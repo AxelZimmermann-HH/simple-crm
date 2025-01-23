@@ -1,0 +1,21 @@
+<mat-card appearance="outlined">
+    <mat-card-content>
+        <table class="user-table">
+            <tr>
+                <th>Company</th>
+                <th>Contact person</th>
+                <th>City</th>
+            </tr>
+            <tr *ngFor="let user of allUsers" (click)="showUserDetails(user)">
+                <td>{{ user.company }}</td>
+                <td>{{ user.firstName }} {{ user.lastName }}</td>
+                <td>{{ user.city }}</td>
+              </tr>
+        </table>
+    </mat-card-content>
+</mat-card>
+
+<button (click)="openDialog()" mat-fab color="primary" 
+matTooltip="Add User" [matTooltipPosition]="'above'">
+    <mat-icon>person_add</mat-icon>
+</button>

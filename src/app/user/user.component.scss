@@ -1,0 +1,41 @@
+button {
+    position: absolute;
+    right: 56px;
+    bottom: 56px;
+    // height: 80px;
+    // width: 80px;
+}
+
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+td {
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+tr {
+    height: 50px;
+    cursor: pointer;
+    &:hover {
+        background-color: rgba(0,0,0,0.04);
+    }
+}
+
+.user-table tr:last-child td {
+    border-bottom: none;
+}
+
+.user-table tr:first-child {
+    cursor: unset;
+}
+
+.user-table tr:first-child:hover {
+    background-color: transparent;
+}

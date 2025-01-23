@@ -1,19 +1,22 @@
-
-
 <mat-drawer-container class="mat-drawer-container" autosize>
+
+
+
+  <!-- SIDEBAR -->
   
   <mat-drawer #drawer [opened]="true" class="sidenav" mode="side">
-    <img src="../assets/logo-crm.png" alt="">
-    <p>Auto-resizing sidenav</p>
-    @if (showFiller) {
-      <p>Lorem, ipsum dolor sit amet consectetur.</p>
-    }
-    <button (click)="showFiller = !showFiller" mat-raised-button>
-      Toggle extra text
-    </button>
+    <div class="logo">
+      <img src="../assets/logo-crm.png" alt="">
+    </div>
+    <ul>
+      <li routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"> <mat-icon>dashboard</mat-icon>Dashboard</li>
+      <li routerLink="/user" routerLinkActive="active"><mat-icon>person</mat-icon>Clients</li>
+    </ul>
   </mat-drawer>
 
-  <div class="example-sidenav-content">
+  <!-- TOP BAR -->
+
+  <div class="sidenav-content">
     <mat-toolbar>
       
         <button mat-icon-button (click)="drawer.toggle()" class="icon">
@@ -22,7 +25,13 @@
         
         <span>SIMPLE CRM</span>
     </mat-toolbar>
+
+    <!-- ROUTER CONTENT -->
     
+    <div class="router-container">
+      <router-outlet></router-outlet>
+    </div>
+
   </div>
 
 </mat-drawer-container>

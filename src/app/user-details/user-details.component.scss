@@ -1,0 +1,128 @@
+.profile-header {
+    height: 250px;
+    padding: 20px;
+    background: linear-gradient(
+        to bottom right, 
+        rgba(183, 13, 32, 0.6),
+        rgba(183, 13, 32, 1) 
+    );
+    display: flex;
+    align-items: flex-end;
+    > img {
+        width: 150px;
+        border-radius: 50%;
+        position: absolute;
+        top: 220px; /* Falls auch vertikale Zentrierung gewünscht ist */
+        left: 50%; /* Horizontale Mitte */
+        transform: translate(-50%, -50%);
+        border: 3px solid lightgray;
+        object-fit: cover;
+    }
+}
+
+.header-infos {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: white;
+    > h1 {
+        margin-block-start: 0;
+        margin-block-end: 0.4em;
+        font-size: 38px;
+    }
+    > p {
+        font-size: 16px;
+    }
+}
+
+.profile-information {
+    margin-top: 100px;
+}
+
+
+
+mat-card-header {
+    padding-bottom: 10px;
+    border-bottom: 3px solid rgba(183, 13, 32, 0.5);
+    display: flex;
+    justify-content: space-between;
+}
+
+mat-card-title {
+    font-size: 24px;
+    color: grey;
+}
+
+.profile-address {
+    padding-top: 15px;
+    font-size: 18px;
+    line-height: 1.5em;
+}
+
+.button-right-corner {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.button-right-bottom-corner {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    color: white;
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+}
+
+.button-left-bottom-corner {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    color: white;
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+}
+
+.menu {
+    padding: 0;
+}
+
+.contacts-area {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.contact-card {
+    height: 120px;
+    width: 120px;
+    border-radius: 15px;
+    background: linear-gradient(
+        to bottom right, 
+        rgba(183, 13, 32, 0.6),
+        rgba(183, 13, 32, 1) 
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+    }
+}
+
+.channel {
+    font-size: 20px;
+    padding-top: 12px;
+}
+
+.channel-img {
+    width: 40px;
+    padding-top: 12px;
+}
