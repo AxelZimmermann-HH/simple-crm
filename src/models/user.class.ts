@@ -11,6 +11,7 @@ export class User {
     zipCode: number;
     city: string;
     country: string;
+    image: string;
     contacts: Contact[];
 
 
@@ -25,9 +26,11 @@ export class User {
         this.zipCode = obj ? obj.zipCode : '';
         this.city = obj ? obj.city : '';
         this.country = obj ? obj.country : '';
-        this.contacts = obj && obj.contacts 
-            ? obj.contacts.map((contact: any) => new Contact(contact)) 
-            : [];
+        this.image = obj ? obj.image : '';
+        this.contacts = [];
+        // this.contacts = obj && obj.contacts 
+        //     ? obj.contacts.map((contact: any) => new Contact(contact)) 
+        //     : [];
     }
 
 }

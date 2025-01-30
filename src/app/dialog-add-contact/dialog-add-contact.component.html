@@ -1,0 +1,54 @@
+@if (loading) {
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+}
+
+<div class="dialog-container">
+
+    <mat-card class="profile-header">
+        <h1>ADD CONTACT</h1>
+    </mat-card>
+
+
+    <div mat-dialog-content class="field-area">
+
+        <div>
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Date</mat-label>
+                <input required [disabled]="loading" [(ngModel)]="contact.contactDate" matInput [matDatepicker]="picker" placeholder="">
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+            </mat-form-field>
+        </div>
+
+        <mat-form-field class="w-100">
+            <mat-label>Contact via...</mat-label>
+            <mat-select required [(ngModel)]="contact.channel" [(value)]="selected">
+              <mat-option>None</mat-option>
+              <mat-option value="mail">E-Mail</mat-option>
+              <mat-option value="phone">Phone</mat-option>
+              <mat-option value="videocall">Videocall</mat-option>
+              <mat-option value="personal">Personal</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <div>
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Informations</mat-label>
+                <textarea required [disabled]="loading" [(ngModel)]="contact.text" matInput placeholder=""></textarea>
+            
+            </mat-form-field>
+        </div>
+    </div>
+
+
+
+
+
+    <mat-dialog-actions class="button-area">
+        <button mat-button (click)="dialogRef.close()">Cancel</button>
+        <button mat-button (click)="saveContact()" cdkFocusInitial [disabled]="!formValid()">Save</button>
+    </mat-dialog-actions>
+
+
+</div>

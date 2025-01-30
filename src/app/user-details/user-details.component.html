@@ -4,11 +4,22 @@
         <mat-icon>arrow_back</mat-icon>
     </button>
 
-    <img src="assets/profile-placeholder.jpg" alt="">
+
+    <div class="profile-img-container">
+        <img class="profile-img" src={{user.image}} alt=""> 
+        <button (click)="openImgDialog()" class="button-profile" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+            <mat-icon>edit</mat-icon>
+        </button>
+    </div>
+
     <div *ngIf="user" class="header-infos">
         <h1>{{ user.company }}</h1>
         <p></p>
     </div>
+
+    <button (click)="openDeleteUserDialog()" class="button-delete" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+        <mat-icon>delete</mat-icon>
+    </button>
     
     <button [matMenuTriggerFor]="nameMenu" class="button-right-bottom-corner" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
         <mat-icon>more_vert</mat-icon>
@@ -27,11 +38,11 @@
     
     <mat-card-header>
         <mat-card-title>CONTACT PERSON</mat-card-title>
-        <button [matMenuTriggerFor]="addressMenu" class="button-right-corner" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+        <button [matMenuTriggerFor]="contactPersonMenu" class="button-right-corner" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
             <mat-icon>more_vert</mat-icon>
         </button>
 
-        <mat-menu #addressMenu="matMenu">
+        <mat-menu #contactPersonMenu="matMenu">
             <button (click)="openContactPersonDialog()" mat-menu-item>Edit</button>
         </mat-menu>
 
@@ -79,34 +90,21 @@
     
     <mat-card-header>
         <mat-card-title>CONTACTS</mat-card-title>
-        <button [matMenuTriggerFor]="addressMenu" class="button-right-corner" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
-            <mat-icon>more_vert</mat-icon>
+        <button (click)="openAddContactDialog()" class="button-right-corner" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+            <mat-icon>add</mat-icon>
         </button>
 
-        <mat-menu #addressMenu="matMenu">
-            <button (click)="openAddressDialog()" mat-menu-item>Edit</button>
-        </mat-menu>
 
     </mat-card-header>
 
     <mat-card-content class="contacts-area">
-        
-        <mat-card class="contact-card">
-            10.01.2025 <br>
-            <img class="channel-img"  src="assets/icons/mail.svg" alt="">
-            
-        </mat-card>
 
-        <mat-card class="contact-card">
-            14.12.2024 <br>
-           <img class="channel-img"  src="assets/icons/phone.svg" alt="">
-            
-        </mat-card> 
-        
-        <mat-card class="contact-card">
-            07.12.2024 <br>
-            <img class="channel-img"  src="assets/icons/mail.svg" alt="">
-        </mat-card>
+        @for (contact of user.contacts; track user.mail) {
+            <mat-card (click)="openShowContactDialog(contact)" class="contact-card">
+                {{ contact.contactDate | date:'dd.MM.yyyy' }} <br>
+                <img class="channel-img" [src]="getChannelIcon(contact.channel)" alt="">
+              </mat-card>
+        }
 
     </mat-card-content>
     

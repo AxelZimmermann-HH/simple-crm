@@ -18,13 +18,15 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { User } from '../../models/user.class';
 import { collection, addDoc, Firestore } from '@angular/fire/firestore';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { Router } from '@angular/router';
+
 
 
 
 @Component({
   selector: 'app-dialog-add-user',
   standalone: true,
-  imports: [MatProgressBarModule, MatDialogContent, MatInputModule, MatNativeDateModule, MatFormFieldModule, MatIconModule, MatDatepickerModule, MatDialogActions, MatDialogClose, MatButtonModule, FormsModule],
+  imports: [MatProgressBarModule, MatDialogContent, MatInputModule, MatNativeDateModule, MatFormFieldModule, MatIconModule, MatDatepickerModule, MatDialogActions, MatButtonModule, FormsModule],
   templateUrl: './dialog-add-user.component.html',
   styleUrl: './dialog-add-user.component.scss'
 })
@@ -36,9 +38,7 @@ export class DialogAddUserComponent {
 
   loading = false;
 
-  constructor(private firestore: Firestore, public dialogRef: MatDialogRef<DialogAddUserComponent>) {
-
-  }
+  constructor(private firestore: Firestore, public dialogRef: MatDialogRef<DialogAddUserComponent>, private router: Router) {}
 
   onNoClick() {
 
@@ -48,6 +48,8 @@ export class DialogAddUserComponent {
     this.user.birthDate = this.birthDate ? this.birthDate.getTime() : undefined;
     console.log('Current user:', this.user);
     this.loading = true;
+
+    this.user.image = 'assets/profile-placeholder.jpg'; 
   
     // Kopiere nur Felder, die definiert sind
     const userData = { ...this.user };
@@ -66,5 +68,9 @@ export class DialogAddUserComponent {
       .catch((error) => {
         console.error('Error adding user:', error);
       });
+
+      if (!this.router.url.includes('/user')) {
+        this.router.navigate(['/user']);
+      }
   }
 }

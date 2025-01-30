@@ -1,0 +1,15 @@
+@if (loading) {
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+}
+
+<div class="dialog-container">
+    <img class="profile-img" [src]="profileImageUrl ? profileImageUrl : 'assets/profile-placeholder.jpg'" alt="">
+
+    <mat-dialog-actions class="button-area">
+        <button mat-button (click)="dialogRef.close()">Cancel</button>
+        <button mat-button (click)="fileInput.click()" [disabled]="selectedFile">Choose File</button>
+        <input type="file" #fileInput accept="image/*" hidden (change)="onFileSelected($event)">
+        <button *ngIf="!isUploaded" [disabled]="!selectedFile" (click)="uploadFile()">Upload File</button>
+        <button *ngIf="isUploaded" class="save-button" mat-button (click)="saveImage()" cdkFocusInitial>Save</button>
+    </mat-dialog-actions>
+</div>

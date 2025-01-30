@@ -8,16 +8,23 @@
     );
     display: flex;
     align-items: flex-end;
-    > img {
-        width: 150px;
-        border-radius: 50%;
-        position: absolute;
-        top: 220px; /* Falls auch vertikale Zentrierung gewünscht ist */
-        left: 50%; /* Horizontale Mitte */
-        transform: translate(-50%, -50%);
-        border: 3px solid lightgray;
-        object-fit: cover;
-    }
+}
+
+.profile-img-container {
+    position: absolute;
+    top: 220px; /* Falls auch vertikale Zentrierung gewünscht ist */
+    left: 50%; /* Horizontale Mitte */
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid lightgray;
+    object-fit: cover;
 }
 
 .header-infos {
@@ -65,6 +72,16 @@ mat-card-title {
     right: 5px;
 }
 
+.button-delete {
+    position: absolute;
+    bottom: 5px;
+    right: 50px;
+    color: white;
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+}
+
 .button-right-bottom-corner {
     position: absolute;
     bottom: 5px;
@@ -85,6 +102,19 @@ mat-card-title {
     }
 }
 
+.button-profile {
+    position: absolute;
+    top: 0;
+    right: -10px;
+    border: 1px solid white;
+    background-color: rgba(207, 137, 145, 0.8);
+    
+    color: white;
+    &:hover {
+        background-color: rgba(183, 13, 32, 0.8);
+    }
+}
+
 .menu {
     padding: 0;
 }
@@ -92,6 +122,7 @@ mat-card-title {
 .contacts-area {
     margin-top: 20px;
     display: flex;
+    flex-wrap: wrap;
     gap: 15px;
 }
 
@@ -105,8 +136,9 @@ mat-card-title {
         rgba(183, 13, 32, 1) 
     );
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    padding-top: 20px;
     color: white;
     font-size: 18px;
     text-align: center;

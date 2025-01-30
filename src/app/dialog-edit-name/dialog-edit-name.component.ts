@@ -24,7 +24,7 @@ import { FirestoreService } from '../services/firestore.service';
 @Component({
   selector: 'app-dialog-edit-name',
   standalone: true,
-  imports: [MatProgressBarModule, MatDialogContent, MatInputModule, MatNativeDateModule, MatFormFieldModule, MatIconModule, MatDatepickerModule, MatDialogActions, MatDialogClose, MatButtonModule, FormsModule],
+  imports: [MatProgressBarModule, MatDialogContent, MatInputModule, MatNativeDateModule, MatFormFieldModule, MatIconModule, MatDatepickerModule, MatDialogActions, MatButtonModule, FormsModule],
   templateUrl: './dialog-edit-name.component.html',
   styleUrl: './dialog-edit-name.component.scss'
 })
@@ -63,8 +63,14 @@ export class DialogEditNameComponent {
     }
   
     try {
+
+      const userToSave = {
+        ...this.user,
+        contacts: this.user.contacts.map((contact) => ({ ...contact })), // Nur die Daten kopieren
+      };
+
       const userDocRef = doc(this.firestore, `users/${this.data.id}`); 
-      await setDoc(userDocRef, { ...this.user }); // Aktualisiere die Benutzerdaten in Firestore
+      await setDoc(userDocRef, userToSave); // Aktualisiere die Benutzerdaten in Firestore
       this.dialogRef.close(this.user); // Dialog schließen und die aktualisierten Daten zurückgeben
       this.loading = false;
     } catch (error) {

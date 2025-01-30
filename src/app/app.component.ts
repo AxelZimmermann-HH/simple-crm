@@ -5,6 +5,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -16,4 +17,10 @@ import { RouterModule } from '@angular/router';
 export class AppComponent {
   title = 'simple-crm';
   showFiller = false;
+
+  constructor(private router: Router) {}
+
+  goToDashboard() {
+    this.router.navigate(['/']);
+  }
 }

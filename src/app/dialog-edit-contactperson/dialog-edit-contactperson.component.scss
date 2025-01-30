@@ -1,0 +1,27 @@
+.dialog-container {
+    padding: 24px;
+}
+
+.field-area {
+    padding: 5px 0 0 0;
+}
+
+.button-area button {
+    border: 1px solid rgba(183,13,32,1);
+    border-radius: 15px;
+    width: 80px;
+    height: 50px;
+    &:focus {
+        background-color: rgb(239, 213, 216);
+    }
+    &:hover {
+        background-color: rgba(183,13,32,0.3);
+    }
+}
+
+.save-button {
+    &:hover {
+        background-color: rgba(183,13,32,1) !important;
+        color: white !important;
+    }
+}

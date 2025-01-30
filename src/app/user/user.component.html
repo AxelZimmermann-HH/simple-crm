@@ -1,17 +1,38 @@
+<mat-card class="profile-header">
+    <h1>Customer Base</h1> 
+</mat-card>
+
 <mat-card appearance="outlined">
+    <mat-card-header>
+        <div class="table-header-element first">
+            COMPANY
+        </div>
+        <div class="table-header-element first">
+            CONTACT PERSON
+        </div>
+        <div class="table-header-element second">
+            CITY
+        </div>
+    </mat-card-header>
     <mat-card-content>
-        <table class="user-table">
-            <tr>
-                <th>Company</th>
-                <th>Contact person</th>
-                <th>City</th>
-            </tr>
-            <tr *ngFor="let user of allUsers" (click)="showUserDetails(user)">
-                <td>{{ user.company }}</td>
-                <td>{{ user.firstName }} {{ user.lastName }}</td>
-                <td>{{ user.city }}</td>
-              </tr>
-        </table>
+
+        <div *ngFor="let group of groupedUsers">
+        
+            <div class="letter">{{ group.letter }}</div>
+    
+            <div *ngFor="let user of group.users" (click)="showUserDetails(user)" class="table-row">
+                <div class="table-element first">
+                    {{ user.company }}
+                </div>
+                <div class="table-element first">
+                    {{ user.firstName }} {{ user.lastName }}
+                </div>
+                <div class="table-element second">
+                    {{ user.city }}
+                </div>
+            </div>
+    
+        </div>
     </mat-card-content>
 </mat-card>
 

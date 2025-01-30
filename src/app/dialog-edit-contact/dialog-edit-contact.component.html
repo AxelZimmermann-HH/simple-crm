@@ -1,0 +1,29 @@
+@if (loading) {
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+}
+
+<div class="dialog-container">
+
+    <mat-card class="profile-header">
+        <h1>EDIT CONTACT</h1>
+    </mat-card>
+
+
+    <div mat-dialog-content class="field-area">
+
+        <div>
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Informations</mat-label>
+                <textarea style="height: 200px;" required [disabled]="loading" matInput [(ngModel)]="contact.text" placeholder="Enter information"></textarea>
+            
+            </mat-form-field>
+        </div>
+    </div>
+
+    <mat-dialog-actions class="button-area">
+        <button mat-button (click)="dialogRef.close()">Cancel</button>
+        <button mat-button (click)="saveContact()" cdkFocusInitial>Save</button>
+    </mat-dialog-actions>
+
+
+</div>

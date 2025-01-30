@@ -1,1 +1,78 @@
-<p>dashboard works!</p>
+<mat-card class="profile-header">
+    <h1>{{ getGreeting() }} </h1> <mat-icon class="icon">mood</mat-icon>
+</mat-card>
+
+
+<!-- FIRST ROW -->
+
+<mat-card class="profile-information mt-35">
+
+    @if (loading) {
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    }
+    
+    <mat-card-header>
+        <mat-card-title>CURRENT CONTACTS</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content class="contacts-area">
+        
+        <div class="contacts-left">
+
+            @for (contact of displayedContacts; track contact.id) {
+                <mat-card class="contact-card">
+                    <div class="contact-card-date">
+                        {{ contact.contactDate | date:'dd.MM.yyyy' }}
+                    </div>
+                    
+                    <div class="contact-card-img">
+                        <img class="channel-img" [src]="getChannelIcon(contact.channel)" alt="">
+                    </div>
+        
+                    <div class="contact-card-company">
+                        {{ contact.company }}
+                    </div>
+                </mat-card>
+            }
+
+        </div>
+
+
+        <div class="slide-button-area">
+            <button *ngIf="currentContactIndex > 0" class="back" (click)="showPreviousContacts()" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+                <mat-icon class="icon">arrow_backward</mat-icon>
+            </button>
+            <button *ngIf="currentContactIndex + 4 < allContacts.length" (click)="showNextContacts()" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+                <mat-icon class="icon">arrow_forward</mat-icon>
+            </button>
+        </div>
+
+    </mat-card-content>
+    
+</mat-card>
+
+<!-- SECOND ROW -->
+
+<div class="second-row">
+    <mat-card class="profile-information left">
+
+        <mat-card-header>
+            <mat-card-title>CUSTOMER BASE</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="base-content">
+            <mat-card class="contact-card number">
+                {{ userCount }}
+            </mat-card>
+            <button (click)="goToClients()">CLIENTS</button>
+        </mat-card-content>
+
+
+    </mat-card>
+    <mat-card (click)="goToAddUser()" class="add-card">
+
+        <div class="add-card-text">ADD <br> NEW <br> CLIENT</div>
+        <div class="add">
+            <mat-icon class="icon">add</mat-icon>
+        </div>
+    </mat-card>
+</div>

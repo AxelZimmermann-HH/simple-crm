@@ -1,1 +1,50 @@
-<p>dialog-edit-contactperson works!</p>
+@if (loading) {
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+}
+
+<div class="dialog-container">
+
+    <h2 mat-dialog-title>EDIT ADDRESS</h2>
+
+
+    <div mat-dialog-content class="field-area">
+
+        <div>
+            <mat-form-field appearance="outline" class="mr-16">
+                <mat-label>First Name</mat-label>
+                <input [disabled]="loading" [(ngModel)]="user.firstName" matInput placeholder="">
+            
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>City</mat-label>
+                <input [disabled]="loading" [(ngModel)]="user.lastName" matInput placeholder="">
+            
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Country</mat-label>
+                <input [disabled]="loading" [(ngModel)]="user.mail" matInput placeholder="">
+            
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Street & House No.</mat-label>
+                <input [disabled]="loading" [(ngModel)]="user.phone" matInput placeholder="">
+            
+            </mat-form-field>
+        </div>
+    </div>
+
+
+
+
+
+    <mat-dialog-actions class="button-area">
+        <button mat-button (click)="dialogRef.close()">Cancel</button>
+        <button class="save-button" mat-button (click)="saveUser()" cdkFocusInitial>Save</button>
+    </mat-dialog-actions>
+
+
+</div>

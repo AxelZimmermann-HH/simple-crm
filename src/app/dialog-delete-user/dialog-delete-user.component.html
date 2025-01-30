@@ -1,0 +1,12 @@
+@if (loading) {
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+}
+
+<div class="dialog-container">
+    <p>Are you sure that you want to delete <br>this user?</p>
+
+    <mat-dialog-actions class="button-area">
+        <button mat-button (click)="dialogRef.close()">Cancel</button>
+        <button class="save-button" mat-button (click)="deleteUser()" cdkFocusInitial>Delete</button>
+    </mat-dialog-actions>
+</div>

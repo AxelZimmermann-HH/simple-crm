@@ -1,0 +1,48 @@
+<div class="dialog-container">
+
+    <mat-card class="profile-header">
+        <h1>CONTACT</h1>
+        <div class="header-buttons">
+
+            <button (click)="deleteContact()" class="button-left-bottom-corner" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+                <mat-icon>delete</mat-icon>
+            </button>
+            
+            <button [matMenuTriggerFor]="contactMenu" class="button-left-bottom-corner" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #contactMenu="matMenu">
+                <button (click)="openEditContact()" mat-menu-item>Edit</button>
+            </mat-menu>
+
+            <button (click)="closeDialog()" class="button-left-bottom-corner" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+                <mat-icon>close</mat-icon>
+            </button>
+
+        </div>
+    </mat-card>
+
+    <div class="contact-firstrow">
+        <mat-card class="contact-infos">
+                <div class="infos-header">
+                    <h1>DATE:</h1>
+                </div>
+                <p style="padding-left: 16px">{{ contact.contactDate | date: 'dd.MM.yyyy' }}</p>
+        </mat-card>
+        <mat-card class="contact-infos">
+            <div class="infos-header">
+                <h1>VIA:</h1>
+            </div>
+            <img class="channel-img" [src]="getChannelIcon(contact.channel)" alt="">
+        </mat-card>
+    </div>
+    <div class="pd-16">
+        <mat-card class="contact-infos">
+            <div class="infos-header">
+                <h1>INFORMATION:</h1>
+            </div>
+            <p style="padding-left: 16px; white-space: pre-wrap;">{{ contact.text }}</p>
+        </mat-card>
+    </div>
+    
+</div>

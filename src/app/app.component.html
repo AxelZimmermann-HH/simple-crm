@@ -5,13 +5,21 @@
   <!-- SIDEBAR -->
   
   <mat-drawer #drawer [opened]="true" class="sidenav" mode="side">
-    <div class="logo">
-      <img src="../assets/logo-crm.png" alt="">
+
+    <div class="sidenav-top">
+      <div (click)="goToDashboard()" class="logo">
+        <img src="../assets/logo-crm2.png" alt="">
+      </div>
+      <ul>
+        <li routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"> <mat-icon>dashboard</mat-icon>Dashboard</li>
+        <li routerLink="/user" routerLinkActive="active"><mat-icon>person</mat-icon>Clients</li>
+      </ul>
     </div>
-    <ul>
-      <li routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"> <mat-icon>dashboard</mat-icon>Dashboard</li>
-      <li routerLink="/user" routerLinkActive="active"><mat-icon>person</mat-icon>Clients</li>
-    </ul>
+
+    <div class="sidenav-bottom">
+      <a href="/">Imprint</a>
+      <a href="/">Privacy Policy</a>
+    </div>
   </mat-drawer>
 
   <!-- TOP BAR -->
@@ -23,7 +31,7 @@
           <mat-icon>menu</mat-icon>
         </button>
         
-        <span>SIMPLE CRM</span>
+        <!-- <span>SIMPLE CRM</span> -->
     </mat-toolbar>
 
     <!-- ROUTER CONTENT -->

@@ -23,7 +23,7 @@ import { FirestoreService } from '../services/firestore.service';
 @Component({
   selector: 'app-dialog-edit-address',
   standalone: true,
-  imports: [MatProgressBarModule, MatDialogContent, MatInputModule, MatNativeDateModule, MatFormFieldModule, MatIconModule, MatDatepickerModule, MatDialogActions, MatDialogClose, MatButtonModule, FormsModule],
+  imports: [MatProgressBarModule, MatDialogContent, MatInputModule, MatNativeDateModule, MatFormFieldModule, MatIconModule, MatDatepickerModule, MatDialogActions, MatButtonModule, FormsModule],
   templateUrl: './dialog-edit-address.component.html',
   styleUrl: './dialog-edit-address.component.scss'
 })
@@ -52,23 +52,32 @@ export class DialogEditAddressComponent {
   }
 
   async saveUser(): Promise<void> {
-
     this.loading = true;
-
-      if (!this.data.id) {
-        console.error('Keine User-ID gefunden, um die Daten zu speichern.');
-        return;
-      }
-    
-      try {
-        const userDocRef = doc(this.firestore, `users/${this.data.id}`); // Dokumentreferenz basierend auf der ID
-        await setDoc(userDocRef, { ...this.user }); // Aktualisiere die Benutzerdaten in Firestore
-        console.log('Benutzerdaten erfolgreich gespeichert:', this.user);
-        this.dialogRef.close(this.user); // Dialog schließen und die aktualisierten Daten zurückgeben
-        this.loading = false;
-      } catch (error) {
-        console.error('Fehler beim Speichern der Benutzerdaten:', error);
-      }
+  
+    if (!this.data.id) {
+      console.error('Keine User-ID gefunden, um die Daten zu speichern.');
+      this.loading = false; // Ladeindikator deaktivieren
+      return;
     }
+  
+    try {
+      // Temporär serialisierbare Daten für Firestore erstellen
+      const userToSave = {
+        ...this.user,
+        contacts: this.user.contacts.map((contact) => ({ ...contact })), // Nur die Daten kopieren
+      };
+  
+      const userDocRef = doc(this.firestore, `users/${this.data.id}`); // Dokumentreferenz basierend auf der ID
+      await setDoc(userDocRef, userToSave); // Aktualisiere die Benutzerdaten in Firestore
+  
+      console.log('Benutzerdaten erfolgreich gespeichert:', this.user);
+      this.dialogRef.close(this.user); // Dialog schließen und aktualisierte Daten zurückgeben
+      this.loading = false; // Ladeindikator deaktivieren
+    } catch (error) {
+      console.error('Fehler beim Speichern der Benutzerdaten:', error);
+      this.loading = false; // Ladeindikator deaktivieren
+    }
+  }
+  
 
 }

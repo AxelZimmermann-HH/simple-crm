@@ -1,0 +1,70 @@
+.dialog-container {
+    width: 600px;
+}
+
+p {
+    margin-top: 10px;
+    color: rgba(0,0,0,0.83);
+    font-size: 18px;
+}
+
+.profile-header {
+    padding: 20px;
+    background: linear-gradient(
+        to bottom right, 
+        rgba(183, 13, 32, 0.6),
+        rgba(183, 13, 32, 1) 
+    );
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: white;
+    > h1 {
+        margin: 0;
+        > p {
+            margin-block-start: 0;
+            margin-block-end: 0;
+        }
+    };
+    > h2 {
+        font-weight: 400;
+    }
+}
+
+.contact-firstrow {
+    padding: 16px 16px 0px 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    > mat-card {
+        width: 49%;
+    }
+}
+
+.contact-infos {
+    border: 3px solid rgba(183,13,32,0.8);
+    color: rgba(183,13,32,1);
+    display: flex;
+    flex-direction: column;
+    > img {
+        width: 25px;
+        padding-left: 16px;
+        padding-top: 5px;
+    }
+}
+
+.infos-header {
+    background: linear-gradient(
+        to bottom right, 
+        rgba(183, 13, 32, 0.6),
+        rgba(183, 13, 32, 1) 
+    );
+    padding-left: 16px;
+    > h1 {
+        margin: 0;
+        font-size: 18px;
+        color: white;
+    };
+}
