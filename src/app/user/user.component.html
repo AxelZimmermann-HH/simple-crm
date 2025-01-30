@@ -7,10 +7,10 @@
         <div class="table-header-element first">
             COMPANY
         </div>
-        <div class="table-header-element first">
+        <div class="table-header-element first desktop">
             CONTACT PERSON
         </div>
-        <div class="table-header-element second">
+        <div class="table-header-element second desktop">
             CITY
         </div>
     </mat-card-header>
@@ -24,10 +24,10 @@
                 <div class="table-element first">
                     {{ user.company }}
                 </div>
-                <div class="table-element first">
+                <div class="table-element first desktop">
                     {{ user.firstName }} {{ user.lastName }}
                 </div>
-                <div class="table-element second">
+                <div class="table-element second desktop">
                     {{ user.city }}
                 </div>
             </div>
@@ -36,7 +36,7 @@
     </mat-card-content>
 </mat-card>
 
-<button (click)="openDialog()" mat-fab color="primary" 
+<button (click)="openDialog()" mat-fab color="primary" class="add-button"
 matTooltip="Add User" [matTooltipPosition]="'above'">
     <mat-icon>person_add</mat-icon>
 </button>

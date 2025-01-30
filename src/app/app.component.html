@@ -1,41 +1,38 @@
-<mat-drawer-container class="mat-drawer-container" autosize>
-
-
+<mat-drawer-container class="mat-drawer-container">
 
   <!-- SIDEBAR -->
-  
-  <mat-drawer #drawer [opened]="true" class="sidenav" mode="side">
-
+  <mat-drawer #drawer class="sidenav" [mode]="drawerMode" [opened]="drawerOpened">
     <div class="sidenav-top">
-      <div (click)="goToDashboard()" class="logo">
-        <img src="../assets/logo-crm2.png" alt="">
+      <div (click)="drawer.toggle()" routerLink="/" routerLinkActive="active" class="logo">
+        <img src="assets/logo-crm2.png" alt="Logo">
       </div>
       <ul>
-        <li routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"> <mat-icon>dashboard</mat-icon>Dashboard</li>
-        <li routerLink="/user" routerLinkActive="active"><mat-icon>person</mat-icon>Clients</li>
+        <li (click)="drawer.toggle()" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"> 
+          <mat-icon>dashboard</mat-icon>Dashboard
+        </li>
+        <li (click)="drawer.toggle()" routerLink="/user" routerLinkActive="active">
+          <mat-icon>person</mat-icon>Clients
+        </li>
       </ul>
     </div>
 
     <div class="sidenav-bottom">
-      <a href="/">Imprint</a>
-      <a href="/">Privacy Policy</a>
+      <a (click)="drawer.toggle()" routerLink="/imprint" routerLinkActive="active">Imprint</a>
+      <a (click)="drawer.toggle()" routerLink="/privacy" routerLinkActive="active">Privacy Policy</a>
     </div>
   </mat-drawer>
 
   <!-- TOP BAR -->
-
   <div class="sidenav-content">
     <mat-toolbar>
-      
-        <button mat-icon-button (click)="drawer.toggle()" class="icon">
-          <mat-icon>menu</mat-icon>
-        </button>
-        
-        <!-- <span>SIMPLE CRM</span> -->
+      <button mat-icon-button (click)="drawer.toggle()" class="icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <img src="assets/logo-crm2.png" alt="">
     </mat-toolbar>
 
     <!-- ROUTER CONTENT -->
-    
     <div class="router-container">
       <router-outlet></router-outlet>
     </div>

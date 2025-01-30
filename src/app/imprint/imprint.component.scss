@@ -1,0 +1,24 @@
+.profile-header {
+    height: 115px;
+    padding: 20px;
+    background: linear-gradient(
+        to bottom right, 
+        rgba(183, 13, 32, 0.6),
+        rgba(183, 13, 32, 1) 
+    );
+    display: flex;
+    > h1 {
+        color: white;
+        font-size: 60px;
+        padding-top: 20px;
+    }
+    margin-bottom: 30px;
+}
+
+p {
+    font-size: 16px;
+}
+
+h2 {
+    padding-top: 15px;
+}
