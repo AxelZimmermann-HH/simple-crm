@@ -67,20 +67,13 @@ mat-card-content {
     box-sizing: border-box;
 }
 
-.letter {
-    font-size: 18px;
-    color: grey;
-    font-weight: 700;
-    padding-top: 30px;
 
-    padding-bottom: 10px;
-}
 
 .table-row {
     width: 100%;
     display: flex;
     font-size: 18px;
-    height: 40px;
+    height: 50px;
     cursor: pointer;
     &:hover {
         background-color: rgba(0,0,0,0.04);
@@ -88,7 +81,26 @@ mat-card-content {
     > div {
         display: flex;
         align-items: center;
-        // border-bottom: 1px solid rgba(0,0,0,0.2);
+    }
+}
+
+.letter-row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 5px;
+}
+
+.letter {
+    font-size: 18px;
+    color: grey;
+    font-weight: 700;
+
+    
+    cursor: default;
+    &:hover {
+        background-color: transparent;
     }
 }
 
@@ -102,12 +114,21 @@ mat-card-content {
     }
     mat-card-header {
         justify-content: center;
+        > div {
+            width: 250px;
+        }
     }
     .table-row {
         justify-content: center;
+        > div {
+            width: 250px;
+        }
     }
-    .letter {
+    .letter-row {
         justify-content: center;
+        > div {
+            width: 250px;
+        }
     }
 }
 

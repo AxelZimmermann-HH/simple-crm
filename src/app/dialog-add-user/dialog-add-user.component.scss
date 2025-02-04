@@ -1,9 +1,40 @@
 .dialog-container {
-    padding: 24px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.profile-header {
+    padding: 20px;
+    box-sizing: border-box;
+    background: linear-gradient(
+        to bottom right, 
+        rgba(183, 13, 32, 0.6),
+        rgba(183, 13, 32, 1) 
+    );
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: white;
+    > h1 {
+        margin: 0;
+        > p {
+            margin-block-start: 0;
+            margin-block-end: 0;
+        }
+    };
+    > h2 {
+        font-weight: 400;
+    }
 }
 
 .field-area {
-    padding: 5px 0 0 0;
+    padding: 24px 24px 0px 24px;
+}
+
+.button-area {
+    padding: 0px 24px 24px 24px;
 }
 
 .button-area button {

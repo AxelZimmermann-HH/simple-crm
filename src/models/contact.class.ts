@@ -4,6 +4,7 @@ export class Contact {
     channel: string;
     text: string; // Text der Nachricht oder des Kontakts
     company: string;
+    companyId: string | null;
 
   
     constructor(obj?: any) {
@@ -12,5 +13,6 @@ export class Contact {
       this.channel = obj ? obj.channel : '';
       this.text = obj ? obj.text : ''; // Standard: leerer Text
       this.company = obj ? obj.company : '';
+      this.companyId = obj ? obj.companyId : '';
     }
   }

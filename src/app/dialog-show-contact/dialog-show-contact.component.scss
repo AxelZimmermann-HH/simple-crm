@@ -1,5 +1,6 @@
 .dialog-container {
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
 }
 
 p {
@@ -9,7 +10,9 @@ p {
 }
 
 .profile-header {
+    width: 100%;
     padding: 20px;
+    box-sizing: border-box;
     background: linear-gradient(
         to bottom right, 
         rgba(183, 13, 32, 0.6),
@@ -19,7 +22,6 @@ p {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
     color: white;
     > h1 {
         margin: 0;
@@ -67,4 +69,11 @@ p {
         font-size: 18px;
         color: white;
     };
+}
+
+@media (max-width: 750px) {
+    // .dialog-container {
+    //     width: 98vw;
+    // }
+    
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -7,6 +7,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { MatDrawer } from '@angular/material/sidenav';
+
 
 
 @Component({
@@ -19,6 +21,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 export class AppComponent {
   title = 'simple-crm';
   showFiller = false;
+  @ViewChild('drawer') drawer!: MatDrawer;
   drawerMode: 'side' | 'over' = 'side';
   drawerOpened = true;
 
@@ -35,4 +38,11 @@ export class AppComponent {
       });
   }
 
+  toggleDrawer(): void {
+    if (this.drawerMode === 'over') {
+      this.drawer.toggle();
+    }
+  }
+
 }
+

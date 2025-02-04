@@ -17,8 +17,10 @@
     <mat-card-content>
 
         <div *ngFor="let group of groupedUsers">
-        
-            <div class="letter">{{ group.letter }}</div>
+
+            <div class="letter-row">
+                <div class="first letter">{{ group.letter }}</div>
+            </div>
     
             <div *ngFor="let user of group.users" (click)="showUserDetails(user)" class="table-row">
                 <div class="table-element first">

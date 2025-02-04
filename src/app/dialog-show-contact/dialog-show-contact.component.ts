@@ -24,6 +24,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { FirestoreService } from '../services/firestore.service';
 import {MatMenuModule} from '@angular/material/menu';
 import { DialogEditContactComponent } from '../dialog-edit-contact/dialog-edit-contact.component';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-dialog-show-contact',
@@ -36,37 +37,48 @@ export class DialogShowContactComponent {
   userId: string | null = null;
   user: User = new User;
   contact: Contact;
+  deleted = false;
 
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: { contact: Contact; id: string }, public dialogRef: MatDialogRef<DialogShowContactComponent>, private dialog: MatDialog, private firestore: Firestore,  private firestoreService: FirestoreService) {
     this.contact = data.contact;     
     this.userId = data.id; 
     console.log('Übergebene userId:', this.userId, 'vollständiger:', this.contact);
-    
   }
 
-  // async ngOnInit(): Promise<void> {
-  //   this.userId = this.data.id;
-  //   if (this.userId) {
-  //     try {
-  //       const userData = await this.firestoreService.fetchUserDetails(this.userId);
-  //       if (userData) {
-  //         this.user = { ...this.user, ...userData };     
-  //         console.log(this.user);
-          
-  //       }
-  //       const contactData = await this.firestoreService.fetchContacts(this.userId);
-  //       console.log(contactData);
-        
-  //     } catch (error) {
-  //       console.error('Fehler beim Laden des Benutzers:', error);
-  //     }
-  //   } else {
-  //     console.error('Keine User-ID in den Dialogdaten gefunden');
-  //   }
-  // }
+  ngOnInit(): void {
+    this.dialogRef.beforeClosed().pipe(take(1)).subscribe(() => {
+        if (this.deleted) {
+            console.log('Kontakt wurde gelöscht. Zurückgegeben wird nur die ID:', this.contact.id);
+            this.dialogRef.close(this.contact.id); // Nur ID zurückgeben
+        } else {
+            console.log('Kontakt wurde bearbeitet. Zurückgegeben wird das Objekt:', this.contact);
+            this.dialogRef.close(this.contact); // Bearbeiteter Kontakt wird zurückgegeben
+        }
+    });
+}
 
-  deleteContact() {
+deleteContact() {
+  if (!this.userId || !this.contact.id) {
+      console.error('Benutzer-ID oder Kontakt-ID fehlt.');
+      return;
+  }
+
+  const userDocRef = doc(this.firestore, `users/${this.userId}`);
+  const contactDocRef = doc(userDocRef, `contacts/${this.contact.id}`);
+
+  deleteDoc(contactDocRef)
+      .then(() => {
+          console.log('Kontakt erfolgreich gelöscht:', this.contact.id);
+          this.deleted = true; // 🔥 Merken, dass gelöscht wurde
+          this.dialogRef.close(this.contact.id); // Manuelles Schließen mit ID
+      })
+      .catch((error) => {
+          console.error('Fehler beim Löschen des Kontakts:', error);
+      });
+}
+
+  deleteContact2() {
     if (!this.userId || !this.contact.id) {
       console.error('Benutzer-ID oder Kontakt-ID fehlt.');
       return;
@@ -92,6 +104,8 @@ export class DialogShowContactComponent {
     console.log('Kontakt beim Öffnen des Dialogs:', this.contact); // Debugging
 
     const dialogRef = this.dialog.open(DialogEditContactComponent, {
+      width: '98%', // Setzt die Breite auf 100%
+      maxWidth: '600px', // Begrenzung der maximalen Breite auf 600px
       data: { contact: this.contact, id: this.userId }, // Kontakt als Dialog-Daten übergeben
     });
     console.log(this.contact);

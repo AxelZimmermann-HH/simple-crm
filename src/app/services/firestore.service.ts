@@ -111,7 +111,7 @@ export class FirestoreService {
     return snapshot.size; // Gibt die Anzahl der Dokumente zurück
   }
 
-  async getLatestContacts(): Promise<Contact[]> {
+  async getAllContacts(): Promise<Contact[]> {
     const usersCollectionRef = collection(this.firestore, 'users');
     const usersSnapshot = await getDocs(usersCollectionRef);
     
@@ -121,7 +121,7 @@ export class FirestoreService {
     for (const userDoc of usersSnapshot.docs) {
         const userId = userDoc.id;
         const contactsCollectionRef = collection(this.firestore, `users/${userId}/contacts`);
-        const contactsQuery = query(contactsCollectionRef, orderBy('contactDate', 'desc'), limit(4)); // Holt nur die 4 neuesten Kontakte pro User
+        const contactsQuery = query(contactsCollectionRef, orderBy('contactDate', 'desc'));
         const contactsPromise = getDocs(contactsQuery).then(contactsSnapshot => 
             contactsSnapshot.docs.map((doc) => {
                 const contactData = doc.data();
@@ -131,6 +131,7 @@ export class FirestoreService {
                     channel: contactData["channel"] ?? '',
                     text: contactData["text"] ?? '',
                     company: contactData["company"] ?? '', // Falls vorhanden
+                    companyId: contactData["companyId"] ?? userId
                 });
             })
         );

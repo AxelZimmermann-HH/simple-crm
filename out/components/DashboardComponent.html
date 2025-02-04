@@ -1,0 +1,1603 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>simple-crm documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">simple-crm documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  DashboardComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/dashboard/dashboard.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Dashboard-Komponente für die Anzeige der neuesten Kontakte.</p>
+
+    </p>
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-dashboard</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>CommonModule</code>
+                            <code>MatCard</code>
+                            <code>MatCardModule</code>
+                            <code>MatIconModule</code>
+                            <code>MatButtonModule</code>
+                            <code>MatProgressBarModule</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./dashboard.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./dashboard.component.scss</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#allContacts" >allContacts</a>
+                            </li>
+                            <li>
+                                <a href="#currentContactIndex" >currentContactIndex</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#dialog" >dialog</a>
+                            </li>
+                            <li>
+                                <a href="#displayedContacts" >displayedContacts</a>
+                            </li>
+                            <li>
+                                <a href="#loading" >loading</a>
+                            </li>
+                            <li>
+                                <a href="#userCount" >userCount</a>
+                            </li>
+                            <li>
+                                <a href="#userId" >userId</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#deleteContactLocally" >deleteContactLocally</a>
+                            </li>
+                            <li>
+                                <a href="#getChannelIcon" >getChannelIcon</a>
+                            </li>
+                            <li>
+                                <a href="#getGreeting" >getGreeting</a>
+                            </li>
+                            <li>
+                                <a href="#goToAddUser" >goToAddUser</a>
+                            </li>
+                            <li>
+                                <a href="#goToClients" >goToClients</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#handleDialogResult" >handleDialogResult</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#openContact" >openContact</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#reloadContactsFromFirestore" >reloadContactsFromFirestore</a>
+                            </li>
+                            <li>
+                                <a href="#showNextContacts" >showNextContacts</a>
+                            </li>
+                            <li>
+                                <a href="#showPreviousContacts" >showPreviousContacts</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateContactLocally" >updateContactLocally</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#updateDisplayedContacts" >updateDisplayedContacts</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(dialog: MatDialog, router: Router, firestoreService: <a href="../injectables/FirestoreService.html" target="_self">FirestoreService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/dashboard/dashboard.component.ts:33</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>dialog</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatDialog</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>firestoreService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/FirestoreService.html" target="_self" >FirestoreService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteContactLocally"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>deleteContactLocally</b></span>
+                        <a href="#deleteContactLocally"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deleteContactLocally(contactId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="112"
+                                    class="link-to-prism">src/app/dashboard/dashboard.component.ts:112</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>contactId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getChannelIcon"></a>
+                    <span class="name">
+                        <span ><b>getChannelIcon</b></span>
+                        <a href="#getChannelIcon"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getChannelIcon(channel: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="65"
+                                    class="link-to-prism">src/app/dashboard/dashboard.component.ts:65</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>channel</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getGreeting"></a>
+                    <span class="name">
+                        <span ><b>getGreeting</b></span>
+                        <a href="#getGreeting"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getGreeting()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="50"
+                                    class="link-to-prism">src/app/dashboard/dashboard.component.ts:50</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goToAddUser"></a>
+                    <span class="name">
+                        <span ><b>goToAddUser</b></span>
+                        <a href="#goToAddUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>goToAddUser()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="76"
+                                    class="link-to-prism">src/app/dashboard/dashboard.component.ts:76</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goToClients"></a>
+                    <span class="name">
+                        <span ><b>goToClients</b></span>
+                        <a href="#goToClients"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>goToClients()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="81"
+                                    class="link-to-prism">src/app/dashboard/dashboard.component.ts:81</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleDialogResult"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>handleDialogResult</b></span>
+                        <a href="#handleDialogResult"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>handleDialogResult(result: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="103"
+                                    class="link-to-prism">src/app/dashboard/dashboard.component.ts:103</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>result</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="41"
+                                    class="link-to-prism">src/app/dashboard/dashboard.component.ts:41</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openContact"></a>
+                    <span class="name">
+                        <span ><b>openContact</b></span>
+                        <a href="#openContact"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openContact(contact: <a href="../classes/Contact.html" target="_self">Contact</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="89"
+                                    class="link-to-prism">src/app/dashboard/dashboard.component.ts:89</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Öffnet den Dialog für einen Kontakt.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>contact</td>
+                                            <td>
+                                                            <code><a href="../classes/Contact.html" target="_self" >Contact</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Der Kontakt, der angezeigt wird.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="reloadContactsFromFirestore"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>reloadContactsFromFirestore</b></span>
+                        <a href="#reloadContactsFromFirestore"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>reloadContactsFromFirestore()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="130"
+                                    class="link-to-prism">src/app/dashboard/dashboard.component.ts:130</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showNextContacts"></a>
+                    <span class="name">
+                        <span ><b>showNextContacts</b></span>
+                        <a href="#showNextContacts"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>showNextContacts()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="136"
+                                    class="link-to-prism">src/app/dashboard/dashboard.component.ts:136</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showPreviousContacts"></a>
+                    <span class="name">
+                        <span ><b>showPreviousContacts</b></span>
+                        <a href="#showPreviousContacts"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>showPreviousContacts()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="146"
+                                    class="link-to-prism">src/app/dashboard/dashboard.component.ts:146</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateContactLocally"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>updateContactLocally</b></span>
+                        <a href="#updateContactLocally"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateContactLocally(updatedContact: <a href="../classes/Contact.html" target="_self">Contact</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="118"
+                                    class="link-to-prism">src/app/dashboard/dashboard.component.ts:118</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>updatedContact</td>
+                                            <td>
+                                                            <code><a href="../classes/Contact.html" target="_self" >Contact</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateDisplayedContacts"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>updateDisplayedContacts</b></span>
+                        <a href="#updateDisplayedContacts"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateDisplayedContacts()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="125"
+                                    class="link-to-prism">src/app/dashboard/dashboard.component.ts:125</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="allContacts"></a>
+                    <span class="name">
+                        <span ><b>allContacts</b></span>
+                        <a href="#allContacts"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Contact.html" target="_self" >Contact[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/dashboard/dashboard.component.ts:31</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="currentContactIndex"></a>
+                    <span class="name">
+                        <span ><b>currentContactIndex</b></span>
+                        <a href="#currentContactIndex"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/dashboard/dashboard.component.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dialog"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>dialog</b></span>
+                        <a href="#dialog"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MatDialog</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/dashboard/dashboard.component.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="displayedContacts"></a>
+                    <span class="name">
+                        <span ><b>displayedContacts</b></span>
+                        <a href="#displayedContacts"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Contact.html" target="_self" >Contact[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/dashboard/dashboard.component.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loading"></a>
+                    <span class="name">
+                        <span ><b>loading</b></span>
+                        <a href="#loading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/dashboard/dashboard.component.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="userCount"></a>
+                    <span class="name">
+                        <span ><b>userCount</b></span>
+                        <a href="#userCount"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/dashboard/dashboard.component.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="userId"></a>
+                    <span class="name">
+                        <span ><b>userId</b></span>
+                        <a href="#userId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/dashboard/dashboard.component.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+import {MatCardModule} from &#x27;@angular/material/card&#x27;;
+import { MatCard } from &#x27;@angular/material/card&#x27;;
+import { MatIconModule } from &#x27;@angular/material/icon&#x27;;
+import { MatButtonModule } from &#x27;@angular/material/button&#x27;;
+import { CommonModule } from &#x27;@angular/common&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import {MatDialog} from &#x27;@angular/material/dialog&#x27;;
+import { DialogAddUserComponent } from &#x27;../dialog-add-user/dialog-add-user.component&#x27;;
+import { FirestoreService } from &#x27;../services/firestore.service&#x27;;
+import { Contact } from &#x27;../../models/contact.class&#x27;;
+import {MatProgressBarModule} from &#x27;@angular/material/progress-bar&#x27;;
+import { DialogShowContactComponent } from &#x27;../dialog-show-contact/dialog-show-contact.component&#x27;;
+
+/**
+ * Dashboard-Komponente für die Anzeige der neuesten Kontakte.
+ */
+@Component({
+  selector: &#x27;app-dashboard&#x27;,
+  standalone: true,
+  imports: [CommonModule, MatCard, MatCardModule, MatIconModule, MatButtonModule, MatProgressBarModule],
+  templateUrl: &#x27;./dashboard.component.html&#x27;,
+  styleUrl: &#x27;./dashboard.component.scss&#x27;
+})
+
+export class DashboardComponent {
+
+  userId: string | null &#x3D; null;
+  userCount: number &#x3D; 0;
+  displayedContacts: Contact[] &#x3D; [];
+  allContacts: Contact[] &#x3D; [];
+  currentContactIndex &#x3D; 0;
+  loading &#x3D; false;
+
+  
+  constructor(public dialog: MatDialog, 
+    private router: Router, 
+    private firestoreService: FirestoreService) { }
+
+  
+  async ngOnInit(): Promise&lt;void&gt; {
+    this.loading &#x3D; true;
+    this.userCount &#x3D; await this.firestoreService.getUserCount();
+    this.allContacts &#x3D; await this.firestoreService.getAllContacts();
+    this.displayedContacts &#x3D; this.allContacts.slice(0, 4);  
+    this.loading &#x3D; false;
+  }
+
+
+  getGreeting(): string {
+    const hour &#x3D; new Date().getHours();
+  
+    if (hour &gt;&#x3D; 5 &amp;&amp; hour &lt; 12) {
+      return &#x27;Good Morning!&#x27;;
+    } else if (hour &gt;&#x3D; 12 &amp;&amp; hour &lt; 18) {
+      return &#x27;Good Afternoon!&#x27;;
+    } else if (hour &gt;&#x3D; 18 &amp;&amp; hour &lt; 22) {
+      return &#x27;Good Evening!&#x27;;
+    } else {
+      return &#x27;Good Night!&#x27;;
+    }
+  }
+
+
+  getChannelIcon(channel: string): string {
+    switch (channel) {
+        case &#x27;mail&#x27;: return &#x27;assets/icons/mail.svg&#x27;;
+        case &#x27;phone&#x27;: return &#x27;assets/icons/phone.svg&#x27;;
+        case &#x27;videocall&#x27;: return &#x27;assets/icons/videocall.svg&#x27;;
+        case &#x27;personal&#x27;: return &#x27;assets/icons/personal.svg&#x27;;
+        default: return &#x27;assets/icons/default.svg&#x27;;
+    }
+  }
+
+
+  goToAddUser() {
+    this.dialog.open(DialogAddUserComponent);
+  }
+
+
+  goToClients() {
+    this.router.navigate([&#x27;/user&#x27;]);
+  }
+
+  /**
+   * Öffnet den Dialog für einen Kontakt.
+   * @param contact Der Kontakt, der angezeigt wird.
+   */
+  openContact(contact: Contact): void {
+    const dialogRef &#x3D; this.dialog.open(DialogShowContactComponent, {
+        width: &#x27;98%&#x27;,
+        maxWidth: &#x27;600px&#x27;,
+        data: { contact, id: contact.companyId },
+    });
+
+    dialogRef.afterClosed().subscribe(async (result) &#x3D;&gt; {
+        if (!result) return;
+        await this.handleDialogResult(result);
+    });
+  }
+
+
+  private async handleDialogResult(result: any): Promise&lt;void&gt; {
+      if (typeof result &#x3D;&#x3D;&#x3D; &#x27;string&#x27;) {
+          this.deleteContactLocally(result);
+      } else if (typeof result &#x3D;&#x3D;&#x3D; &#x27;object&#x27;) {
+          await this.updateContactLocally(result);
+      }
+  }
+
+
+  private deleteContactLocally(contactId: string): void {
+      this.allContacts &#x3D; this.allContacts.filter((c) &#x3D;&gt; c.id !&#x3D;&#x3D; contactId);
+      this.updateDisplayedContacts();
+  }
+
+
+  private async updateContactLocally(updatedContact: Contact): Promise&lt;void&gt; {
+      const index &#x3D; this.allContacts.findIndex((c) &#x3D;&gt; c.id &#x3D;&#x3D;&#x3D; updatedContact.id);
+      if (index !&#x3D;&#x3D; -1) this.allContacts[index] &#x3D; updatedContact;
+      await this.reloadContactsFromFirestore();
+  }
+
+
+  private updateDisplayedContacts(): void {
+      this.displayedContacts &#x3D; this.allContacts.slice(this.currentContactIndex, this.currentContactIndex + 4);
+  }
+
+
+  private async reloadContactsFromFirestore(): Promise&lt;void&gt; {
+      this.allContacts &#x3D; await this.firestoreService.getAllContacts();
+      this.updateDisplayedContacts();
+  }
+
+
+  showNextContacts(): void {
+    if (this.currentContactIndex + 4 &lt; this.allContacts.length) {
+        this.currentContactIndex +&#x3D; 4; 
+    } else {
+        this.currentContactIndex &#x3D; 0; 
+    }
+    this.displayedContacts &#x3D; this.allContacts.slice(this.currentContactIndex, this.currentContactIndex + 4);
+  }
+
+
+  showPreviousContacts(): void {
+    if (this.currentContactIndex - 4 &gt;&#x3D; 0) {
+        this.currentContactIndex -&#x3D; 4; 
+    } else {
+        this.currentContactIndex &#x3D; Math.max(0, this.allContacts.length - (this.allContacts.length % 4 || 4)); 
+    }
+    this.displayedContacts &#x3D; this.allContacts.slice(this.currentContactIndex, this.currentContactIndex + 4);
+  }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;mat-card class&#x3D;&quot;profile-header&quot;&gt;
+    &lt;h1&gt;{{ getGreeting() }} &lt;/h1&gt; &lt;mat-icon class&#x3D;&quot;icon&quot;&gt;mood&lt;/mat-icon&gt;
+&lt;/mat-card&gt;
+
+&lt;!-- FIRST ROW --&gt;
+
+&lt;mat-card class&#x3D;&quot;profile-information&quot;&gt;
+
+    @if (loading) {
+        &lt;mat-progress-bar mode&#x3D;&quot;indeterminate&quot;&gt;&lt;/mat-progress-bar&gt;
+    }
+    
+    &lt;mat-card-header&gt;
+        &lt;mat-card-title&gt;CURRENT CONTACTS&lt;/mat-card-title&gt;
+    &lt;/mat-card-header&gt;
+
+    &lt;mat-card-content class&#x3D;&quot;contacts-area&quot;&gt;  
+        &lt;div class&#x3D;&quot;contacts-left&quot;&gt;
+            @for (contact of displayedContacts; track contact.id) {
+                &lt;mat-card (click)&#x3D;&quot;openContact(contact)&quot; class&#x3D;&quot;contact-card&quot;&gt;
+                    &lt;div class&#x3D;&quot;contact-card-date&quot;&gt;
+                        {{ contact.contactDate | date:&#x27;dd.MM.yyyy&#x27; }}
+                    &lt;/div&gt;
+                    
+                    &lt;div class&#x3D;&quot;contact-card-img&quot;&gt;
+                        &lt;img class&#x3D;&quot;channel-img&quot; [src]&#x3D;&quot;getChannelIcon(contact.channel)&quot; alt&#x3D;&quot;&quot;&gt;
+                    &lt;/div&gt;
+        
+                    &lt;div class&#x3D;&quot;contact-card-company&quot;&gt;
+                        {{ contact.company }}
+                    &lt;/div&gt;
+                &lt;/mat-card&gt;
+            }
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;slide-button-area&quot;&gt;
+            &lt;button *ngIf&#x3D;&quot;currentContactIndex &gt; 0&quot; class&#x3D;&quot;back&quot; (click)&#x3D;&quot;showPreviousContacts()&quot; mat-icon-button aria-label&#x3D;&quot;Example icon button with a vertical three dot icon&quot;&gt;
+                &lt;mat-icon class&#x3D;&quot;icon&quot;&gt;arrow_backward&lt;/mat-icon&gt;
+            &lt;/button&gt;
+            &lt;button *ngIf&#x3D;&quot;currentContactIndex + 4 &lt; allContacts.length&quot; (click)&#x3D;&quot;showNextContacts()&quot; mat-icon-button aria-label&#x3D;&quot;Example icon button with a vertical three dot icon&quot;&gt;
+                &lt;mat-icon class&#x3D;&quot;icon&quot;&gt;arrow_forward&lt;/mat-icon&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/mat-card-content&gt;  
+&lt;/mat-card&gt;
+
+
+&lt;!-- SECOND ROW --&gt;
+
+&lt;div class&#x3D;&quot;second-row&quot;&gt;
+    &lt;mat-card class&#x3D;&quot;profile-information left&quot;&gt;
+        &lt;mat-card-header&gt;
+            &lt;mat-card-title&gt;CUSTOMER BASE&lt;/mat-card-title&gt;
+        &lt;/mat-card-header&gt;
+
+        &lt;mat-card-content class&#x3D;&quot;base-content&quot;&gt;
+            &lt;mat-card class&#x3D;&quot;contact-card number&quot;&gt;
+                {{ userCount }}
+            &lt;/mat-card&gt;
+            &lt;button (click)&#x3D;&quot;goToClients()&quot;&gt;CLIENTS&lt;/button&gt;
+        &lt;/mat-card-content&gt;
+    &lt;/mat-card&gt;
+
+    &lt;mat-card (click)&#x3D;&quot;goToAddUser()&quot; class&#x3D;&quot;add-card&quot;&gt;
+        &lt;div class&#x3D;&quot;add-card-text&quot;&gt;ADD &lt;br&gt; NEW &lt;br&gt; CLIENT&lt;/div&gt;
+        &lt;div class&#x3D;&quot;add&quot;&gt;
+            &lt;mat-icon class&#x3D;&quot;icon&quot;&gt;add&lt;/mat-icon&gt;
+        &lt;/div&gt;
+    &lt;/mat-card&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><mat-card class="profile-header">    <h1>{{ getGreeting() }} </h1> <mat-icon class="icon">mood</mat-icon></mat-card><!-- FIRST ROW --><mat-card class="profile-information">    @if (loading) {        <mat-progress-bar mode="indeterminate"></mat-progress-bar>    }        <mat-card-header>        <mat-card-title>CURRENT CONTACTS</mat-card-title>    </mat-card-header>    <mat-card-content class="contacts-area">          <div class="contacts-left">            @for (contact of displayedContacts; track contact.id) {                <mat-card (click)="openContact(contact)" class="contact-card">                    <div class="contact-card-date">                        {{ contact.contactDate | date:\'dd.MM.yyyy\' }}                    </div>                                        <div class="contact-card-img">                        <img class="channel-img" [src]="getChannelIcon(contact.channel)" alt="">                    </div>                            <div class="contact-card-company">                        {{ contact.company }}                    </div>                </mat-card>            }        </div>        <div class="slide-button-area">            <button *ngIf="currentContactIndex > 0" class="back" (click)="showPreviousContacts()" mat-icon-button aria-label="Example icon button with a vertical three dot icon">                <mat-icon class="icon">arrow_backward</mat-icon>            </button>            <button *ngIf="currentContactIndex + 4 < allContacts.length" (click)="showNextContacts()" mat-icon-button aria-label="Example icon button with a vertical three dot icon">                <mat-icon class="icon">arrow_forward</mat-icon>            </button>        </div>    </mat-card-content>  </mat-card><!-- SECOND ROW --><div class="second-row">    <mat-card class="profile-information left">        <mat-card-header>            <mat-card-title>CUSTOMER BASE</mat-card-title>        </mat-card-header>        <mat-card-content class="base-content">            <mat-card class="contact-card number">                {{ userCount }}            </mat-card>            <button (click)="goToClients()">CLIENTS</button>        </mat-card-content>    </mat-card>    <mat-card (click)="goToAddUser()" class="add-card">        <div class="add-card-text">ADD <br> NEW <br> CLIENT</div>        <div class="add">            <mat-icon class="icon">add</mat-icon>        </div>    </mat-card></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DialogAddContactComponent', 'selector': 'app-dialog-add-contact'},{'name': 'DialogAddUserComponent', 'selector': 'app-dialog-add-user'},{'name': 'DialogDeleteUserComponent', 'selector': 'app-dialog-delete-user'},{'name': 'DialogEditAddressComponent', 'selector': 'app-dialog-edit-address'},{'name': 'DialogEditContactComponent', 'selector': 'app-dialog-edit-contact'},{'name': 'DialogEditContactpersonComponent', 'selector': 'app-dialog-edit-contactperson'},{'name': 'DialogEditImgComponent', 'selector': 'app-dialog-edit-img'},{'name': 'DialogEditNameComponent', 'selector': 'app-dialog-edit-name'},{'name': 'DialogShowContactComponent', 'selector': 'app-dialog-show-contact'},{'name': 'ImprintComponent', 'selector': 'app-imprint'},{'name': 'PrivacyComponent', 'selector': 'app-privacy'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserDetailComponent', 'selector': 'app-user-details'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'DashboardComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'DashboardComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

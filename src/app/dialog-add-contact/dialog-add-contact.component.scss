@@ -1,5 +1,6 @@
 .dialog-container {
-    width: 500px;
+    width: 100%;
+    max-width: 600px;
 }
 
 .field-area {
@@ -8,6 +9,7 @@
 
 .profile-header {
     padding: 20px;
+    box-sizing: border-box;
     background: linear-gradient(
         to bottom right, 
         rgba(183, 13, 32, 0.6),

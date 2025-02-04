@@ -4,10 +4,9 @@
 
 <div class="dialog-container">
 
-    <mat-card class="profile-header">
+    <div class="profile-header">
         <h1>ADD CONTACT</h1>
-    </mat-card>
-
+    </div>
 
     <div mat-dialog-content class="field-area">
 
@@ -17,7 +16,6 @@
                 <input required [disabled]="loading" [(ngModel)]="contact.contactDate" matInput [matDatepicker]="picker" placeholder="">
                 <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
-                <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
             </mat-form-field>
         </div>
 
@@ -41,14 +39,9 @@
         </div>
     </div>
 
-
-
-
-
     <mat-dialog-actions class="button-area">
         <button mat-button (click)="dialogRef.close()">Cancel</button>
         <button mat-button (click)="saveContact()" cdkFocusInitial [disabled]="!formValid()">Save</button>
     </mat-dialog-actions>
-
 
 </div>

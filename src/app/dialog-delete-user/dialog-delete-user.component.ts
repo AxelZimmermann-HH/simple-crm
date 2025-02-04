@@ -19,8 +19,16 @@ export class DialogDeleteUserComponent {
   loading = false;
   user: User = new User;
 
+  /**
+   * Component constructor for deleting a user.
+   * Handles retrieving user details before deletion.
+   */
   constructor(@Inject(MAT_DIALOG_DATA) public data: { id: string }, private firestore: Firestore, public dialogRef: MatDialogRef<DialogDeleteUserComponent>, private firestoreService: FirestoreService, private router: Router) {}
 
+  /**
+   * Initializes the dialog by fetching user details based on the provided user ID.
+   * If no user ID is found, an error is logged.
+   */
   async ngOnInit(): Promise<void> {
     const userId = this.data.id;
     if (userId) {
@@ -37,26 +45,51 @@ export class DialogDeleteUserComponent {
     }
   }
 
-
+  /**
+ * Deletes the user from Firestore if a valid user ID is provided.
+ */
   deleteUser(): void {
-    if (!this.data.id) {
-      console.error('Keine User-ID zum Löschen vorhanden.');
-      return;
-    }
-  
+    if (!this.validateUserId()) return;
+
     this.loading = true;
+    this.performUserDeletion();
+  }
+
+  /**
+  * Validates if a user ID is available before attempting deletion.
+  * @returns {boolean} True if the user ID exists, false otherwise.
+  */
+  private validateUserId(): boolean {
+    if (!this.data.id) {
+        console.error('No user ID available for deletion.');
+        return false;
+    }
+    return true;
+  }
+
+  /**
+  * Performs the deletion of the user from Firestore.
+  */
+  private performUserDeletion(): void {
     const userDocRef = doc(this.firestore, `users/${this.data.id}`);
-  
+
     deleteDoc(userDocRef)
-      .then(() => {
-        this.dialogRef.close(); 
-        this.router.navigate(['/user/']); 
-      })
-      .catch((error) => {
-        console.error('Fehler beim Löschen des Benutzers:', error);
-      })
-      .finally(() => {
-        this.loading = false; 
-      });
+        .then(() => {
+            this.handleSuccessfulDeletion();
+        })
+        .catch((error) => {
+            console.error('Error deleting user:', error);
+        })
+        .finally(() => {
+            this.loading = false;
+        });
+  }
+
+  /**
+  * Handles actions after successful deletion, such as closing the dialog and navigating away.
+  */
+  private handleSuccessfulDeletion(): void {
+    this.dialogRef.close();
+    this.router.navigate(['/user/']);
   }
 }

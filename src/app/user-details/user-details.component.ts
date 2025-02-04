@@ -57,6 +57,8 @@ export class UserDetailComponent implements OnInit {
   
   openDialog(component: any) {
     const dialogRef = this.dialog.open(component, {
+      width: '98%', // Setzt die Breite auf 100%
+      maxWidth: '600px', // Begrenzung der maximalen Breite auf 600px
       data: { id: this.route.snapshot.paramMap.get('id') },
     });
   
@@ -103,6 +105,8 @@ export class UserDetailComponent implements OnInit {
 
   openShowContactDialog(contact: Contact): void {
     const dialogRef = this.dialog.open(DialogShowContactComponent, {
+      width: '98%', // Setzt die Breite auf 100%
+      maxWidth: '600px', // Begrenzung der maximalen Breite auf 600px
       data: { contact, id: this.userId }, // Kontakt und Benutzer-ID übergeben
     });
   
