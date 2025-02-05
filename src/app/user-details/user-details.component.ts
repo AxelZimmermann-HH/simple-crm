@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Firestore, doc, getDoc, collection, getDocs, query } from '@angular/fire/firestore';
+import { Firestore } from '@angular/fire/firestore';
 import { CommonModule } from '@angular/common';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
@@ -33,8 +33,20 @@ export class UserDetailComponent implements OnInit {
   user: User = new User;
   contact = new Contact();
 
+  /**
+ * Constructor for the User Details component.
+ * @param route ActivatedRoute for accessing route parameters.
+ * @param firestore Firestore service for database interactions.
+ * @param firestoreService Custom Firestore service for fetching data.
+ * @param dialog MatDialog for opening modals.
+ * @param router Router for navigation.
+ */
   constructor(private route: ActivatedRoute, private firestore: Firestore, private firestoreService: FirestoreService, public dialog: MatDialog,  private router: Router) {}
 
+  /**
+   * Lifecycle hook that is called after component initialization.
+   * Retrieves the user ID from the route parameters and loads user details.
+   */
   ngOnInit(): void {
     this.userId = this.route.snapshot.paramMap.get('id');
     console.log(this.userId);
@@ -44,6 +56,10 @@ export class UserDetailComponent implements OnInit {
     }
   }
 
+  /**
+   * Fetches user details from Firestore based on the provided user ID.
+   * @param userId The ID of the user to be fetched.
+   */
   async loadUserDetails(userId: string): Promise<void> {
     try {
       const user = await this.firestoreService.fetchUserDetails(userId);
@@ -55,10 +71,14 @@ export class UserDetailComponent implements OnInit {
     }
   }
   
+  /**
+ * Opens a dialog component.
+ * @param component The component to be opened in the dialog.
+ */
   openDialog(component: any) {
     const dialogRef = this.dialog.open(component, {
-      width: '98%', // Setzt die Breite auf 100%
-      maxWidth: '600px', // Begrenzung der maximalen Breite auf 600px
+      width: '98%', 
+      maxWidth: '600px', 
       data: { id: this.route.snapshot.paramMap.get('id') },
     });
   
@@ -79,65 +99,89 @@ export class UserDetailComponent implements OnInit {
     });
   }
 
+  /**
+ * Opens the dialog to edit the user's name.
+ */
   openNameDialog() {
     this.openDialog(DialogEditNameComponent);
   }
 
+  /**
+ * Opens the dialog to edit the user's profile image.
+ */
   openImgDialog() {
     this.openDialog(DialogEditImgComponent);
   }
 
+  /**
+ * Opens the dialog to edit the user's address.
+ */
   openAddressDialog() {
     this.openDialog(DialogEditAddressComponent);
   }
   
+  /**
+ * Opens the dialog to edit the user's contact person information.
+ */
   openContactPersonDialog() {
     this.openDialog(DialogEditContactpersonComponent);
   }
 
+  /**
+ * Opens the dialog to delete the user.
+ */
   openDeleteUserDialog() {
     this.openDialog(DialogDeleteUserComponent);
   }
 
+  /**
+ * Opens the dialog to add a new contact for the user.
+ */
   openAddContactDialog() {
     this.openDialog(DialogAddContactComponent);
   }
 
+  /**
+ * Opens the dialog to display details of a specific contact. Specific function needed because of 
+ * further handling in different components.
+ * @param contact The contact to be displayed.
+ */
   openShowContactDialog(contact: Contact): void {
     const dialogRef = this.dialog.open(DialogShowContactComponent, {
-      width: '98%', // Setzt die Breite auf 100%
-      maxWidth: '600px', // Begrenzung der maximalen Breite auf 600px
-      data: { contact, id: this.userId }, // Kontakt und Benutzer-ID übergeben
+      width: '98%', 
+      maxWidth: '600px', 
+      data: { contact, id: this.userId }, 
     });
   
     dialogRef.afterClosed().subscribe((result) => {
-      console.log('Dialog geschlossen, Ergebnis:', result); // Debugging
   
       if (!result) {
-        return; // Wenn der Dialog ohne Aktion geschlossen wird
+        return; 
       }
   
       if (typeof result === 'string') {
-        // Kontakt wurde gelöscht, result enthält die ID
         this.user.contacts = this.user.contacts.filter((c) => c.id !== result);
-        console.log('Kontakt gelöscht:', result);
       } else if (result && typeof result === 'object') {
-        // Kontakt wurde aktualisiert, result enthält den aktualisierten Kontakt
         const index = this.user.contacts.findIndex((c) => c.id === result.id);
         if (index !== -1) {
-          this.user.contacts[index] = result; // Aktualisierung in der lokalen Liste
+          this.user.contacts[index] = result; 
         }
-        console.log('Kontakt aktualisiert:', result);
       }
     });
   }
 
-  
-
+  /**
+ * Navigates back to the user list page.
+ */
   getBack() {
     this.router.navigate(['/user']);
   }
 
+  /**
+ * Returns the appropriate icon for a given communication channel.
+ * @param channel The communication channel type (e.g., mail, phone).
+ * @returns The path to the corresponding icon.
+ */
   getChannelIcon(channel: string): string {
     switch (channel) {
       case 'mail':
@@ -149,7 +193,7 @@ export class UserDetailComponent implements OnInit {
       case 'personal':
         return 'assets/icons/personal.svg';
       default:
-        return 'assets/icons/default.svg'; // Fallback-Icon
+        return 'assets/icons/default.svg';
     }
   }
 }

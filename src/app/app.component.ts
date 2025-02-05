@@ -25,24 +25,30 @@ export class AppComponent {
   drawerMode: 'side' | 'over' = 'side';
   drawerOpened = true;
 
+  /**
+   * Component constructor for the main layout. Checking the window size and modifing the drawer mode.
+   * @param router for navigating 
+   * @param breakpointObserver for tracking the window width
+   */
   constructor(private router: Router, private breakpointObserver: BreakpointObserver) {
     this.breakpointObserver.observe(['(max-width: 1400px)'])
       .subscribe(result => {
         if (result.matches) {
-          this.drawerMode = 'over'; // Auf kleinen Bildschirmen überlagert
-          this.drawerOpened = false; // Standardmäßig geschlossen
+          this.drawerMode = 'over'; 
+          this.drawerOpened = false; 
         } else {
-          this.drawerMode = 'side'; // Große Bildschirme: Sidebar sichtbar
+          this.drawerMode = 'side'; 
           this.drawerOpened = true;
         }
       });
   }
 
+  /**
+   * Showing or hiding the sidebar.
+   */
   toggleDrawer(): void {
     if (this.drawerMode === 'over') {
       this.drawer.toggle();
     }
   }
-
 }
-

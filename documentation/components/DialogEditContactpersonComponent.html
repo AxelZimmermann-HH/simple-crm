@@ -236,6 +236,11 @@
                                     <span class="modifier">Async</span>
                                 <a href="#saveUser" >saveUser</a>
                             </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateUserInFirestore" >updateUserInFirestore</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -259,12 +264,15 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/dialog-edit-contactperson/dialog-edit-contactperson.component.ts:33</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/dialog-edit-contactperson/dialog-edit-contactperson.component.ts:30</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Component constructor for editing a user&#39;s contact person.
+Injects dialog data, Firestore, FirestoreService, and MatDialogRef.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -273,6 +281,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -287,6 +296,12 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <ul>
+<li>The injected data containing the user ID.</li>
+</ul>
+
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>firestore</td>
@@ -299,6 +314,12 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <ul>
+<li>Firestore instance for database operations.</li>
+</ul>
+
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>dialogRef</td>
@@ -311,6 +332,12 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <ul>
+<li>Reference to the dialog instance.</li>
+</ul>
+
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>firestoreService</td>
@@ -323,6 +350,12 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <ul>
+<li>Service for Firestore operations.</li>
+</ul>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -364,19 +397,26 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="41"
-                                    class="link-to-prism">src/app/dialog-edit-contactperson/dialog-edit-contactperson.component.ts:41</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="49"
+                                    class="link-to-prism">src/app/dialog-edit-contactperson/dialog-edit-contactperson.component.ts:49</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Initializes the component by fetching user details from Firestore.
+If the user ID is found, it loads user data; otherwise, logs an error.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
 
                         </div>
+                            <div class="io-description">
+                                <p>Resolves after user data is loaded.</p>
+
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -403,19 +443,72 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="57"
-                                    class="link-to-prism">src/app/dialog-edit-contactperson/dialog-edit-contactperson.component.ts:57</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="70"
+                                    class="link-to-prism">src/app/dialog-edit-contactperson/dialog-edit-contactperson.component.ts:70</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Saves the user data to Firestore.
+Ensures the user ID exists before updating.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
 
                         </div>
+                            <div class="io-description">
+                                <p>Resolves after successfully saving the user.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateUserInFirestore"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>updateUserInFirestore</b></span>
+                        <a href="#updateUserInFirestore"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateUserInFirestore()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="91"
+                                    class="link-to-prism">src/app/dialog-edit-contactperson/dialog-edit-contactperson.component.ts:91</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Updates the user data in Firestore.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Resolves after Firestore update.</p>
+
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -456,10 +549,15 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/dialog-edit-contactperson/dialog-edit-contactperson.component.ts:37</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/dialog-edit-contactperson/dialog-edit-contactperson.component.ts:40</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description">- The injected data containing the user ID.</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -483,10 +581,15 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/dialog-edit-contactperson/dialog-edit-contactperson.component.ts:37</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/dialog-edit-contactperson/dialog-edit-contactperson.component.ts:40</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description">- Reference to the dialog instance.</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -508,7 +611,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/dialog-edit-contactperson/dialog-edit-contactperson.component.ts:32</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/dialog-edit-contactperson/dialog-edit-contactperson.component.ts:29</a></div>
                         </td>
                     </tr>
 
@@ -539,7 +642,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/dialog-edit-contactperson/dialog-edit-contactperson.component.ts:33</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/dialog-edit-contactperson/dialog-edit-contactperson.component.ts:30</a></div>
                         </td>
                     </tr>
 
@@ -557,12 +660,9 @@ import {FormsModule} from &#x27;@angular/forms&#x27;;
 import {MatButtonModule} from &#x27;@angular/material/button&#x27;;
 import {
   MAT_DIALOG_DATA,
-  MatDialog,
   MatDialogActions,
-  MatDialogClose,
   MatDialogContent,
   MatDialogRef,
-  MatDialogTitle,
 } from &#x27;@angular/material/dialog&#x27;;
 import {MatFormFieldModule} from &#x27;@angular/material/form-field&#x27;;
 import {MatInputModule} from &#x27;@angular/material/input&#x27;;
@@ -570,7 +670,7 @@ import { MatIconModule } from &#x27;@angular/material/icon&#x27;;
 import {MatDatepickerModule} from &#x27;@angular/material/datepicker&#x27;;
 import { MatNativeDateModule } from &#x27;@angular/material/core&#x27;;
 import { User } from &#x27;../../models/user.class&#x27;;
-import { collection, addDoc, doc, setDoc, Firestore } from &#x27;@angular/fire/firestore&#x27;;
+import { doc, setDoc, Firestore } from &#x27;@angular/fire/firestore&#x27;;
 import {MatProgressBarModule} from &#x27;@angular/material/progress-bar&#x27;;
 import { FirestoreService } from &#x27;../services/firestore.service&#x27;;
 
@@ -585,13 +685,24 @@ export class DialogEditContactpersonComponent {
 
   loading &#x3D; false;
   user: User &#x3D; new User;
-  
 
-
+  /**
+   * Component constructor for editing a user&#x27;s contact person.
+   * Injects dialog data, Firestore, FirestoreService, and MatDialogRef.
+   * @param {object} data - The injected data containing the user ID.
+   * @param {Firestore} firestore - Firestore instance for database operations.
+   * @param {MatDialogRef&lt;DialogEditContactpersonComponent&gt;} dialogRef - Reference to the dialog instance.
+   * @param {FirestoreService} firestoreService - Service for Firestore operations.
+   */
   constructor(@Inject(MAT_DIALOG_DATA) public data: { id: string }, private firestore: Firestore, public dialogRef: MatDialogRef&lt;DialogEditContactpersonComponent&gt;, private firestoreService: FirestoreService) {
 
   }
 
+  /**
+   * Initializes the component by fetching user details from Firestore.
+   * If the user ID is found, it loads user data; otherwise, logs an error.
+   * @returns {Promise&lt;void&gt;} Resolves after user data is loaded.
+   */
   async ngOnInit(): Promise&lt;void&gt; {
     const userId &#x3D; this.data.id;
     if (userId) {
@@ -608,34 +719,38 @@ export class DialogEditContactpersonComponent {
     }
   }
 
+  /**
+   * Saves the user data to Firestore.
+   * Ensures the user ID exists before updating.
+   * @returns {Promise&lt;void&gt;} Resolves after successfully saving the user.
+   */
   async saveUser(): Promise&lt;void&gt; {
-    this.loading &#x3D; true;
-  
     if (!this.data.id) {
-      console.error(&#x27;Keine User-ID gefunden, um die Daten zu speichern.&#x27;);
-      return;
+        console.error(&#x27;User ID is missing.&#x27;);
+        return;
     }
-  
+
+    this.loading &#x3D; true;
     try {
-      // Temporär serialisierbare Daten für Firestore erstellen
-      const userToSave &#x3D; {
-        ...this.user,
-        contacts: this.user.contacts.map((contact) &#x3D;&gt; ({ ...contact })), // Nur die Daten kopieren
-      };
-  
-      const userDocRef &#x3D; doc(this.firestore, &#x60;users/${this.data.id}&#x60;);
-      await setDoc(userDocRef, userToSave); // Benutzer in Firestore speichern
-      console.log(&#x27;Benutzerdaten erfolgreich gespeichert:&#x27;, this.user);
-      this.dialogRef.close(this.user); // Dialog schließen und Benutzer zurückgeben
-      this.loading &#x3D; false;
+        await this.updateUserInFirestore();
+        this.dialogRef.close(this.user);
     } catch (error) {
-      console.error(&#x27;Fehler beim Speichern der Benutzerdaten:&#x27;, error);
-      this.loading &#x3D; false;
+        console.error(&#x27;Error saving user data:&#x27;, error);
+    } finally {
+        this.loading &#x3D; false;
     }
   }
 
-}
-</code></pre>
+  /**
+   * Updates the user data in Firestore.
+   * @returns {Promise&lt;void&gt;} Resolves after Firestore update.
+   */
+  private async updateUserInFirestore(): Promise&lt;void&gt; {
+      const userDocRef &#x3D; doc(this.firestore, &#x60;users/${this.data.id}&#x60;);
+      const userToSave &#x3D; { ...this.user, contacts: this.user.contacts.map(contact &#x3D;&gt; ({ ...contact })) };
+      await setDoc(userDocRef, userToSave);
+  }
+}</code></pre>
     </div>
 
     <div class="tab-pane fade " id="templateData">
@@ -648,7 +763,6 @@ export class DialogEditContactpersonComponent {
     &lt;div class&#x3D;&quot;profile-header&quot;&gt;
         &lt;h1 mat-dialog-title&gt;EDIT CONTACT PERSON&lt;/h1&gt;
     &lt;/div&gt;
-
 
     &lt;div mat-dialog-content class&#x3D;&quot;field-area&quot;&gt;
 
@@ -680,18 +794,12 @@ export class DialogEditContactpersonComponent {
         &lt;/div&gt;
     &lt;/div&gt;
 
-
-
-
-
     &lt;mat-dialog-actions class&#x3D;&quot;button-area&quot;&gt;
         &lt;button mat-button (click)&#x3D;&quot;dialogRef.close()&quot;&gt;Cancel&lt;/button&gt;
         &lt;button class&#x3D;&quot;save-button&quot; mat-button (click)&#x3D;&quot;saveUser()&quot; cdkFocusInitial&gt;Save&lt;/button&gt;
     &lt;/mat-dialog-actions&gt;
 
-
-&lt;/div&gt;
-</code></pre>
+&lt;/div&gt;</code></pre>
     </div>
 
 

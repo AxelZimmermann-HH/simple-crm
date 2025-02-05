@@ -6,9 +6,6 @@ import { User } from '../../models/user.class';
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialogActions, } from '@angular/material/dialog';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 
-
-
-
 @Component({
   selector: 'app-dialog-edit-img',
   standalone: true,
@@ -26,10 +23,15 @@ export class DialogEditImgComponent {
   loading = false;
   success = false;
 
-
+  /**
+   * Component constructor for editing a user's profile image.
+   */
   constructor(public dialogRef: MatDialogRef<DialogEditImgComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private firestoreService: FirestoreService) {}
 
-
+  /**
+   * Initializes the component by fetching user details.
+   * If a user ID is provided, it retrieves the user data from Firestore.
+   */
   async ngOnInit(): Promise<void> {
     this.isUploaded = false;
     this.success = false;
@@ -51,7 +53,11 @@ export class DialogEditImgComponent {
     }
   }
 
-
+  /**
+   * Handles file selection from input.
+   * Ensures that only image files are accepted.
+   * @param {Event} event - The file input change event.
+   */
   onFileSelected(event: Event): void {
   const input = event.target as HTMLInputElement;
 
@@ -69,9 +75,11 @@ export class DialogEditImgComponent {
     }
   }
 
-
+  /**
+   * Uploads the selected file to Firebase Storage and retrieves the download URL.
+   * Updates the `profileImageUrl` after successful upload.
+   */
   uploadFile(): void {
-
     this.loading = true;
     if (!this.selectedFile) {
       console.error('No file selected.');
@@ -95,23 +103,24 @@ export class DialogEditImgComponent {
       });
   }
 
-
+  /**
+   * Saves the uploaded image URL to Firestore under the user's profile.
+   * Updates the local user object and closes the dialog with the updated user data.
+   */
   saveImage(): void {
     this.loading = true;
     if (!this.userId || !this.profileImageUrl) {
       console.error('Benutzer-ID oder Bild-URL fehlt.');
       return;
     }
-  
     this.firestoreService.updateUserImage(this.userId, this.profileImageUrl)
       .then(() => {
-        this.user.image = this.profileImageUrl; // Lokalen User aktualisieren
-        this.dialogRef.close(this.user); // Benutzer mit neuem Bild zurückgeben
+        this.user.image = this.profileImageUrl;
+        this.dialogRef.close(this.user); 
         this.loading = false;
       })
       .catch((error) => {
         console.error('Fehler beim Speichern des Profilbildes:', error);
       });
   }
-
 }

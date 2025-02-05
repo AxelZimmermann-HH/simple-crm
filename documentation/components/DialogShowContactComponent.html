@@ -158,10 +158,8 @@
                             <code>MatCard</code>
                             <code>MatMenuModule</code>
                             <code>MatInputModule</code>
-                            <code>MatNativeDateModule</code>
                             <code>MatFormFieldModule</code>
                             <code>MatIconModule</code>
-                            <code>MatDatepickerModule</code>
                             <code>MatButtonModule</code>
                             <code>FormsModule</code>
                 </td>
@@ -242,9 +240,6 @@
                                 <a href="#deleteContact" >deleteContact</a>
                             </li>
                             <li>
-                                <a href="#deleteContact2" >deleteContact2</a>
-                            </li>
-                            <li>
                                 <a href="#getChannelIcon" >getChannelIcon</a>
                             </li>
                             <li>
@@ -276,12 +271,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/dialog-show-contact/dialog-show-contact.component.ts:40</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/dialog-show-contact/dialog-show-contact.component.ts:34</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Component constructor for displaying and managing contact details.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -391,14 +388,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="122"
-                                    class="link-to-prism">src/app/dialog-show-contact/dialog-show-contact.component.ts:122</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="101"
+                                    class="link-to-prism">src/app/dialog-show-contact/dialog-show-contact.component.ts:101</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Closes the dialog and returns the current contact data.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -428,51 +427,17 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="61"
-                                    class="link-to-prism">src/app/dialog-show-contact/dialog-show-contact.component.ts:61</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="62"
+                                    class="link-to-prism">src/app/dialog-show-contact/dialog-show-contact.component.ts:62</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
-
-                        <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                        </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="deleteContact2"></a>
-                    <span class="name">
-                        <span ><b>deleteContact2</b></span>
-                        <a href="#deleteContact2"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>deleteContact2()</code>
-                </td>
-            </tr>
-
-
-                    <tr>
-                        <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="81"
-                                    class="link-to-prism">src/app/dialog-show-contact/dialog-show-contact.component.ts:81</a></div>
-                        </td>
-                    </tr>
-
-
-            <tr>
-                <td class="col-md-4">
+                        <div class="io-description"><p>Deletes the contact from Firestore.
+If the deletion is successful, the contact ID is returned to the parent component.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -502,14 +467,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="128"
-                                    class="link-to-prism">src/app/dialog-show-contact/dialog-show-contact.component.ts:128</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="110"
+                                    class="link-to-prism">src/app/dialog-show-contact/dialog-show-contact.component.ts:110</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Returns the appropriate icon URL based on the communication channel.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -520,6 +487,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -534,6 +502,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>The type of communication channel (e.g., &#39;mail&#39;, &#39;phone&#39;).</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -543,7 +515,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>The corresponding icon path as a string.</p>
+
                             </div>
                 </td>
             </tr>
@@ -569,14 +542,17 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="49"
-                                    class="link-to-prism">src/app/dialog-show-contact/dialog-show-contact.component.ts:49</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="48"
+                                    class="link-to-prism">src/app/dialog-show-contact/dialog-show-contact.component.ts:48</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Initializes the dialog and handles the closing behavior.
+Ensures that if the contact was deleted, only the contact ID is returned.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -606,14 +582,17 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="102"
-                                    class="link-to-prism">src/app/dialog-show-contact/dialog-show-contact.component.ts:102</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="84"
+                                    class="link-to-prism">src/app/dialog-show-contact/dialog-show-contact.component.ts:84</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Opens the dialog to edit the contact details.
+Once the edit dialog is closed, it updates the displayed contact information.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -648,7 +627,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/dialog-show-contact/dialog-show-contact.component.ts:39</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/dialog-show-contact/dialog-show-contact.component.ts:33</a></div>
                         </td>
                     </tr>
 
@@ -685,7 +664,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/dialog-show-contact/dialog-show-contact.component.ts:43</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/dialog-show-contact/dialog-show-contact.component.ts:39</a></div>
                         </td>
                     </tr>
 
@@ -710,7 +689,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/dialog-show-contact/dialog-show-contact.component.ts:40</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/dialog-show-contact/dialog-show-contact.component.ts:34</a></div>
                         </td>
                     </tr>
 
@@ -737,7 +716,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/dialog-show-contact/dialog-show-contact.component.ts:43</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/dialog-show-contact/dialog-show-contact.component.ts:39</a></div>
                         </td>
                     </tr>
 
@@ -768,7 +747,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/dialog-show-contact/dialog-show-contact.component.ts:38</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/dialog-show-contact/dialog-show-contact.component.ts:32</a></div>
                         </td>
                     </tr>
 
@@ -799,7 +778,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/dialog-show-contact/dialog-show-contact.component.ts:37</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/dialog-show-contact/dialog-show-contact.component.ts:31</a></div>
                         </td>
                     </tr>
 
@@ -813,27 +792,21 @@
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Inject, Component } from &#x27;@angular/core&#x27;;
-import { CommonModule, DatePipe } from &#x27;@angular/common&#x27;;
+import { DatePipe } from &#x27;@angular/common&#x27;;
 import {FormsModule} from &#x27;@angular/forms&#x27;;
 import {MatButtonModule} from &#x27;@angular/material/button&#x27;;
 import {
   MAT_DIALOG_DATA,
   MatDialog,
-  MatDialogActions,
-  MatDialogClose,
-  MatDialogContent,
   MatDialogRef,
-  MatDialogTitle,
 } from &#x27;@angular/material/dialog&#x27;;
 import {MatFormFieldModule} from &#x27;@angular/material/form-field&#x27;;
 import {MatInputModule} from &#x27;@angular/material/input&#x27;;
 import { MatIconModule } from &#x27;@angular/material/icon&#x27;;
-import {MatDatepickerModule} from &#x27;@angular/material/datepicker&#x27;;
-import { MatNativeDateModule } from &#x27;@angular/material/core&#x27;;
 import { User } from &#x27;../../models/user.class&#x27;;
 import { Contact } from &#x27;../../models/contact.class&#x27;;
 import { MatCard } from &#x27;@angular/material/card&#x27;;
-import { collection, addDoc, doc, deleteDoc, Firestore } from &#x27;@angular/fire/firestore&#x27;;
+import { doc, deleteDoc, Firestore } from &#x27;@angular/fire/firestore&#x27;;
 import {MatProgressBarModule} from &#x27;@angular/material/progress-bar&#x27;;
 import { FirestoreService } from &#x27;../services/firestore.service&#x27;;
 import {MatMenuModule} from &#x27;@angular/material/menu&#x27;;
@@ -843,7 +816,7 @@ import { take } from &#x27;rxjs/operators&#x27;;
 @Component({
   selector: &#x27;app-dialog-show-contact&#x27;,
   standalone: true,
-  imports: [DatePipe, MatProgressBarModule, MatCard, MatMenuModule, MatInputModule, MatNativeDateModule, MatFormFieldModule, MatIconModule, MatDatepickerModule, MatButtonModule, FormsModule],
+  imports: [DatePipe, MatProgressBarModule, MatCard, MatMenuModule, MatInputModule, MatFormFieldModule, MatIconModule, MatButtonModule, FormsModule],
   templateUrl: &#x27;./dialog-show-contact.component.html&#x27;,
   styleUrl: &#x27;./dialog-show-contact.component.scss&#x27;
 })
@@ -853,92 +826,80 @@ export class DialogShowContactComponent {
   contact: Contact;
   deleted &#x3D; false;
 
-
+  /**
+   * Component constructor for displaying and managing contact details.
+   */
   constructor(@Inject(MAT_DIALOG_DATA) public data: { contact: Contact; id: string }, public dialogRef: MatDialogRef&lt;DialogShowContactComponent&gt;, private dialog: MatDialog, private firestore: Firestore,  private firestoreService: FirestoreService) {
     this.contact &#x3D; data.contact;     
     this.userId &#x3D; data.id; 
-    console.log(&#x27;Übergebene userId:&#x27;, this.userId, &#x27;vollständiger:&#x27;, this.contact);
   }
 
+  /**
+   * Initializes the dialog and handles the closing behavior.
+   * Ensures that if the contact was deleted, only the contact ID is returned.
+   */
   ngOnInit(): void {
     this.dialogRef.beforeClosed().pipe(take(1)).subscribe(() &#x3D;&gt; {
         if (this.deleted) {
-            console.log(&#x27;Kontakt wurde gelöscht. Zurückgegeben wird nur die ID:&#x27;, this.contact.id);
-            this.dialogRef.close(this.contact.id); // Nur ID zurückgeben
+            this.dialogRef.close(this.contact.id); 
         } else {
-            console.log(&#x27;Kontakt wurde bearbeitet. Zurückgegeben wird das Objekt:&#x27;, this.contact);
-            this.dialogRef.close(this.contact); // Bearbeiteter Kontakt wird zurückgegeben
+            this.dialogRef.close(this.contact);
         }
     });
-}
+  } 
 
-deleteContact() {
-  if (!this.userId || !this.contact.id) {
-      console.error(&#x27;Benutzer-ID oder Kontakt-ID fehlt.&#x27;);
-      return;
-  }
-
-  const userDocRef &#x3D; doc(this.firestore, &#x60;users/${this.userId}&#x60;);
-  const contactDocRef &#x3D; doc(userDocRef, &#x60;contacts/${this.contact.id}&#x60;);
-
-  deleteDoc(contactDocRef)
-      .then(() &#x3D;&gt; {
-          console.log(&#x27;Kontakt erfolgreich gelöscht:&#x27;, this.contact.id);
-          this.deleted &#x3D; true; // 🔥 Merken, dass gelöscht wurde
-          this.dialogRef.close(this.contact.id); // Manuelles Schließen mit ID
-      })
-      .catch((error) &#x3D;&gt; {
-          console.error(&#x27;Fehler beim Löschen des Kontakts:&#x27;, error);
-      });
-}
-
-  deleteContact2() {
+  /**
+   * Deletes the contact from Firestore.
+   * If the deletion is successful, the contact ID is returned to the parent component.
+   */
+  deleteContact() {
     if (!this.userId || !this.contact.id) {
-      console.error(&#x27;Benutzer-ID oder Kontakt-ID fehlt.&#x27;);
-      return;
+        console.error(&#x27;Benutzer-ID oder Kontakt-ID fehlt.&#x27;);
+        return;
     }
-  
     const userDocRef &#x3D; doc(this.firestore, &#x60;users/${this.userId}&#x60;);
     const contactDocRef &#x3D; doc(userDocRef, &#x60;contacts/${this.contact.id}&#x60;);
-  
+
     deleteDoc(contactDocRef)
-      .then(() &#x3D;&gt; {
-        console.log(&#x27;Kontakt erfolgreich gelöscht:&#x27;, this.contact);
-        this.dialogRef.close(this.contact.id); // Kontakt-ID an UserDetails zurückgeben
-      })
-      .catch((error) &#x3D;&gt; {
-        console.error(&#x27;Fehler beim Löschen des Kontakts:&#x27;, error);
-      })
-      .finally(() &#x3D;&gt; {
-      });
+        .then(() &#x3D;&gt; {
+            this.deleted &#x3D; true; 
+            this.dialogRef.close(this.contact.id); 
+        })
+        .catch((error) &#x3D;&gt; {
+            console.error(&#x27;Fehler beim Löschen des Kontakts:&#x27;, error);
+        });
   }
 
+  /**
+   * Opens the dialog to edit the contact details.
+   * Once the edit dialog is closed, it updates the displayed contact information.
+   */
   openEditContact(): void {
-    console.log(&#x27;userId beim Öffnen des Dialogs:&#x27;, this.userId); // Debugging
-    console.log(&#x27;Kontakt beim Öffnen des Dialogs:&#x27;, this.contact); // Debugging
-
     const dialogRef &#x3D; this.dialog.open(DialogEditContactComponent, {
-      width: &#x27;98%&#x27;, // Setzt die Breite auf 100%
-      maxWidth: &#x27;600px&#x27;, // Begrenzung der maximalen Breite auf 600px
-      data: { contact: this.contact, id: this.userId }, // Kontakt als Dialog-Daten übergeben
+      width: &#x27;98%&#x27;, 
+      maxWidth: &#x27;600px&#x27;, 
+      data: { contact: this.contact, id: this.userId }, 
     });
-    console.log(this.contact);
-    
-  
+
     dialogRef.afterClosed().subscribe((updatedContact) &#x3D;&gt; {
       if (updatedContact) {
-        this.contact &#x3D; updatedContact; // Aktualisierten Kontakt in der Ansicht anzeigen
-        console.log(&#x27;Kontakt aktualisiert:&#x27;, this.contact);
+        this.contact &#x3D; updatedContact; 
       }
     });
   }
 
+  /**
+   * Closes the dialog and returns the current contact data.
+   */
   closeDialog(): void {
-    console.log(&#x27;Dialog geschlossen, Kontakt zurückgegeben:&#x27;, this.contact); // Debugging
-
-    this.dialogRef.close(this.contact); // Den aktuellen Kontakt beim Schließen übergeben
+    this.dialogRef.close(this.contact);
   }
 
+  /**
+   * Returns the appropriate icon URL based on the communication channel.
+   * @param channel The type of communication channel (e.g., &#x27;mail&#x27;, &#x27;phone&#x27;).
+   * @returns The corresponding icon path as a string.
+   */
   getChannelIcon(channel: string): string {
     switch (channel) {
       case &#x27;mail&#x27;:
@@ -950,11 +911,10 @@ deleteContact() {
       case &#x27;personal&#x27;:
         return &#x27;assets/icons/personal-red.svg&#x27;;
       default:
-        return &#x27;assets/icons/default.svg&#x27;; // Fallback-Icon
+        return &#x27;assets/icons/default.svg&#x27;; 
     }
   }
-}
-</code></pre>
+}</code></pre>
     </div>
 
     <div class="tab-pane fade " id="templateData">

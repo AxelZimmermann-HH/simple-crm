@@ -259,12 +259,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/dialog-edit-name/dialog-edit-name.component.ts:34</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/dialog-edit-name/dialog-edit-name.component.ts:30</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Component constructor for editing a user&#39;s name.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -364,14 +366,17 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="40"
-                                    class="link-to-prism">src/app/dialog-edit-name/dialog-edit-name.component.ts:40</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="41"
+                                    class="link-to-prism">src/app/dialog-edit-name/dialog-edit-name.component.ts:41</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Initializes the component by fetching user details.
+If a valid user ID is provided, it retrieves the user data from Firestore.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
@@ -403,14 +408,17 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="56"
-                                    class="link-to-prism">src/app/dialog-edit-name/dialog-edit-name.component.ts:56</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="61"
+                                    class="link-to-prism">src/app/dialog-edit-name/dialog-edit-name.component.ts:61</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Saves the updated user data to Firestore.
+Ensures the user ID is available before saving.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
@@ -456,7 +464,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/dialog-edit-name/dialog-edit-name.component.ts:36</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/dialog-edit-name/dialog-edit-name.component.ts:35</a></div>
                         </td>
                     </tr>
 
@@ -483,7 +491,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/dialog-edit-name/dialog-edit-name.component.ts:36</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/dialog-edit-name/dialog-edit-name.component.ts:35</a></div>
                         </td>
                     </tr>
 
@@ -508,7 +516,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/dialog-edit-name/dialog-edit-name.component.ts:33</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/dialog-edit-name/dialog-edit-name.component.ts:29</a></div>
                         </td>
                     </tr>
 
@@ -539,7 +547,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/dialog-edit-name/dialog-edit-name.component.ts:34</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/dialog-edit-name/dialog-edit-name.component.ts:30</a></div>
                         </td>
                     </tr>
 
@@ -557,12 +565,9 @@ import {FormsModule} from &#x27;@angular/forms&#x27;;
 import {MatButtonModule} from &#x27;@angular/material/button&#x27;;
 import {
   MAT_DIALOG_DATA,
-  MatDialog,
   MatDialogActions,
-  MatDialogClose,
   MatDialogContent,
   MatDialogRef,
-  MatDialogTitle,
 } from &#x27;@angular/material/dialog&#x27;;
 import {MatFormFieldModule} from &#x27;@angular/material/form-field&#x27;;
 import {MatInputModule} from &#x27;@angular/material/input&#x27;;
@@ -570,9 +575,8 @@ import { MatIconModule } from &#x27;@angular/material/icon&#x27;;
 import {MatDatepickerModule} from &#x27;@angular/material/datepicker&#x27;;
 import { MatNativeDateModule } from &#x27;@angular/material/core&#x27;;
 import { User } from &#x27;../../models/user.class&#x27;;
-import { collection, addDoc, doc, setDoc, Firestore } from &#x27;@angular/fire/firestore&#x27;;
+import { doc, setDoc, Firestore } from &#x27;@angular/fire/firestore&#x27;;
 import {MatProgressBarModule} from &#x27;@angular/material/progress-bar&#x27;;
-import { ActivatedRoute } from &#x27;@angular/router&#x27;;
 import { FirestoreService } from &#x27;../services/firestore.service&#x27;;
 
 @Component({
@@ -587,10 +591,15 @@ export class DialogEditNameComponent {
   loading &#x3D; false;
   user: User &#x3D; new User;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: { id: string }, private firestore: Firestore, public dialogRef: MatDialogRef&lt;DialogEditNameComponent&gt;, private firestoreService: FirestoreService) {
+  /**
+   * Component constructor for editing a user&#x27;s name.
+   */
+  constructor(@Inject(MAT_DIALOG_DATA) public data: { id: string }, private firestore: Firestore, public dialogRef: MatDialogRef&lt;DialogEditNameComponent&gt;, private firestoreService: FirestoreService) {}
 
-  }
-
+  /**
+   * Initializes the component by fetching user details.
+   * If a valid user ID is provided, it retrieves the user data from Firestore.
+   */
   async ngOnInit(): Promise&lt;void&gt; {
     const userId &#x3D; this.data.id;
     if (userId) {
@@ -607,33 +616,28 @@ export class DialogEditNameComponent {
     }
   }
 
+  /**
+   * Saves the updated user data to Firestore.
+   * Ensures the user ID is available before saving.
+   */
   async saveUser(): Promise&lt;void&gt; {
-
     this.loading &#x3D; true;
 
     if (!this.data.id) {
       console.error(&#x27;Keine User-ID gefunden, um die Daten zu speichern.&#x27;);
       return;
     }
-  
     try {
-
-      const userToSave &#x3D; {
-        ...this.user,
-        contacts: this.user.contacts.map((contact) &#x3D;&gt; ({ ...contact })), // Nur die Daten kopieren
-      };
-
+      const userToSave &#x3D; {...this.user, contacts: this.user.contacts.map((contact) &#x3D;&gt; ({ ...contact })),};
       const userDocRef &#x3D; doc(this.firestore, &#x60;users/${this.data.id}&#x60;); 
-      await setDoc(userDocRef, userToSave); // Aktualisiere die Benutzerdaten in Firestore
-      this.dialogRef.close(this.user); // Dialog schließen und die aktualisierten Daten zurückgeben
+      await setDoc(userDocRef, userToSave); 
+      this.dialogRef.close(this.user);
       this.loading &#x3D; false;
     } catch (error) {
       console.error(&#x27;Fehler beim Speichern der Benutzerdaten:&#x27;, error);
     }
   }
-
-}
-</code></pre>
+}</code></pre>
     </div>
 
     <div class="tab-pane fade " id="templateData">
@@ -641,14 +645,11 @@ export class DialogEditNameComponent {
     &lt;mat-progress-bar mode&#x3D;&quot;indeterminate&quot;&gt;&lt;/mat-progress-bar&gt;
 }
 
-
 &lt;div class&#x3D;&quot;dialog-container&quot;&gt;
     &lt;div class&#x3D;&quot;profile-header&quot;&gt;
         &lt;h1&gt;EDIT COMPANY NAME&lt;/h1&gt;
     &lt;/div&gt;
     
-
-
     &lt;div mat-dialog-content class&#x3D;&quot;field-area&quot;&gt;
 
         &lt;div&gt;
@@ -660,19 +661,12 @@ export class DialogEditNameComponent {
                 &lt;/mat-form-field&gt;
             &lt;/div&gt;
         &lt;/div&gt;
-
-        
     &lt;/div&gt;
-
-
-
-
 
     &lt;mat-dialog-actions class&#x3D;&quot;button-area&quot;&gt;
         &lt;button mat-button (click)&#x3D;&quot;dialogRef.close()&quot;&gt;Cancel&lt;/button&gt;
         &lt;button class&#x3D;&quot;save-button&quot; mat-button (click)&#x3D;&quot;saveUser()&quot; cdkFocusInitial&gt;Save&lt;/button&gt;
     &lt;/mat-dialog-actions&gt;
-
 
 &lt;/div&gt;</code></pre>
     </div>
@@ -703,7 +697,7 @@ export class DialogEditNameComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div>@if (loading) {    <mat-progress-bar mode="indeterminate"></mat-progress-bar>}<div class="dialog-container">    <div class="profile-header">        <h1>EDIT COMPANY NAME</h1>    </div>        <div mat-dialog-content class="field-area">        <div>            <div>                <mat-form-field appearance="outline" class="w-100">                    <mat-label>E-Mail</mat-label>                    <input [disabled]="loading" [(ngModel)]="user.company" matInput placeholder="">                                </mat-form-field>            </div>        </div>            </div>    <mat-dialog-actions class="button-area">        <button mat-button (click)="dialogRef.close()">Cancel</button>        <button class="save-button" mat-button (click)="saveUser()" cdkFocusInitial>Save</button>    </mat-dialog-actions></div></div>'
+        var COMPONENT_TEMPLATE = '<div>@if (loading) {    <mat-progress-bar mode="indeterminate"></mat-progress-bar>}<div class="dialog-container">    <div class="profile-header">        <h1>EDIT COMPANY NAME</h1>    </div>        <div mat-dialog-content class="field-area">        <div>            <div>                <mat-form-field appearance="outline" class="w-100">                    <mat-label>E-Mail</mat-label>                    <input [disabled]="loading" [(ngModel)]="user.company" matInput placeholder="">                                </mat-form-field>            </div>        </div>    </div>    <mat-dialog-actions class="button-area">        <button mat-button (click)="dialogRef.close()">Cancel</button>        <button class="save-button" mat-button (click)="saveUser()" cdkFocusInitial>Save</button>    </mat-dialog-actions></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DialogAddContactComponent', 'selector': 'app-dialog-add-contact'},{'name': 'DialogAddUserComponent', 'selector': 'app-dialog-add-user'},{'name': 'DialogDeleteUserComponent', 'selector': 'app-dialog-delete-user'},{'name': 'DialogEditAddressComponent', 'selector': 'app-dialog-edit-address'},{'name': 'DialogEditContactComponent', 'selector': 'app-dialog-edit-contact'},{'name': 'DialogEditContactpersonComponent', 'selector': 'app-dialog-edit-contactperson'},{'name': 'DialogEditImgComponent', 'selector': 'app-dialog-edit-img'},{'name': 'DialogEditNameComponent', 'selector': 'app-dialog-edit-name'},{'name': 'DialogShowContactComponent', 'selector': 'app-dialog-show-contact'},{'name': 'ImprintComponent', 'selector': 'app-imprint'},{'name': 'PrivacyComponent', 'selector': 'app-privacy'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserDetailComponent', 'selector': 'app-user-details'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'DialogEditNameComponent'};

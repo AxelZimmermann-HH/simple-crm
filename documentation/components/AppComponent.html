@@ -257,6 +257,8 @@
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Component constructor for the main layout. Checking the window size and modifing the drawer mode.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -265,6 +267,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -279,6 +282,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>for navigating</p>
+
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>breakpointObserver</td>
@@ -291,6 +298,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>for tracking the window width</p>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -330,14 +341,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="41"
-                                    class="link-to-prism">src/app/app.component.ts:41</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="49"
+                                    class="link-to-prism">src/app/app.component.ts:49</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Showing or hiding the sidebar.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -534,28 +547,33 @@ export class AppComponent {
   drawerMode: &#x27;side&#x27; | &#x27;over&#x27; &#x3D; &#x27;side&#x27;;
   drawerOpened &#x3D; true;
 
+  /**
+   * Component constructor for the main layout. Checking the window size and modifing the drawer mode.
+   * @param router for navigating 
+   * @param breakpointObserver for tracking the window width
+   */
   constructor(private router: Router, private breakpointObserver: BreakpointObserver) {
     this.breakpointObserver.observe([&#x27;(max-width: 1400px)&#x27;])
       .subscribe(result &#x3D;&gt; {
         if (result.matches) {
-          this.drawerMode &#x3D; &#x27;over&#x27;; // Auf kleinen Bildschirmen überlagert
-          this.drawerOpened &#x3D; false; // Standardmäßig geschlossen
+          this.drawerMode &#x3D; &#x27;over&#x27;; 
+          this.drawerOpened &#x3D; false; 
         } else {
-          this.drawerMode &#x3D; &#x27;side&#x27;; // Große Bildschirme: Sidebar sichtbar
+          this.drawerMode &#x3D; &#x27;side&#x27;; 
           this.drawerOpened &#x3D; true;
         }
       });
   }
 
+  /**
+   * Showing or hiding the sidebar.
+   */
   toggleDrawer(): void {
     if (this.drawerMode &#x3D;&#x3D;&#x3D; &#x27;over&#x27;) {
       this.drawer.toggle();
     }
   }
-
-}
-
-</code></pre>
+}</code></pre>
     </div>
 
     <div class="tab-pane fade " id="templateData">
@@ -600,9 +618,7 @@ export class AppComponent {
 
   &lt;/div&gt;
 
-&lt;/mat-drawer-container&gt;
-
-</code></pre>
+&lt;/mat-drawer-container&gt;</code></pre>
     </div>
 
 

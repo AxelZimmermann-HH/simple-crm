@@ -159,10 +159,8 @@
                             <code>MatSelectModule</code>
                             <code>MatDialogContent</code>
                             <code>MatInputModule</code>
-                            <code>MatNativeDateModule</code>
                             <code>MatFormFieldModule</code>
                             <code>MatIconModule</code>
-                            <code>MatDatepickerModule</code>
                             <code>MatDialogActions</code>
                             <code>MatButtonModule</code>
                             <code>FormsModule</code>
@@ -264,12 +262,15 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/dialog-edit-contact/dialog-edit-contact.component.ts:38</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/dialog-edit-contact/dialog-edit-contact.component.ts:31</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Component constructor for editing a contact.
+Receives the contact data and user ID as dialog data.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -355,14 +356,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="72"
-                                    class="link-to-prism">src/app/dialog-edit-contact/dialog-edit-contact.component.ts:72</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="68"
+                                    class="link-to-prism">src/app/dialog-edit-contact/dialog-edit-contact.component.ts:68</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Closes the dialog without saving any changes.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -394,19 +397,28 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="52"
-                                    class="link-to-prism">src/app/dialog-edit-contact/dialog-edit-contact.component.ts:52</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="48"
+                                    class="link-to-prism">src/app/dialog-edit-contact/dialog-edit-contact.component.ts:48</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Saves the edited contact to Firestore.
+Ensures that the user ID and contact ID exist before updating.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
 
                         </div>
+                            <div class="io-description">
+                                <ul>
+<li>Resolves after the contact is successfully updated.</li>
+</ul>
+
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -436,7 +448,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/dialog-edit-contact/dialog-edit-contact.component.ts:37</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/dialog-edit-contact/dialog-edit-contact.component.ts:30</a></div>
                         </td>
                     </tr>
 
@@ -473,7 +485,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/dialog-edit-contact/dialog-edit-contact.component.ts:42</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/dialog-edit-contact/dialog-edit-contact.component.ts:38</a></div>
                         </td>
                     </tr>
 
@@ -500,7 +512,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/dialog-edit-contact/dialog-edit-contact.component.ts:41</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/dialog-edit-contact/dialog-edit-contact.component.ts:38</a></div>
                         </td>
                     </tr>
 
@@ -525,7 +537,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/dialog-edit-contact/dialog-edit-contact.component.ts:36</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/dialog-edit-contact/dialog-edit-contact.component.ts:29</a></div>
                         </td>
                     </tr>
 
@@ -551,7 +563,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/dialog-edit-contact/dialog-edit-contact.component.ts:38</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/dialog-edit-contact/dialog-edit-contact.component.ts:31</a></div>
                         </td>
                     </tr>
 
@@ -570,21 +582,14 @@ import {FormsModule} from &#x27;@angular/forms&#x27;;
 import {MatButtonModule} from &#x27;@angular/material/button&#x27;;
 import {
   MAT_DIALOG_DATA,
-  MatDialog,
   MatDialogActions,
-  MatDialogClose,
   MatDialogContent,
   MatDialogRef,
-  MatDialogTitle,
 } from &#x27;@angular/material/dialog&#x27;;
 import {MatSelectModule} from &#x27;@angular/material/select&#x27;;
 import {MatFormFieldModule} from &#x27;@angular/material/form-field&#x27;;
 import {MatInputModule} from &#x27;@angular/material/input&#x27;;
 import { MatIconModule } from &#x27;@angular/material/icon&#x27;;
-import {MatDatepickerModule} from &#x27;@angular/material/datepicker&#x27;;
-import { MatNativeDateModule } from &#x27;@angular/material/core&#x27;;
-import { User } from &#x27;../../models/user.class&#x27;;
-import { collection, addDoc, doc, Firestore } from &#x27;@angular/fire/firestore&#x27;;
 import {MatProgressBarModule} from &#x27;@angular/material/progress-bar&#x27;;
 import { Contact } from &#x27;../../models/contact.class&#x27;;
 import { FirestoreService } from &#x27;../services/firestore.service&#x27;;
@@ -594,7 +599,7 @@ import { MatCard } from &#x27;@angular/material/card&#x27;;
 @Component({
   selector: &#x27;app-dialog-edit-contact&#x27;,
   standalone: true,
-  imports: [CommonModule, MatProgressBarModule, MatCard, MatSelectModule, MatDialogContent, MatInputModule, MatNativeDateModule, MatFormFieldModule, MatIconModule, MatDatepickerModule, MatDialogActions, MatButtonModule, FormsModule],
+  imports: [CommonModule, MatProgressBarModule, MatCard, MatSelectModule, MatDialogContent, MatInputModule, MatFormFieldModule, MatIconModule, MatDialogActions, MatButtonModule, FormsModule],
   templateUrl: &#x27;./dialog-edit-contact.component.html&#x27;,
   styleUrl: &#x27;./dialog-edit-contact.component.scss&#x27;
 })
@@ -603,43 +608,45 @@ export class DialogEditContactComponent {
   contact: Contact;
   userId: string;
 
+  /**
+   * Component constructor for editing a contact.
+   * Receives the contact data and user ID as dialog data.
+   */
   constructor(
-    public dialogRef: MatDialogRef&lt;DialogEditContactComponent&gt;,
-    @Inject(MAT_DIALOG_DATA) public data: { contact: Contact; id: string },
-    private firestoreService: FirestoreService 
-  ) {
-    console.log(&#x27;Daten im Dialog empfangen:&#x27;, data);
-    this.contact &#x3D; { ...data.contact }; // Kontakt kopieren, um Änderungen zu machen
+    public dialogRef: MatDialogRef&lt;DialogEditContactComponent&gt;, @Inject(MAT_DIALOG_DATA) public data: { contact: Contact; id: string }, private firestoreService: FirestoreService ) {
+    this.contact &#x3D; { ...data.contact };
     this.userId &#x3D; data.id;
-    console.log(&#x27;Kontakt:&#x27;, this.contact, &#x27;UserId:&#x27;, this.userId);
-    
   }
 
+  /**
+   * Saves the edited contact to Firestore.
+   * Ensures that the user ID and contact ID exist before updating.
+   * @returns {Promise&lt;void&gt;} - Resolves after the contact is successfully updated.
+   */
   async saveContact(): Promise&lt;void&gt; {
     if (!this.userId || !this.contact.id) {
       console.error(&#x27;Benutzer-ID oder Kontakt-ID fehlt&#x27;);
       return;
     }
 
-    this.loading &#x3D; true; // Ladeindikator aktivieren
-
+    this.loading &#x3D; true; 
     try {
-      // Kontakt in Firestore aktualisieren
       await this.firestoreService.updateContact(this.userId, this.contact);
-      console.log(&#x27;Kontakt erfolgreich aktualisiert:&#x27;, this.contact);
-      this.dialogRef.close(this.contact); // Geänderten Kontakt zurückgeben
+      this.dialogRef.close(this.contact); 
     } catch (error) {
       console.error(&#x27;Fehler beim Aktualisieren des Kontakts:&#x27;, error);
     } finally {
-      this.loading &#x3D; false; // Ladeindikator deaktivieren
+      this.loading &#x3D; false;
     }
   }
 
+  /**
+   * Closes the dialog without saving any changes.
+   */
   cancel(): void {
-    this.dialogRef.close(); // Dialog schließen, ohne Änderungen
+    this.dialogRef.close();
   }
-}
-</code></pre>
+}</code></pre>
     </div>
 
     <div class="tab-pane fade " id="templateData">
@@ -652,7 +659,6 @@ export class DialogEditContactComponent {
     &lt;mat-card class&#x3D;&quot;profile-header&quot;&gt;
         &lt;h1&gt;EDIT CONTACT&lt;/h1&gt;
     &lt;/mat-card&gt;
-
 
     &lt;div mat-dialog-content class&#x3D;&quot;field-area&quot;&gt;
 
@@ -669,7 +675,6 @@ export class DialogEditContactComponent {
         &lt;button mat-button (click)&#x3D;&quot;dialogRef.close()&quot;&gt;Cancel&lt;/button&gt;
         &lt;button mat-button (click)&#x3D;&quot;saveContact()&quot; cdkFocusInitial&gt;Save&lt;/button&gt;
     &lt;/mat-dialog-actions&gt;
-
 
 &lt;/div&gt;</code></pre>
     </div>

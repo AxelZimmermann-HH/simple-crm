@@ -226,16 +226,25 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#groupUsersAlphabetically" >groupUsersAlphabetically</a>
+                            </li>
+                            <li>
                                 <a href="#loadUsers" >loadUsers</a>
                             </li>
                             <li>
-                                <a href="#loadUsers2" >loadUsers2</a>
+                                    <span class="modifier">Private</span>
+                                <a href="#mapUserData" >mapUserData</a>
                             </li>
                             <li>
                                 <a href="#ngOnInit" >ngOnInit</a>
                             </li>
                             <li>
                                 <a href="#openDialog" >openDialog</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#processUserSnapshot" >processUserSnapshot</a>
                             </li>
                             <li>
                                 <a href="#showUserDetails" >showUserDetails</a>
@@ -341,6 +350,83 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="groupUsersAlphabetically"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>groupUsersAlphabetically</b></span>
+                        <a href="#groupUsersAlphabetically"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>groupUsersAlphabetically(users: any[])</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="81"
+                                    class="link-to-prism">src/app/user/user.component.ts:81</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Groups users alphabetically by their company name.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>users</td>
+                                            <td>
+                                                        <code>any[]</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>An array of users to be grouped.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>any[]</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>A structured array of grouped users by their first company letter.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="loadUsers"></a>
                     <span class="name">
                         <span ><b>loadUsers</b></span>
@@ -357,14 +443,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="37"
-                                    class="link-to-prism">src/app/user/user.component.ts:37</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="42"
+                                    class="link-to-prism">src/app/user/user.component.ts:42</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Loads and groups users alphabetically by company name.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -378,35 +466,75 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="loadUsers2"></a>
+                    <a name="mapUserData"></a>
                     <span class="name">
-                        <span ><b>loadUsers2</b></span>
-                        <a href="#loadUsers2"><span class="icon ion-ios-link"></span></a>
+                            <span class="modifier">Private</span>
+                        <span ><b>mapUserData</b></span>
+                        <a href="#mapUserData"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>loadUsers2()</code>
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>mapUserData(doc: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="74"
-                                    class="link-to-prism">src/app/user/user.component.ts:74</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="65"
+                                    class="link-to-prism">src/app/user/user.component.ts:65</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Maps Firestore document data to a user object.</p>
+</div>
 
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>doc</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Firestore document snapshot of a user.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                         </div>
+                            <div class="io-description">
+                                <p>A mapped user object with extracted properties.</p>
+
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -431,14 +559,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="32"
-                                    class="link-to-prism">src/app/user/user.component.ts:32</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="35"
+                                    class="link-to-prism">src/app/user/user.component.ts:35</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Initializes component by fetching and displaying all user data.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -468,19 +598,98 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="90"
-                                    class="link-to-prism">src/app/user/user.component.ts:90</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="119"
+                                    class="link-to-prism">src/app/user/user.component.ts:119</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Opens a dialog for adding a new user.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                         </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="processUserSnapshot"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>processUserSnapshot</b></span>
+                        <a href="#processUserSnapshot"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>processUserSnapshot(snapshot: QuerySnapshot<DocumentData>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="56"
+                                    class="link-to-prism">src/app/user/user.component.ts:56</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Processes the Firestore snapshot and extracts user data.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>snapshot</td>
+                                            <td>
+                                                        <code>QuerySnapshot&lt;DocumentData&gt;</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Firestore snapshot containing user documents.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>any[]</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>An array of users with extracted fields.</p>
+
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -505,14 +714,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="86"
-                                    class="link-to-prism">src/app/user/user.component.ts:86</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="112"
+                                    class="link-to-prism">src/app/user/user.component.ts:112</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Navigates to the detailed view of a selected user.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -523,6 +734,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -537,6 +749,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>The user object containing the user ID.</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -572,14 +788,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="82"
-                                    class="link-to-prism">src/app/user/user.component.ts:82</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="104"
+                                    class="link-to-prism">src/app/user/user.component.ts:104</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Sorts the list of all users alphabetically based on their company name.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -750,7 +968,7 @@ import {MatDialogModule} from &#x27;@angular/material/dialog&#x27;;
 import { DialogAddUserComponent } from &#x27;../dialog-add-user/dialog-add-user.component&#x27;;
 import { User } from &#x27;../../models/user.class&#x27;;
 import {MatCardModule} from &#x27;@angular/material/card&#x27;;
-import { collection, addDoc, Firestore, onSnapshot, CollectionReference } from &#x27;@angular/fire/firestore&#x27;;
+import { collection, addDoc, Firestore, onSnapshot, CollectionReference, QuerySnapshot, DocumentData } from &#x27;@angular/fire/firestore&#x27;;
 import { Router } from &#x27;@angular/router&#x27;; // Router importieren
 
 
@@ -763,7 +981,7 @@ import { Router } from &#x27;@angular/router&#x27;; // Router importieren
 })
 export class UserComponent {
 
-  allUsers: any[] &#x3D; []; // Array zum Speichern der Benutzer
+  allUsers: any[] &#x3D; []; 
   user &#x3D; new User();
   usersCollection &#x3D; collection(this.firestore, &#x27;users&#x27;);
   groupedUsers: { letter: string, users: any[] }[] &#x3D; [];
@@ -771,69 +989,97 @@ export class UserComponent {
 
   constructor(public dialog: MatDialog, private firestore: Firestore, private router: Router) { }
 
+  /**
+   * Initializes component by fetching and displaying all user data.
+   */
   ngOnInit(): void {
-    this.loadUsers(); // Benutzer laden
-
+    this.loadUsers(); 
   }
 
+  /**
+ * Loads and groups users alphabetically by company name.
+ */
   loadUsers(): void {
-    const usersCollection &#x3D; collection(this.firestore, &#x27;users&#x27;); // &#x27;users&#x27;-Collection referenzieren
+    const usersCollection &#x3D; collection(this.firestore, &#x27;users&#x27;); 
+
     onSnapshot(usersCollection, (snapshot) &#x3D;&gt; {
-      const users &#x3D; snapshot.docs.map(doc &#x3D;&gt; {
-        const data &#x3D; doc.data() as any; // Firestore gibt nicht automatisch den richtigen Typ zurück
-        return {
-          id: doc.id,
-          company: data.company || &#x27;&#x27;, // Falls &#x60;company&#x60; nicht existiert, setze leeren String
-          firstName: data.firstName || &#x27;&#x27;,
-          lastName: data.lastName || &#x27;&#x27;,
-          city: data.city || &#x27;&#x27;
-        };
-      });
-  
-      // User alphabetisch nach &#x60;company&#x60; sortieren
-      users.sort((a, b) &#x3D;&gt; a.company.localeCompare(b.company));
-  
-      // Gruppierung nach dem ersten Buchstaben der &#x60;company&#x60;
-      this.groupedUsers &#x3D; [];
-      let currentLetter &#x3D; &#x27;&#x27;;
-  
-      users.forEach(user &#x3D;&gt; {
-        const firstLetter &#x3D; user.company.charAt(0).toUpperCase(); // Ersten Buchstaben extrahieren
-  
-        // Falls neuer Buchstabe, füge eine neue Gruppe hinzu
+        const users &#x3D; this.processUserSnapshot(snapshot);
+        this.groupedUsers &#x3D; this.groupUsersAlphabetically(users);
+    });
+  }
+
+  /**
+  * Processes the Firestore snapshot and extracts user data.
+  * @param snapshot Firestore snapshot containing user documents.
+  * @returns An array of users with extracted fields.
+  */
+  private processUserSnapshot(snapshot: QuerySnapshot&lt;DocumentData&gt;): any[] {
+    return snapshot.docs.map(doc &#x3D;&gt; this.mapUserData(doc));
+  }
+
+  /**
+  * Maps Firestore document data to a user object.
+  * @param doc Firestore document snapshot of a user.
+  * @returns A mapped user object with extracted properties.
+  */
+  private mapUserData(doc: any): any {
+    const data &#x3D; doc.data() as any;
+    return {
+        id: doc.id,
+        company: data.company || &#x27;&#x27;, 
+        firstName: data.firstName || &#x27;&#x27;,
+        lastName: data.lastName || &#x27;&#x27;,
+        city: data.city || &#x27;&#x27;
+    };
+  }
+
+  /**
+  * Groups users alphabetically by their company name.
+  * @param users An array of users to be grouped.
+  * @returns A structured array of grouped users by their first company letter.
+  */
+  private groupUsersAlphabetically(users: any[]): any[] {
+    users.sort((a, b) &#x3D;&gt; a.company.localeCompare(b.company));
+    
+    const groupedUsers: { letter: string, users: any[] }[] &#x3D; [];
+    let currentLetter &#x3D; &#x27;&#x27;;
+
+    users.forEach(user &#x3D;&gt; {
+        const firstLetter &#x3D; user.company.charAt(0).toUpperCase();
+
         if (firstLetter !&#x3D;&#x3D; currentLetter) {
-          currentLetter &#x3D; firstLetter;
-          this.groupedUsers.push({ letter: firstLetter, users: [] });
+            currentLetter &#x3D; firstLetter;
+            groupedUsers.push({ letter: firstLetter, users: [] });
         }
-  
-        // Füge den User zur richtigen Gruppe hinzu
-        this.groupedUsers[this.groupedUsers.length - 1].users.push(user);
-      });
-    });
-  }
-  
 
-  loadUsers2(): void {
-    const usersCollection &#x3D; collection(this.firestore, &#x27;users&#x27;); // &#x27;users&#x27;-Collection referenzieren
-    onSnapshot(usersCollection, (snapshot) &#x3D;&gt; {
-      this.allUsers &#x3D; snapshot.docs.map(doc &#x3D;&gt; ({ id: doc.id, ...doc.data() })); // Inkl. userId (doc.id)
-      this.sortUsersByCompany();
+        groupedUsers[groupedUsers.length - 1].users.push(user);
     });
+
+    return groupedUsers;
   }
 
+  /**
+ * Sorts the list of all users alphabetically based on their company name.
+ */
   sortUsersByCompany(): void {
     this.allUsers.sort((a, b) &#x3D;&gt; a.company.localeCompare(b.company));
   }
 
+  /**
+ * Navigates to the detailed view of a selected user.
+ * @param user The user object containing the user ID.
+ */
   showUserDetails(user: any): void {
     this.router.navigate([&#x27;/user&#x27;, user.id]);
   }
 
+  /**
+ * Opens a dialog for adding a new user.
+ */
   openDialog() {
     this.dialog.open(DialogAddUserComponent);
   }
-}
-</code></pre>
+}</code></pre>
     </div>
 
     <div class="tab-pane fade " id="templateData">

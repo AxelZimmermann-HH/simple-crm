@@ -140,20 +140,60 @@
                                 <a href="#fetchContacts" >fetchContacts</a>
                             </li>
                             <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#fetchContactsForUser" >fetchContactsForUser</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
                                     <span class="modifier">Async</span>
-                                <a href="#fetchUserDetails" >fetchUserDetails</a>
+                                <a href="#fetchUserContacts" >fetchUserContacts</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#fetchUserDetails2" >fetchUserDetails2</a>
+                                <a href="#fetchUserDetails" >fetchUserDetails</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
                                 <a href="#getAllContacts" >getAllContacts</a>
                             </li>
                             <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getContactPromises" >getContactPromises</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#getContactsSnapshot" >getContactsSnapshot</a>
+                            </li>
+                            <li>
                                     <span class="modifier">Async</span>
                                 <a href="#getUserCount" >getUserCount</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#getUsersSnapshot" >getUsersSnapshot</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#mapContact" >mapContact</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#mapContacts" >mapContacts</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#processContactPromises" >processContactPromises</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#sortContacts" >sortContacts</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#sortContactsByDate" >sortContactsByDate</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
@@ -185,7 +225,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/services/firestore.service.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/services/firestore.service.ts:10</a></div>
                             </td>
                         </tr>
 
@@ -250,14 +290,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="71"
-                                    class="link-to-prism">src/app/services/firestore.service.ts:71</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="83"
+                                    class="link-to-prism">src/app/services/firestore.service.ts:83</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Fetches and returns the list of contacts for a specific user.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -268,6 +310,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -282,6 +325,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>The ID of the user whose contacts should be retrieved.</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -291,7 +338,163 @@
 
                         </div>
                             <div class="io-description">
+                                <p>A sorted array of contacts.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchContactsForUser"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>fetchContactsForUser</b></span>
+                        <a href="#fetchContactsForUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fetchContactsForUser(userDoc: QueryDocumentSnapshot<any>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="193"
+                                    class="link-to-prism">src/app/services/firestore.service.ts:193</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Fetches contacts for a specific user and returns a promise.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
                                 
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userDoc</td>
+                                            <td>
+                                                        <code>QueryDocumentSnapshot&lt;any&gt;</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The Firestore document snapshot for a user.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/Contact.html" target="_self" >Promise&lt;Contact[]&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>A promise that resolves to an array of contacts for the given user.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchUserContacts"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>fetchUserContacts</b></span>
+                        <a href="#fetchUserContacts"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fetchUserContacts(userDocRef: DocumentReference)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="42"
+                                    class="link-to-prism">src/app/services/firestore.service.ts:42</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Fetches the contacts for a given user.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userDocRef</td>
+                                            <td>
+                                                        <code>DocumentReference</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The Firestore document reference for the user.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/Contact.html" target="_self" >Promise&lt;Contact[]&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>A Promise resolving to an array of contacts.</p>
+
                             </div>
                 </td>
             </tr>
@@ -319,14 +522,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="36"
-                                    class="link-to-prism">src/app/services/firestore.service.ts:36</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="19"
+                                    class="link-to-prism">src/app/services/firestore.service.ts:19</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Fetches user details from Firestore, including their contacts.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -337,6 +542,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -351,6 +557,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>The ID of the user to fetch.</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -360,76 +570,8 @@
 
                         </div>
                             <div class="io-description">
-                                
-                            </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="fetchUserDetails2"></a>
-                    <span class="name">
-                            <span class="modifier">Async</span>
-                        <span ><b>fetchUserDetails2</b></span>
-                        <a href="#fetchUserDetails2"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>fetchUserDetails2(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                </td>
-            </tr>
+                                <p>A Promise resolving to the user object or null if not found.</p>
 
-
-                    <tr>
-                        <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="13"
-                                    class="link-to-prism">src/app/services/firestore.service.ts:13</a></div>
-                        </td>
-                    </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                            <div class="io-description">
-                                <b>Parameters :</b>
-                                
-                                <table class="params">
-                                    <thead>
-                                        <tr>
-                                            <td>Name</td>
-                                                <td>Type</td>
-                                            <td>Optional</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                                <td>userId</td>
-                                            <td>
-                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                            </td>
-
-                                            <td>
-                                                    No
-                                            </td>
-
-
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        <div class="io-description">
-                            <b>Returns : </b>        <code><a href="../classes/User.html" target="_self" >Promise&lt;User | null&gt;</a></code>
-
-                        </div>
-                            <div class="io-description">
-                                
                             </div>
                 </td>
             </tr>
@@ -457,19 +599,180 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="114"
-                                    class="link-to-prism">src/app/services/firestore.service.ts:114</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="162"
+                                    class="link-to-prism">src/app/services/firestore.service.ts:162</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Retrieves all contacts from all users in Firestore.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="../classes/Contact.html" target="_self" >Promise&lt;Contact[]&gt;</a></code>
 
                         </div>
+                            <div class="io-description">
+                                <p>A sorted array of all contacts from Firestore.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getContactPromises"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>getContactPromises</b></span>
+                        <a href="#getContactPromises"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getContactPromises(usersSnapshot: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="182"
+                                    class="link-to-prism">src/app/services/firestore.service.ts:182</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Creates an array of promises that fetch contacts for each user.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>usersSnapshot</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The Firestore snapshot containing all users.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise[]</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>An array of promises that resolve to contact arrays.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getContactsSnapshot"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>getContactsSnapshot</b></span>
+                        <a href="#getContactsSnapshot"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getContactsSnapshot(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="94"
+                                    class="link-to-prism">src/app/services/firestore.service.ts:94</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Retrieves the Firestore snapshot of contacts for a given user.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The ID of the user.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>A Firestore snapshot of the user&#39;s contacts.</p>
+
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -496,19 +799,472 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="108"
-                                    class="link-to-prism">src/app/services/firestore.service.ts:108</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="152"
+                                    class="link-to-prism">src/app/services/firestore.service.ts:152</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Gets the number of all clients from the collection in firestore.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>    <code>Promise&lt;number&gt;</code>
 
                         </div>
+                            <div class="io-description">
+                                <p>number</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUsersSnapshot"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>getUsersSnapshot</b></span>
+                        <a href="#getUsersSnapshot"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getUsersSnapshot()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="172"
+                                    class="link-to-prism">src/app/services/firestore.service.ts:172</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Fetches the Firestore snapshot for all users.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>A Firestore snapshot containing all users.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mapContact"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>mapContact</b></span>
+                        <a href="#mapContact"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>mapContact(doc: QueryDocumentSnapshot<any>, userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="209"
+                                    class="link-to-prism">src/app/services/firestore.service.ts:209</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Maps Firestore contact document data to a Contact object.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>doc</td>
+                                            <td>
+                                                        <code>QueryDocumentSnapshot&lt;any&gt;</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The Firestore document snapshot for a contact.</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The ID of the user to whom the contact belongs.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/Contact.html" target="_self" >Contact</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>A Contact object.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mapContacts"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>mapContacts</b></span>
+                        <a href="#mapContacts"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>mapContacts(contactsSnapshot: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="105"
+                                    class="link-to-prism">src/app/services/firestore.service.ts:105</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Maps Firestore documents to an array of Contact objects.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>contactsSnapshot</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The Firestore snapshot containing contact data.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/Contact.html" target="_self" >Contact[]</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>An array of Contact objects.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="processContactPromises"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>processContactPromises</b></span>
+                        <a href="#processContactPromises"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>processContactPromises(contactPromises: <a href="../classes/Contact.html" target="_self">Promise&lt;Contact[]&gt;[]</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="226"
+                                    class="link-to-prism">src/app/services/firestore.service.ts:226</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Processes an array of contact promises and returns a sorted list of all contacts.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>contactPromises</td>
+                                            <td>
+                                                            <code><a href="../classes/Contact.html" target="_self" >Promise&lt;Contact[]&gt;[]</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>An array of promises that resolve to contact arrays.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/Contact.html" target="_self" >Promise&lt;Contact[]&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>A sorted array of all contacts.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sortContacts"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>sortContacts</b></span>
+                        <a href="#sortContacts"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>sortContacts(contacts: <a href="../classes/Contact.html" target="_self">Contact[]</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="122"
+                                    class="link-to-prism">src/app/services/firestore.service.ts:122</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Sorts an array of contacts by date, with the newest contacts first.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>contacts</td>
+                                            <td>
+                                                            <code><a href="../classes/Contact.html" target="_self" >Contact[]</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The array of contacts to be sorted.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/Contact.html" target="_self" >Contact[]</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>The sorted array of contacts.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sortContactsByDate"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>sortContactsByDate</b></span>
+                        <a href="#sortContactsByDate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>sortContactsByDate(contacts: <a href="../classes/Contact.html" target="_self">Contact[]</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="61"
+                                    class="link-to-prism">src/app/services/firestore.service.ts:61</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Sorts an array of contacts by contact date in descending order.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>contacts</td>
+                                            <td>
+                                                            <code><a href="../classes/Contact.html" target="_self" >Contact[]</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The array of contacts to be sorted.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -535,14 +1291,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="95"
-                                    class="link-to-prism">src/app/services/firestore.service.ts:95</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="135"
+                                    class="link-to-prism">src/app/services/firestore.service.ts:135</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Updating contact in Firestore after editing.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -553,6 +1311,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -567,6 +1326,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>string</p>
+
+                                            </td>
                                         </tr>
                                         <tr>
                                                 <td>contact</td>
@@ -579,6 +1342,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>object</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -614,14 +1381,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="31"
-                                    class="link-to-prism">src/app/services/firestore.service.ts:31</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="72"
+                                    class="link-to-prism">src/app/services/firestore.service.ts:72</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Edits image URL in Firestore</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -680,99 +1449,139 @@
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import { Firestore, doc, getDoc, getDocs, updateDoc, collection, query, orderBy, limit } from &#x27;@angular/fire/firestore&#x27;;
+import { Firestore, doc, getDoc, getDocs, updateDoc, collection, query, orderBy, DocumentReference, QueryDocumentSnapshot } from &#x27;@angular/fire/firestore&#x27;;
 import { User } from &#x27;../../models/user.class&#x27;;
 import { Contact } from &#x27;../../models/contact.class&#x27;;
 
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
+
 export class FirestoreService {
 
   constructor(private firestore: Firestore) { }
 
-  async fetchUserDetails2(userId: string): Promise&lt;User | null&gt; {
-    try {
-      const userDocRef &#x3D; doc(this.firestore, &#x60;users/${userId}&#x60;);
-      const userDoc &#x3D; await getDoc(userDocRef);
+  /**
+   * Fetches user details from Firestore, including their contacts.
+   * @param userId The ID of the user to fetch.
+   * @returns A Promise resolving to the user object or null if not found.
+   */
+  async fetchUserDetails(userId: string): Promise&lt;User | null&gt; {
+    const userDocRef &#x3D; doc(this.firestore, &#x60;users/${userId}&#x60;);
+    const userDoc &#x3D; await getDoc(userDocRef);
 
-      if (userDoc.exists()) {
-        const userData &#x3D; userDoc.data() as User;
-        return userData;
-      } else {
-        console.error(&#x27;Benutzer nicht gefunden&#x27;);
+    if (!userDoc.exists()) {
+        console.error(&#x27;User not found&#x27;);
         return null;
-      }
-    } catch (error) {
-      console.error(&#x27;Fehler beim Abrufen der Benutzerdetails:&#x27;, error);
-      throw error;
     }
+
+    const userData &#x3D; userDoc.data();
+    const user &#x3D; new User({ ...userData });
+
+    user.contacts &#x3D; await this.fetchUserContacts(userDocRef);
+    this.sortContactsByDate(user.contacts);
+
+    return user;
   }
 
+  /**
+  * Fetches the contacts for a given user.
+  * @param userDocRef The Firestore document reference for the user.
+  * @returns A Promise resolving to an array of contacts.
+  */
+  private async fetchUserContacts(userDocRef: DocumentReference): Promise&lt;Contact[]&gt; {
+    const contactsCollectionRef &#x3D; collection(userDocRef, &#x27;contacts&#x27;);
+    const contactsSnapshot &#x3D; await getDocs(contactsCollectionRef);
+
+    return contactsSnapshot.docs.map((doc) &#x3D;&gt; {
+        const contactData &#x3D; doc.data();
+        return new Contact({
+            id: doc.id,
+            contactDate: contactData[&quot;contactDate&quot;] || null,
+            channel: contactData[&quot;channel&quot;] || &#x27;&#x27;,
+            text: contactData[&quot;text&quot;] || &#x27;&#x27;,
+        });
+    });
+  }
+
+  /**
+  * Sorts an array of contacts by contact date in descending order.
+  * @param contacts The array of contacts to be sorted.
+  */
+  private sortContactsByDate(contacts: Contact[]): void {
+    contacts.sort((a, b) &#x3D;&gt; {
+        const dateA &#x3D; a.contactDate || 0;
+        const dateB &#x3D; b.contactDate || 0;
+        return dateB - dateA;
+    });
+  }
+
+  /** 
+   * Edits image URL in Firestore 
+   */
   updateUserImage(userId: string, imageUrl: string): Promise&lt;void&gt; {
     const userRef &#x3D; doc(this.firestore, &#x60;users/${userId}&#x60;);
     return updateDoc(userRef, { image: imageUrl });
   }
 
-  async fetchUserDetails(userId: string): Promise&lt;User | null&gt; {
-    const userDocRef &#x3D; doc(this.firestore, &#x60;users/${userId}&#x60;);
-    const userDoc &#x3D; await getDoc(userDocRef);
-
-    if (userDoc.exists()) {
-      const userData &#x3D; userDoc.data();
-      const user &#x3D; new User({ ...userData });
-
-      // Kontakte laden und sortieren
-      const contactsCollectionRef &#x3D; collection(userDocRef, &#x27;contacts&#x27;);
-      const contactsSnapshot &#x3D; await getDocs(contactsCollectionRef);
-
-      user.contacts &#x3D; contactsSnapshot.docs.map((doc) &#x3D;&gt; {
-        const contactData &#x3D; doc.data();
-        return new Contact({
-          id: doc.id,
-          contactDate: contactData[&quot;contactDate&quot;] || null,
-          channel: contactData[&quot;channel&quot;] || &#x27;&#x27;,
-          text: contactData[&quot;text&quot;] || &#x27;&#x27;,
-        });
-      });
-
-      user.contacts.sort((a, b) &#x3D;&gt; {
-        const dateA &#x3D; a.contactDate || 0;
-        const dateB &#x3D; b.contactDate || 0;
-        return dateB - dateA; // Absteigend sortieren
-      });
-
-      return user;
-    } else {
-      console.error(&#x27;Benutzer nicht gefunden&#x27;);
-      return null;
-    }
+  
+    /**
+   * Fetches and returns the list of contacts for a specific user.
+   * @param userId The ID of the user whose contacts should be retrieved.
+   * @returns A sorted array of contacts.
+   */
+  async fetchContacts(userId: string): Promise&lt;Contact[]&gt; {
+    const contactsSnapshot &#x3D; await this.getContactsSnapshot(userId);
+    let contacts &#x3D; this.mapContacts(contactsSnapshot);
+    return this.sortContacts(contacts);
   }
 
-  async fetchContacts(userId: string): Promise&lt;Contact[]&gt; {
+  /**
+  * Retrieves the Firestore snapshot of contacts for a given user.
+  * @param userId The ID of the user.
+  * @returns A Firestore snapshot of the user&#x27;s contacts.
+  */
+  private async getContactsSnapshot(userId: string) {
     const userDocRef &#x3D; doc(this.firestore, &#x60;users/${userId}&#x60;);
     const contactsCollectionRef &#x3D; collection(userDocRef, &#x27;contacts&#x27;);
-    const contactsSnapshot &#x3D; await getDocs(contactsCollectionRef);
-
-    const contacts &#x3D; contactsSnapshot.docs.map((doc) &#x3D;&gt; {
-      const contactData &#x3D; doc.data();
-      return new Contact({
-        id: doc.id,
-        contactDate: contactData[&quot;contactDate&quot;] || null,
-        channel: contactData[&quot;channel&quot;] || &#x27;&#x27;,
-        text: contactData[&quot;text&quot;] || &#x27;&#x27;,
-      });
-    });
-
-    contacts.sort((a, b) &#x3D;&gt; {
-      const dateA &#x3D; a.contactDate || 0;
-      const dateB &#x3D; b.contactDate || 0;
-      return dateB - dateA; // Absteigend sortieren
-    });
-
-    return contacts;
+    return await getDocs(contactsCollectionRef);
   }
 
+  /**
+  * Maps Firestore documents to an array of Contact objects.
+  * @param contactsSnapshot The Firestore snapshot containing contact data.
+  * @returns An array of Contact objects.
+  */
+  private mapContacts(contactsSnapshot: any): Contact[] {
+    return contactsSnapshot.docs.map((doc: QueryDocumentSnapshot&lt;any&gt;) &#x3D;&gt; {
+        const contactData &#x3D; doc.data();
+        return new Contact({
+            id: doc.id,
+            contactDate: contactData[&quot;contactDate&quot;] || null,
+            channel: contactData[&quot;channel&quot;] || &#x27;&#x27;,
+            text: contactData[&quot;text&quot;] || &#x27;&#x27;,
+        });
+    });
+  }
+
+  /**
+  * Sorts an array of contacts by date, with the newest contacts first.
+  * @param contacts The array of contacts to be sorted.
+  * @returns The sorted array of contacts.
+  */
+  private sortContacts(contacts: Contact[]): Contact[] {
+    return contacts.sort((a, b) &#x3D;&gt; {
+        const dateA &#x3D; a.contactDate || 0;
+        const dateB &#x3D; b.contactDate || 0;
+        return dateB - dateA; 
+    });
+  }
+
+  /**
+   * Updating contact in Firestore after editing.
+   * @param userId string
+   * @param contact object
+   */
   async updateContact(userId: string, contact: Contact): Promise&lt;void&gt; {
     if (!userId || !contact.id) {
       throw new Error(&#x27;Benutzer-ID oder Kontakt-ID fehlt&#x27;);
@@ -780,57 +1589,94 @@ export class FirestoreService {
   
     const contactDocRef &#x3D; doc(this.firestore, &#x60;users/${userId}/contacts/${contact.id}&#x60;);
     await updateDoc(contactDocRef, {
-      text: contact.text, // Nur das &quot;text&quot;-Feld aktualisieren
-      contactDate: contact.contactDate || null, // Optional: Wenn das Datum geändert wird
-      channel: contact.channel || null, // Optional: Wenn der Kanal geändert wird
+      text: contact.text, 
+      contactDate: contact.contactDate || null, 
+      channel: contact.channel || null, 
     });
   }
 
+  /**
+   * Gets the number of all clients from the collection in firestore.
+   * @returns number
+   */
   async getUserCount(): Promise&lt;number&gt; {
     const usersCollection &#x3D; collection(this.firestore, &#x27;users&#x27;);
     const snapshot &#x3D; await getDocs(usersCollection);
-    return snapshot.size; // Gibt die Anzahl der Dokumente zurück
+    return snapshot.size;
   }
 
+  /**
+   * Retrieves all contacts from all users in Firestore.
+   * @returns A sorted array of all contacts from Firestore.
+   */
   async getAllContacts(): Promise&lt;Contact[]&gt; {
+    const usersSnapshot &#x3D; await this.getUsersSnapshot();
+    const contactPromises &#x3D; this.getContactPromises(usersSnapshot);
+    return this.processContactPromises(contactPromises);
+  }
+
+  /**
+  * Fetches the Firestore snapshot for all users.
+  * @returns A Firestore snapshot containing all users.
+  */
+  private async getUsersSnapshot() {
     const usersCollectionRef &#x3D; collection(this.firestore, &#x27;users&#x27;);
-    const usersSnapshot &#x3D; await getDocs(usersCollectionRef);
-    
-    let contactPromises: Promise&lt;Contact[]&gt;[] &#x3D; [];
+    return await getDocs(usersCollectionRef);
+  }
 
-    // Durchlaufe alle User und erstelle eine Abfrage für deren Kontakte
-    for (const userDoc of usersSnapshot.docs) {
-        const userId &#x3D; userDoc.id;
-        const contactsCollectionRef &#x3D; collection(this.firestore, &#x60;users/${userId}/contacts&#x60;);
-        const contactsQuery &#x3D; query(contactsCollectionRef, orderBy(&#x27;contactDate&#x27;, &#x27;desc&#x27;));
-        const contactsPromise &#x3D; getDocs(contactsQuery).then(contactsSnapshot &#x3D;&gt; 
-            contactsSnapshot.docs.map((doc) &#x3D;&gt; {
-                const contactData &#x3D; doc.data();
-                return new Contact({
-                    id: doc.id,
-                    contactDate: contactData[&quot;contactDate&quot;] ?? 0,
-                    channel: contactData[&quot;channel&quot;] ?? &#x27;&#x27;,
-                    text: contactData[&quot;text&quot;] ?? &#x27;&#x27;,
-                    company: contactData[&quot;company&quot;] ?? &#x27;&#x27;, // Falls vorhanden
-                    companyId: contactData[&quot;companyId&quot;] ?? userId
-                });
-            })
-        );
+  /**
+  * Creates an array of promises that fetch contacts for each user.
+  * @param usersSnapshot The Firestore snapshot containing all users.
+  * @returns An array of promises that resolve to contact arrays.
+  */
+  private getContactPromises(usersSnapshot: any): Promise&lt;Contact[]&gt;[] {
+    return usersSnapshot.docs.map((userDoc: QueryDocumentSnapshot&lt;any&gt;) &#x3D;&gt; {
+        return this.fetchContactsForUser(userDoc);
+    });
+  }
 
-        contactPromises.push(contactsPromise);
-    }
+  /**
+  * Fetches contacts for a specific user and returns a promise.
+  * @param userDoc The Firestore document snapshot for a user.
+  * @returns A promise that resolves to an array of contacts for the given user.
+  */
+  private fetchContactsForUser(userDoc: QueryDocumentSnapshot&lt;any&gt;): Promise&lt;Contact[]&gt; {
+    const userId &#x3D; userDoc.id;
+    const contactsCollectionRef &#x3D; collection(this.firestore, &#x60;users/${userId}/contacts&#x60;);
+    const contactsQuery &#x3D; query(contactsCollectionRef, orderBy(&#x27;contactDate&#x27;, &#x27;desc&#x27;));
 
-    // Warten, bis alle Firestore-Abfragen abgeschlossen sind
+    return getDocs(contactsQuery).then((contactsSnapshot) &#x3D;&gt;
+        contactsSnapshot.docs.map((doc) &#x3D;&gt; this.mapContact(doc, userId))
+    );
+  }
+
+  /**
+  * Maps Firestore contact document data to a Contact object.
+  * @param doc The Firestore document snapshot for a contact.
+  * @param userId The ID of the user to whom the contact belongs.
+  * @returns A Contact object.
+  */
+  private mapContact(doc: QueryDocumentSnapshot&lt;any&gt;, userId: string): Contact {
+    const contactData &#x3D; doc.data();
+    return new Contact({
+        id: doc.id,
+        contactDate: contactData[&quot;contactDate&quot;] ?? 0,
+        channel: contactData[&quot;channel&quot;] ?? &#x27;&#x27;,
+        text: contactData[&quot;text&quot;] ?? &#x27;&#x27;,
+        company: contactData[&quot;company&quot;] ?? &#x27;&#x27;,
+        companyId: contactData[&quot;companyId&quot;] ?? userId
+    });
+  }
+
+  /**
+  * Processes an array of contact promises and returns a sorted list of all contacts.
+  * @param contactPromises An array of promises that resolve to contact arrays.
+  * @returns A sorted array of all contacts.
+  */
+  private async processContactPromises(contactPromises: Promise&lt;Contact[]&gt;[]): Promise&lt;Contact[]&gt; {
     const results &#x3D; await Promise.all(contactPromises);
-    
-    // Alle Kontakte in ein einziges Array packen und sortieren
-    let allContacts &#x3D; results.flat().sort((a, b) &#x3D;&gt; (b.contactDate ?? 0) - (a.contactDate ?? 0));
-    console.log(allContacts);
-    // Gib die vier neuesten Kontakte zurück
-    return allContacts;
-}
-
-
+    return results.flat().sort((a, b) &#x3D;&gt; (b.contactDate ?? 0) - (a.contactDate ?? 0));
+  }
 }
 
 

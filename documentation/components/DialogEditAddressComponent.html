@@ -156,10 +156,8 @@
                             <code>MatProgressBarModule</code>
                             <code>MatDialogContent</code>
                             <code>MatInputModule</code>
-                            <code>MatNativeDateModule</code>
                             <code>MatFormFieldModule</code>
                             <code>MatIconModule</code>
-                            <code>MatDatepickerModule</code>
                             <code>MatDialogActions</code>
                             <code>MatButtonModule</code>
                             <code>FormsModule</code>
@@ -229,12 +227,33 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#finalizeSaveOperation" >finalizeSaveOperation</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#handleSaveError" >handleSaveError</a>
+                            </li>
+                            <li>
                                     <span class="modifier">Async</span>
                                 <a href="#ngOnInit" >ngOnInit</a>
                             </li>
                             <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#prepareUserData" >prepareUserData</a>
+                            </li>
+                            <li>
                                     <span class="modifier">Async</span>
                                 <a href="#saveUser" >saveUser</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#saveUserToFirestore" >saveUserToFirestore</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#validateUserId" >validateUserId</a>
                             </li>
                         </ul>
                     </td>
@@ -259,12 +278,15 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/dialog-edit-address/dialog-edit-address.component.ts:32</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/dialog-edit-address/dialog-edit-address.component.ts:27</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Component contructor for editing a user&#39;s address.
+Fetches user details based on the provided user ID.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -346,6 +368,125 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="finalizeSaveOperation"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>finalizeSaveOperation</b></span>
+                        <a href="#finalizeSaveOperation"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>finalizeSaveOperation()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="111"
+                                    class="link-to-prism">src/app/dialog-edit-address/dialog-edit-address.component.ts:111</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Handles successful save operations by closing the dialog and resetting loading state.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleSaveError"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>handleSaveError</b></span>
+                        <a href="#handleSaveError"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>handleSaveError(error: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="120"
+                                    class="link-to-prism">src/app/dialog-edit-address/dialog-edit-address.component.ts:120</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Handles errors that occur during the save operation.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>error</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The error that occurred during the save process.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="ngOnInit"></a>
                     <span class="name">
                             <span class="modifier">Async</span>
@@ -364,19 +505,75 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="38"
-                                    class="link-to-prism">src/app/dialog-edit-address/dialog-edit-address.component.ts:38</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="40"
+                                    class="link-to-prism">src/app/dialog-edit-address/dialog-edit-address.component.ts:40</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Initializes the component by fetching user details if a valid user ID is provided.
+Logs an error if no user ID is found.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
 
                         </div>
+                            <div class="io-description">
+                                <ul>
+<li>Resolves once user data is retrieved.</li>
+</ul>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="prepareUserData"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>prepareUserData</b></span>
+                        <a href="#prepareUserData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>prepareUserData()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="91"
+                                    class="link-to-prism">src/app/dialog-edit-address/dialog-edit-address.component.ts:91</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Prepares the user data by copying user details and ensuring contacts are structured properly.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <ul>
+<li>A structured object ready to be saved in Firestore.</li>
+</ul>
+
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -403,19 +600,151 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="54"
-                                    class="link-to-prism">src/app/dialog-edit-address/dialog-edit-address.component.ts:54</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="60"
+                                    class="link-to-prism">src/app/dialog-edit-address/dialog-edit-address.component.ts:60</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Saves the updated user data to Firestore.
+Ensures data integrity before performing the save operation.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
 
                         </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveUserToFirestore"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>saveUserToFirestore</b></span>
+                        <a href="#saveUserToFirestore"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>saveUserToFirestore(userToSave: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="103"
+                                    class="link-to-prism">src/app/dialog-edit-address/dialog-edit-address.component.ts:103</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Saves the user data to Firestore under the specified user ID.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userToSave</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The structured user data to be stored.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <ul>
+<li>Resolves when the save operation is complete.</li>
+</ul>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="validateUserId"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>validateUserId</b></span>
+                        <a href="#validateUserId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>validateUserId()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="78"
+                                    class="link-to-prism">src/app/dialog-edit-address/dialog-edit-address.component.ts:78</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Validates whether a user ID exists before proceeding with the save operation.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <ul>
+<li>Returns true if valid, otherwise stops execution.</li>
+</ul>
+
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -456,7 +785,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/dialog-edit-address/dialog-edit-address.component.ts:34</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/dialog-edit-address/dialog-edit-address.component.ts:33</a></div>
                         </td>
                     </tr>
 
@@ -483,7 +812,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/dialog-edit-address/dialog-edit-address.component.ts:34</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/dialog-edit-address/dialog-edit-address.component.ts:33</a></div>
                         </td>
                     </tr>
 
@@ -508,7 +837,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/dialog-edit-address/dialog-edit-address.component.ts:31</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/dialog-edit-address/dialog-edit-address.component.ts:26</a></div>
                         </td>
                     </tr>
 
@@ -539,7 +868,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/dialog-edit-address/dialog-edit-address.component.ts:32</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/dialog-edit-address/dialog-edit-address.component.ts:27</a></div>
                         </td>
                     </tr>
 
@@ -557,27 +886,22 @@ import {FormsModule} from &#x27;@angular/forms&#x27;;
 import {MatButtonModule} from &#x27;@angular/material/button&#x27;;
 import {
   MAT_DIALOG_DATA,
-  MatDialog,
   MatDialogActions,
-  MatDialogClose,
   MatDialogContent,
-  MatDialogRef,
-  MatDialogTitle,
+  MatDialogRef
 } from &#x27;@angular/material/dialog&#x27;;
 import {MatFormFieldModule} from &#x27;@angular/material/form-field&#x27;;
 import {MatInputModule} from &#x27;@angular/material/input&#x27;;
 import { MatIconModule } from &#x27;@angular/material/icon&#x27;;
-import {MatDatepickerModule} from &#x27;@angular/material/datepicker&#x27;;
-import { MatNativeDateModule } from &#x27;@angular/material/core&#x27;;
 import { User } from &#x27;../../models/user.class&#x27;;
-import { collection, addDoc, doc, setDoc, Firestore } from &#x27;@angular/fire/firestore&#x27;;
+import { doc, setDoc, Firestore } from &#x27;@angular/fire/firestore&#x27;;
 import {MatProgressBarModule} from &#x27;@angular/material/progress-bar&#x27;;
 import { FirestoreService } from &#x27;../services/firestore.service&#x27;;
 
 @Component({
   selector: &#x27;app-dialog-edit-address&#x27;,
   standalone: true,
-  imports: [MatProgressBarModule, MatDialogContent, MatInputModule, MatNativeDateModule, MatFormFieldModule, MatIconModule, MatDatepickerModule, MatDialogActions, MatButtonModule, FormsModule],
+  imports: [MatProgressBarModule, MatDialogContent, MatInputModule, MatFormFieldModule, MatIconModule, MatDialogActions, MatButtonModule, FormsModule],
   templateUrl: &#x27;./dialog-edit-address.component.html&#x27;,
   styleUrl: &#x27;./dialog-edit-address.component.scss&#x27;
 })
@@ -585,10 +909,17 @@ export class DialogEditAddressComponent {
   loading &#x3D; false;
   user: User &#x3D; new User;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: { id: string }, private firestore: Firestore, public dialogRef: MatDialogRef&lt;DialogEditAddressComponent&gt;, private firestoreService: FirestoreService) {
+  /**
+ * Component contructor for editing a user&#x27;s address.
+ * Fetches user details based on the provided user ID.
+ */
+  constructor(@Inject(MAT_DIALOG_DATA) public data: { id: string }, private firestore: Firestore, public dialogRef: MatDialogRef&lt;DialogEditAddressComponent&gt;, private firestoreService: FirestoreService) {}
 
-  }
-
+  /**
+ * Initializes the component by fetching user details if a valid user ID is provided.
+ * Logs an error if no user ID is found.
+ * @returns {Promise&lt;void&gt;} - Resolves once user data is retrieved.
+ */
   async ngOnInit(): Promise&lt;void&gt; {
     const userId &#x3D; this.data.id;
     if (userId) {
@@ -605,37 +936,75 @@ export class DialogEditAddressComponent {
     }
   }
 
+  /**
+   * Saves the updated user data to Firestore.
+   * Ensures data integrity before performing the save operation.
+   */
   async saveUser(): Promise&lt;void&gt; {
     this.loading &#x3D; true;
-  
-    if (!this.data.id) {
-      console.error(&#x27;Keine User-ID gefunden, um die Daten zu speichern.&#x27;);
-      this.loading &#x3D; false; // Ladeindikator deaktivieren
-      return;
-    }
-  
+
+    if (!this.validateUserId()) return;
+
     try {
-      // Temporär serialisierbare Daten für Firestore erstellen
-      const userToSave &#x3D; {
-        ...this.user,
-        contacts: this.user.contacts.map((contact) &#x3D;&gt; ({ ...contact })), // Nur die Daten kopieren
-      };
-  
-      const userDocRef &#x3D; doc(this.firestore, &#x60;users/${this.data.id}&#x60;); // Dokumentreferenz basierend auf der ID
-      await setDoc(userDocRef, userToSave); // Aktualisiere die Benutzerdaten in Firestore
-  
-      console.log(&#x27;Benutzerdaten erfolgreich gespeichert:&#x27;, this.user);
-      this.dialogRef.close(this.user); // Dialog schließen und aktualisierte Daten zurückgeben
-      this.loading &#x3D; false; // Ladeindikator deaktivieren
+        const userToSave &#x3D; this.prepareUserData();
+        await this.saveUserToFirestore(userToSave);
+        this.finalizeSaveOperation();
     } catch (error) {
-      console.error(&#x27;Fehler beim Speichern der Benutzerdaten:&#x27;, error);
-      this.loading &#x3D; false; // Ladeindikator deaktivieren
+        this.handleSaveError(error);
     }
   }
-  
 
-}
-</code></pre>
+  /**
+  * Validates whether a user ID exists before proceeding with the save operation.
+  * @returns {boolean} - Returns true if valid, otherwise stops execution.
+  */
+  private validateUserId(): boolean {
+    if (!this.data.id) {
+        console.error(&#x27;No user ID found to save data.&#x27;);
+        this.loading &#x3D; false;
+        return false;
+    }
+    return true;
+  }
+
+  /**
+  * Prepares the user data by copying user details and ensuring contacts are structured properly.
+  * @returns {any} - A structured object ready to be saved in Firestore.
+  */
+  private prepareUserData(): any {
+    return {
+        ...this.user,
+        contacts: this.user.contacts.map((contact) &#x3D;&gt; ({ ...contact })),
+    };
+  }
+
+  /**
+  * Saves the user data to Firestore under the specified user ID.
+  * @param {any} userToSave - The structured user data to be stored.
+  * @returns {Promise&lt;void&gt;} - Resolves when the save operation is complete.
+  */
+  private async saveUserToFirestore(userToSave: any): Promise&lt;void&gt; {
+    const userDocRef &#x3D; doc(this.firestore, &#x60;users/${this.data.id}&#x60;);
+    await setDoc(userDocRef, userToSave);
+  }
+
+  /**
+  * Handles successful save operations by closing the dialog and resetting loading state.
+  */
+  private finalizeSaveOperation(): void {
+    this.dialogRef.close(this.user);
+    this.loading &#x3D; false;
+  }
+
+  /**
+  * Handles errors that occur during the save operation.
+  * @param {any} error - The error that occurred during the save process.
+  */
+  private handleSaveError(error: any): void {
+    console.error(&#x27;Error saving user data:&#x27;, error);
+    this.loading &#x3D; false;
+  }
+}</code></pre>
     </div>
 
     <div class="tab-pane fade " id="templateData">
@@ -648,7 +1017,6 @@ export class DialogEditAddressComponent {
     &lt;div class&#x3D;&quot;profile-header&quot;&gt;
         &lt;h1 mat-dialog-title&gt;EDIT ADDRESS&lt;/h1&gt;
     &lt;/div&gt;
-
 
     &lt;div mat-dialog-content class&#x3D;&quot;field-area&quot;&gt;
 
@@ -680,15 +1048,10 @@ export class DialogEditAddressComponent {
         &lt;/div&gt;
     &lt;/div&gt;
 
-
-
-
-
     &lt;mat-dialog-actions class&#x3D;&quot;button-area&quot;&gt;
         &lt;button mat-button (click)&#x3D;&quot;dialogRef.close()&quot;&gt;Cancel&lt;/button&gt;
         &lt;button class&#x3D;&quot;save-button&quot; mat-button (click)&#x3D;&quot;saveUser()&quot; cdkFocusInitial&gt;Save&lt;/button&gt;
     &lt;/mat-dialog-actions&gt;
-
 
 &lt;/div&gt;</code></pre>
     </div>
