@@ -1237,17 +1237,17 @@ export class UserDetailComponent implements OnInit {
     dialogRef.afterClosed().subscribe(async (result) &#x3D;&gt; {
       const userId &#x3D; this.route.snapshot.paramMap.get(&#x27;id&#x27;);
       
-      if (result &#x3D;&#x3D;&#x3D; true &amp;&amp; userId) {
-        try {
-          this.user.contacts &#x3D; await this.firestoreService.fetchContacts(userId);
-        } catch (error) {
-          console.error(&#x27;Fehler beim Laden der Kontakte:&#x27;, error);
-        }
-      } else if (result &amp;&amp; typeof result &#x3D;&#x3D;&#x3D; &#x27;object&#x27;) {
-        const updatedContacts &#x3D; this.user.contacts;
-        this.user &#x3D; result;
-        this.user.contacts &#x3D; updatedContacts;
-      }
+      // if (result &#x3D;&#x3D;&#x3D; true &amp;&amp; userId) {
+      //   try {
+      //     this.user.contacts &#x3D; await this.firestoreService.fetchContacts(userId);
+      //   } catch (error) {
+      //     console.error(&#x27;Fehler beim Laden der Kontakte:&#x27;, error);
+      //   }
+      // } else if (result &amp;&amp; typeof result &#x3D;&#x3D;&#x3D; &#x27;object&#x27;) {
+      //   const updatedContacts &#x3D; this.user.contacts;
+      //   this.user &#x3D; result;
+      //   this.user.contacts &#x3D; updatedContacts;
+      // }
     });
   }
 
@@ -1312,12 +1312,12 @@ export class UserDetailComponent implements OnInit {
       }
   
       if (typeof result &#x3D;&#x3D;&#x3D; &#x27;string&#x27;) {
-        this.user.contacts &#x3D; this.user.contacts.filter((c) &#x3D;&gt; c.id !&#x3D;&#x3D; result);
+        // this.user.contacts &#x3D; this.user.contacts.filter((c) &#x3D;&gt; c.id !&#x3D;&#x3D; result);
       } else if (result &amp;&amp; typeof result &#x3D;&#x3D;&#x3D; &#x27;object&#x27;) {
-        const index &#x3D; this.user.contacts.findIndex((c) &#x3D;&gt; c.id &#x3D;&#x3D;&#x3D; result.id);
-        if (index !&#x3D;&#x3D; -1) {
-          this.user.contacts[index] &#x3D; result; 
-        }
+        // const index &#x3D; this.user.contacts.findIndex((c) &#x3D;&gt; c.id &#x3D;&#x3D;&#x3D; result.id);
+        // if (index !&#x3D;&#x3D; -1) {
+        //   // this.user.contacts[index] &#x3D; result; 
+        // }
       }
     });
   }
@@ -1453,12 +1453,12 @@ export class UserDetailComponent implements OnInit {
 
     &lt;mat-card-content class&#x3D;&quot;contacts-area&quot;&gt;
 
-        @for (contact of user.contacts; track user.mail) {
+        &lt;!-- @for (contact of user.contacts; track user.mail) {
             &lt;mat-card (click)&#x3D;&quot;openShowContactDialog(contact)&quot; class&#x3D;&quot;contact-card&quot;&gt;
                 {{ contact.contactDate | date:&#x27;dd.MM.yyyy&#x27; }} &lt;br&gt;
                 &lt;img class&#x3D;&quot;channel-img&quot; [src]&#x3D;&quot;getChannelIcon(contact.channel)&quot; alt&#x3D;&quot;&quot;&gt;
               &lt;/mat-card&gt;
-        }
+        } --&gt;
 
     &lt;/mat-card-content&gt;
     
@@ -1491,7 +1491,7 @@ export class UserDetailComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><mat-card class="profile-header">    <button (click)="getBack()" [matMenuTriggerFor]="nameMenu" class="button-left-bottom-corner" mat-icon-button aria-label="Example icon button with a vertical three dot icon">        <mat-icon>arrow_back</mat-icon>    </button>    <div class="profile-img-container">        <img class="profile-img" src={{user.image}} alt="">         <button (click)="openImgDialog()" class="button-profile" mat-icon-button aria-label="Example icon button with a vertical three dot icon">            <mat-icon>edit</mat-icon>        </button>    </div>    <div *ngIf="user" class="header-infos">        <h1>{{ user.company }}</h1>        <p></p>    </div>    <button (click)="openDeleteUserDialog()" class="button-delete" mat-icon-button aria-label="Example icon button with a vertical three dot icon">        <mat-icon>delete</mat-icon>    </button>        <button [matMenuTriggerFor]="nameMenu" class="button-right-bottom-corner" mat-icon-button aria-label="Example icon button with a vertical three dot icon">        <mat-icon>more_vert</mat-icon>    </button>    <mat-menu #nameMenu="matMenu">        <button (click)="openNameDialog()" mat-menu-item>Edit</button>    </mat-menu>    </mat-card><mat-card class="profile-information">        <mat-card-header>        <mat-card-title>CONTACT PERSON</mat-card-title>        <button [matMenuTriggerFor]="contactPersonMenu" class="button-right-corner" mat-icon-button aria-label="Example icon button with a vertical three dot icon">            <mat-icon>more_vert</mat-icon>        </button>        <mat-menu #contactPersonMenu="matMenu">            <button (click)="openContactPersonDialog()" mat-menu-item>Edit</button>        </mat-menu>    </mat-card-header>    <mat-card-content class="profile-address">        <b>{{user.firstName}} {{user.lastName}}</b> <br>        {{ user.mail }} <br>        {{ user.phone }}    </mat-card-content>    </mat-card><mat-card class="profile-information mt-35">        <mat-card-header>        <mat-card-title>ADDRESS</mat-card-title>        <button [matMenuTriggerFor]="addressMenu" class="button-right-corner" mat-icon-button aria-label="Example icon button with a vertical three dot icon">            <mat-icon>more_vert</mat-icon>        </button>        <mat-menu #addressMenu="matMenu">            <button (click)="openAddressDialog()" mat-menu-item>Edit</button>        </mat-menu>    </mat-card-header>    <mat-card-content class="profile-address">        {{user.street}} <br>        {{ user.zipCode }} {{ user.city }} <br>        {{ user.country }}    </mat-card-content>    </mat-card><mat-card class="profile-information mt-35">        <mat-card-header>        <mat-card-title>CONTACTS</mat-card-title>        <button (click)="openAddContactDialog()" class="button-right-corner" mat-icon-button aria-label="Example icon button with a vertical three dot icon">            <mat-icon>add</mat-icon>        </button>    </mat-card-header>    <mat-card-content class="contacts-area">        @for (contact of user.contacts; track user.mail) {            <mat-card (click)="openShowContactDialog(contact)" class="contact-card">                {{ contact.contactDate | date:\'dd.MM.yyyy\' }} <br>                <img class="channel-img" [src]="getChannelIcon(contact.channel)" alt="">              </mat-card>        }    </mat-card-content>    </mat-card></div>'
+        var COMPONENT_TEMPLATE = '<div><mat-card class="profile-header">    <button (click)="getBack()" [matMenuTriggerFor]="nameMenu" class="button-left-bottom-corner" mat-icon-button aria-label="Example icon button with a vertical three dot icon">        <mat-icon>arrow_back</mat-icon>    </button>    <div class="profile-img-container">        <img class="profile-img" src={{user.image}} alt="">         <button (click)="openImgDialog()" class="button-profile" mat-icon-button aria-label="Example icon button with a vertical three dot icon">            <mat-icon>edit</mat-icon>        </button>    </div>    <div *ngIf="user" class="header-infos">        <h1>{{ user.company }}</h1>        <p></p>    </div>    <button (click)="openDeleteUserDialog()" class="button-delete" mat-icon-button aria-label="Example icon button with a vertical three dot icon">        <mat-icon>delete</mat-icon>    </button>        <button [matMenuTriggerFor]="nameMenu" class="button-right-bottom-corner" mat-icon-button aria-label="Example icon button with a vertical three dot icon">        <mat-icon>more_vert</mat-icon>    </button>    <mat-menu #nameMenu="matMenu">        <button (click)="openNameDialog()" mat-menu-item>Edit</button>    </mat-menu>    </mat-card><mat-card class="profile-information">        <mat-card-header>        <mat-card-title>CONTACT PERSON</mat-card-title>        <button [matMenuTriggerFor]="contactPersonMenu" class="button-right-corner" mat-icon-button aria-label="Example icon button with a vertical three dot icon">            <mat-icon>more_vert</mat-icon>        </button>        <mat-menu #contactPersonMenu="matMenu">            <button (click)="openContactPersonDialog()" mat-menu-item>Edit</button>        </mat-menu>    </mat-card-header>    <mat-card-content class="profile-address">        <b>{{user.firstName}} {{user.lastName}}</b> <br>        {{ user.mail }} <br>        {{ user.phone }}    </mat-card-content>    </mat-card><mat-card class="profile-information mt-35">        <mat-card-header>        <mat-card-title>ADDRESS</mat-card-title>        <button [matMenuTriggerFor]="addressMenu" class="button-right-corner" mat-icon-button aria-label="Example icon button with a vertical three dot icon">            <mat-icon>more_vert</mat-icon>        </button>        <mat-menu #addressMenu="matMenu">            <button (click)="openAddressDialog()" mat-menu-item>Edit</button>        </mat-menu>    </mat-card-header>    <mat-card-content class="profile-address">        {{user.street}} <br>        {{ user.zipCode }} {{ user.city }} <br>        {{ user.country }}    </mat-card-content>    </mat-card><mat-card class="profile-information mt-35">        <mat-card-header>        <mat-card-title>CONTACTS</mat-card-title>        <button (click)="openAddContactDialog()" class="button-right-corner" mat-icon-button aria-label="Example icon button with a vertical three dot icon">            <mat-icon>add</mat-icon>        </button>    </mat-card-header>    <mat-card-content class="contacts-area">        <!-- @for (contact of user.contacts; track user.mail) {            <mat-card (click)="openShowContactDialog(contact)" class="contact-card">                {{ contact.contactDate | date:\'dd.MM.yyyy\' }} <br>                <img class="channel-img" [src]="getChannelIcon(contact.channel)" alt="">              </mat-card>        } -->    </mat-card-content>    </mat-card></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DialogAddContactComponent', 'selector': 'app-dialog-add-contact'},{'name': 'DialogAddUserComponent', 'selector': 'app-dialog-add-user'},{'name': 'DialogDeleteUserComponent', 'selector': 'app-dialog-delete-user'},{'name': 'DialogEditAddressComponent', 'selector': 'app-dialog-edit-address'},{'name': 'DialogEditContactComponent', 'selector': 'app-dialog-edit-contact'},{'name': 'DialogEditContactpersonComponent', 'selector': 'app-dialog-edit-contactperson'},{'name': 'DialogEditImgComponent', 'selector': 'app-dialog-edit-img'},{'name': 'DialogEditNameComponent', 'selector': 'app-dialog-edit-name'},{'name': 'DialogShowContactComponent', 'selector': 'app-dialog-show-contact'},{'name': 'ImprintComponent', 'selector': 'app-imprint'},{'name': 'PrivacyComponent', 'selector': 'app-privacy'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserDetailComponent', 'selector': 'app-user-details'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'UserDetailComponent'};

@@ -11,36 +11,46 @@
     <div mat-dialog-content class="field-area">
 
         <div>
-            <mat-form-field appearance="outline" class="mr-16">
-                <mat-label>First Name</mat-label>
-                <input [disabled]="loading" [(ngModel)]="user.firstName" matInput placeholder="">
-            
+            <mat-form-field class="mr-16" appearance="fill">
+                <mat-label>First name</mat-label>
+                <input [disabled]="loading" [(ngModel)]="user.firstName" #firstNameInput="ngModel" matInput placeholder=""
+                       required pattern="^[a-zA-ZÀ-ÿ\-']{2,}$">
+                <mat-error *ngIf="firstNameInput.invalid && firstNameInput.touched">
+                    Please enter a valid name!
+                </mat-error>
             </mat-form-field>
-            <mat-form-field appearance="outline">
-                <mat-label>City</mat-label>
-                <input [disabled]="loading" [(ngModel)]="user.lastName" matInput placeholder="">
+
+            <mat-form-field appearance="fill">
+                <mat-label>Last name</mat-label>
+                <input [disabled]="loading" [(ngModel)]="user.lastName" #lastNameInput="ngModel" matInput placeholder=""
+                       required pattern="^[a-zA-ZÀ-ÿ\-']{2,}$">
+                <mat-error *ngIf="lastNameInput.invalid && lastNameInput.touched">
+                    Please enter a valid name!
+                </mat-error>
+            </mat-form-field>
             
+        </div>
+        <div>
+            <mat-form-field appearance="fill" class="w-100">
+                <mat-label>E-Mail</mat-label>
+                <input [disabled]="loading" [(ngModel)]="user.mail" #emailInput="ngModel" matInput placeholder=""
+                       required email>
+                <mat-error *ngIf="emailInput.invalid && emailInput.touched">
+                    Please enter a valid email address!
+                </mat-error>
             </mat-form-field>
         </div>
         <div>
-            <mat-form-field appearance="outline" class="w-100">
-                <mat-label>Country</mat-label>
-                <input [disabled]="loading" [(ngModel)]="user.mail" matInput placeholder="">
-            
-            </mat-form-field>
-        </div>
-        <div>
-            <mat-form-field appearance="outline" class="w-100">
-                <mat-label>Street & House No.</mat-label>
-                <input [disabled]="loading" [(ngModel)]="user.phone" matInput placeholder="">
-            
+            <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Phone</mat-label>
+                <input [disabled]="loading" [(ngModel)]="user.phone" #phoneInput="ngModel" matInput placeholder="">
             </mat-form-field>
         </div>
     </div>
 
     <mat-dialog-actions class="button-area">
         <button mat-button (click)="dialogRef.close()">Cancel</button>
-        <button class="save-button" mat-button (click)="saveUser()" cdkFocusInitial>Save</button>
+        <button [disabled]="!user.firstName || !user.lastName || !user.mail || emailInput.invalid" class="save-button" mat-button (click)="saveUser()" cdkFocusInitial>Save</button>
     </mat-dialog-actions>
 
 </div>

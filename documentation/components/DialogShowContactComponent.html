@@ -943,26 +943,26 @@ export class DialogShowContactComponent {
     &lt;/div&gt;
 
     &lt;div class&#x3D;&quot;contact-firstrow&quot;&gt;
-        &lt;mat-card class&#x3D;&quot;contact-infos&quot;&gt;
-                &lt;div class&#x3D;&quot;infos-header&quot;&gt;
-                    &lt;h1&gt;DATE:&lt;/h1&gt;
-                &lt;/div&gt;
-                &lt;p style&#x3D;&quot;padding-left: 16px&quot;&gt;{{ contact.contactDate | date: &#x27;dd.MM.yyyy&#x27; }}&lt;/p&gt;
-        &lt;/mat-card&gt;
-        &lt;mat-card class&#x3D;&quot;contact-infos&quot;&gt;
+        &lt;div class&#x3D;&quot;contact-infos&quot;&gt;
+            &lt;div class&#x3D;&quot;infos-header&quot;&gt;
+                &lt;h1&gt;DATE:&lt;/h1&gt;
+            &lt;/div&gt;
+            &lt;p style&#x3D;&quot;padding-left: 16px&quot;&gt;{{ contact.contactDate | date: &#x27;dd.MM.yyyy&#x27; }}&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;contact-infos&quot;&gt;
             &lt;div class&#x3D;&quot;infos-header&quot;&gt;
                 &lt;h1&gt;VIA:&lt;/h1&gt;
             &lt;/div&gt;
             &lt;img class&#x3D;&quot;channel-img&quot; [src]&#x3D;&quot;getChannelIcon(contact.channel)&quot; alt&#x3D;&quot;&quot;&gt;
-        &lt;/mat-card&gt;
+        &lt;/div&gt;
     &lt;/div&gt;
     &lt;div class&#x3D;&quot;pd-16&quot;&gt;
-        &lt;mat-card class&#x3D;&quot;contact-infos&quot;&gt;
+        &lt;div class&#x3D;&quot;contact-infos w-100&quot;&gt;
             &lt;div class&#x3D;&quot;infos-header&quot;&gt;
                 &lt;h1&gt;INFORMATION:&lt;/h1&gt;
             &lt;/div&gt;
             &lt;p style&#x3D;&quot;padding-left: 16px; white-space: pre-wrap;&quot;&gt;{{ contact.text }}&lt;/p&gt;
-        &lt;/mat-card&gt;
+        &lt;/div&gt;
     &lt;/div&gt;
     
 &lt;/div&gt;</code></pre>
@@ -994,7 +994,7 @@ export class DialogShowContactComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="dialog-container">    <div class="profile-header">        <h1>CONTACT</h1>        <div class="header-buttons">            <button (click)="deleteContact()" class="button-left-bottom-corner" mat-icon-button aria-label="Example icon button with a vertical three dot icon">                <mat-icon>delete</mat-icon>            </button>                        <button [matMenuTriggerFor]="contactMenu" class="button-left-bottom-corner" mat-icon-button aria-label="Example icon button with a vertical three dot icon">                <mat-icon>more_vert</mat-icon>            </button>            <mat-menu #contactMenu="matMenu">                <button (click)="openEditContact()" mat-menu-item>Edit</button>            </mat-menu>            <button (click)="closeDialog()" class="button-left-bottom-corner" mat-icon-button aria-label="Example icon button with a vertical three dot icon">                <mat-icon>close</mat-icon>            </button>        </div>    </div>    <div class="contact-firstrow">        <mat-card class="contact-infos">                <div class="infos-header">                    <h1>DATE:</h1>                </div>                <p style="padding-left: 16px">{{ contact.contactDate | date: \'dd.MM.yyyy\' }}</p>        </mat-card>        <mat-card class="contact-infos">            <div class="infos-header">                <h1>VIA:</h1>            </div>            <img class="channel-img" [src]="getChannelIcon(contact.channel)" alt="">        </mat-card>    </div>    <div class="pd-16">        <mat-card class="contact-infos">            <div class="infos-header">                <h1>INFORMATION:</h1>            </div>            <p style="padding-left: 16px; white-space: pre-wrap;">{{ contact.text }}</p>        </mat-card>    </div>    </div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="dialog-container">    <div class="profile-header">        <h1>CONTACT</h1>        <div class="header-buttons">            <button (click)="deleteContact()" class="button-left-bottom-corner" mat-icon-button aria-label="Example icon button with a vertical three dot icon">                <mat-icon>delete</mat-icon>            </button>                        <button [matMenuTriggerFor]="contactMenu" class="button-left-bottom-corner" mat-icon-button aria-label="Example icon button with a vertical three dot icon">                <mat-icon>more_vert</mat-icon>            </button>            <mat-menu #contactMenu="matMenu">                <button (click)="openEditContact()" mat-menu-item>Edit</button>            </mat-menu>            <button (click)="closeDialog()" class="button-left-bottom-corner" mat-icon-button aria-label="Example icon button with a vertical three dot icon">                <mat-icon>close</mat-icon>            </button>        </div>    </div>    <div class="contact-firstrow">        <div class="contact-infos">            <div class="infos-header">                <h1>DATE:</h1>            </div>            <p style="padding-left: 16px">{{ contact.contactDate | date: \'dd.MM.yyyy\' }}</p>        </div>        <div class="contact-infos">            <div class="infos-header">                <h1>VIA:</h1>            </div>            <img class="channel-img" [src]="getChannelIcon(contact.channel)" alt="">        </div>    </div>    <div class="pd-16">        <div class="contact-infos w-100">            <div class="infos-header">                <h1>INFORMATION:</h1>            </div>            <p style="padding-left: 16px; white-space: pre-wrap;">{{ contact.text }}</p>        </div>    </div>    </div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DialogAddContactComponent', 'selector': 'app-dialog-add-contact'},{'name': 'DialogAddUserComponent', 'selector': 'app-dialog-add-user'},{'name': 'DialogDeleteUserComponent', 'selector': 'app-dialog-delete-user'},{'name': 'DialogEditAddressComponent', 'selector': 'app-dialog-edit-address'},{'name': 'DialogEditContactComponent', 'selector': 'app-dialog-edit-contact'},{'name': 'DialogEditContactpersonComponent', 'selector': 'app-dialog-edit-contactperson'},{'name': 'DialogEditImgComponent', 'selector': 'app-dialog-edit-img'},{'name': 'DialogEditNameComponent', 'selector': 'app-dialog-edit-name'},{'name': 'DialogShowContactComponent', 'selector': 'app-dialog-show-contact'},{'name': 'ImprintComponent', 'selector': 'app-imprint'},{'name': 'PrivacyComponent', 'selector': 'app-privacy'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserDetailComponent', 'selector': 'app-user-details'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'DialogShowContactComponent'};

@@ -32,6 +32,7 @@ export class UserDetailComponent implements OnInit {
   userId: string | null = null;
   user: User = new User;
   contact = new Contact();
+  contacts: Contact[] = [];
 
   /**
  * Constructor for the User Details component.
@@ -65,17 +66,54 @@ export class UserDetailComponent implements OnInit {
       const user = await this.firestoreService.fetchUserDetails(userId);
       if (user) {
         this.user = user;
+        this.loadUserContacts(userId);
       }
     } catch (error) {
       console.error('Fehler beim Laden der Benutzerdetails:', error);
     }
+  }
+
+  async loadUserContacts(userId: string): Promise<void> {
+    try {
+        this.contacts = await this.firestoreService.fetchContacts(userId);
+    } catch (error) {
+        console.error('Fehler beim Laden der Kontakte:', error);
+    }
+  }
+
+  openDialog(component: any) {
+    const dialogRef = this.dialog.open(component, {
+      width: '98%', 
+      maxWidth: '600px', 
+      data: { id: this.route.snapshot.paramMap.get('id') },
+    });
+
+    dialogRef.afterClosed().subscribe(async (result) => {
+      const userId = this.route.snapshot.paramMap.get('id');
+      
+      if (result === true && userId) {
+        // Kontakte neu aus Firestore laden, wenn ein neuer Kontakt hinzugefügt oder gelöscht wurde
+        try {
+          this.contacts = await this.firestoreService.fetchContacts(userId);
+        } catch (error) {
+          console.error('Fehler beim Laden der Kontakte:', error);
+        }
+      } else if (result && typeof result === 'object') {
+        // Falls ein Kontakt aktualisiert wurde, ersetze ihn in der Liste
+        // const index = this.contacts.findIndex(c => c.id === result.id);
+        // if (index !== -1) {
+        //   this.contacts[index] = result;
+        // }
+        this.user = { ...this.user, ...result };
+      }
+    });
   }
   
   /**
  * Opens a dialog component.
  * @param component The component to be opened in the dialog.
  */
-  openDialog(component: any) {
+  openDialog2(component: any) {
     const dialogRef = this.dialog.open(component, {
       width: '98%', 
       maxWidth: '600px', 
@@ -87,14 +125,14 @@ export class UserDetailComponent implements OnInit {
       
       if (result === true && userId) {
         try {
-          this.user.contacts = await this.firestoreService.fetchContacts(userId);
+          this.contacts = await this.firestoreService.fetchContacts(userId);
         } catch (error) {
           console.error('Fehler beim Laden der Kontakte:', error);
         }
       } else if (result && typeof result === 'object') {
-        const updatedContacts = this.user.contacts;
+        const updatedContacts = this.contacts;
         this.user = result;
-        this.user.contacts = updatedContacts;
+        this.contacts = updatedContacts;
       }
     });
   }
@@ -154,17 +192,13 @@ export class UserDetailComponent implements OnInit {
     });
   
     dialogRef.afterClosed().subscribe((result) => {
-  
-      if (!result) {
-        return; 
-      }
-  
+      if (!result) return; 
       if (typeof result === 'string') {
-        this.user.contacts = this.user.contacts.filter((c) => c.id !== result);
+        this.contacts = this.contacts.filter((c) => c.id !== result);
       } else if (result && typeof result === 'object') {
-        const index = this.user.contacts.findIndex((c) => c.id === result.id);
+        const index = this.contacts.findIndex((c) => c.id === result.id);
         if (index !== -1) {
-          this.user.contacts[index] = result; 
+          this.contacts[index] = result; 
         }
       }
     });

@@ -1,5 +1,9 @@
 <mat-card class="profile-header">
     <h1>Customer Base</h1> 
+    <button (click)="openDialog()" mat-fab color="primary" class="button-top"
+        matTooltip="Add Client" [matTooltipPosition]="'above'">
+    <mat-icon>person_add</mat-icon>
+</button>
 </mat-card>
 
 <mat-card appearance="outlined">
@@ -37,8 +41,3 @@
         </div>
     </mat-card-content>
 </mat-card>
-
-<button (click)="openDialog()" mat-fab color="primary" class="add-button"
-matTooltip="Add User" [matTooltipPosition]="'above'">
-    <mat-icon>person_add</mat-icon>
-</button>

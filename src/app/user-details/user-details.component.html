@@ -99,12 +99,12 @@
 
     <mat-card-content class="contacts-area">
 
-        @for (contact of user.contacts; track user.mail) {
+        @for (contact of contacts; track user.mail) {
             <mat-card (click)="openShowContactDialog(contact)" class="contact-card">
                 {{ contact.contactDate | date:'dd.MM.yyyy' }} <br>
                 <img class="channel-img" [src]="getChannelIcon(contact.channel)" alt="">
               </mat-card>
-        }
+        } 
 
     </mat-card-content>
     

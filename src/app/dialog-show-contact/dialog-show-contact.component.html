@@ -23,26 +23,26 @@
     </div>
 
     <div class="contact-firstrow">
-        <mat-card class="contact-infos">
-                <div class="infos-header">
-                    <h1>DATE:</h1>
-                </div>
-                <p style="padding-left: 16px">{{ contact.contactDate | date: 'dd.MM.yyyy' }}</p>
-        </mat-card>
-        <mat-card class="contact-infos">
+        <div class="contact-infos">
+            <div class="infos-header">
+                <h1>DATE:</h1>
+            </div>
+            <p style="padding-left: 16px">{{ contact.contactDate | date: 'dd.MM.yyyy' }}</p>
+        </div>
+        <div class="contact-infos">
             <div class="infos-header">
                 <h1>VIA:</h1>
             </div>
             <img class="channel-img" [src]="getChannelIcon(contact.channel)" alt="">
-        </mat-card>
+        </div>
     </div>
     <div class="pd-16">
-        <mat-card class="contact-infos">
+        <div class="contact-infos w-100">
             <div class="infos-header">
                 <h1>INFORMATION:</h1>
             </div>
             <p style="padding-left: 16px; white-space: pre-wrap;">{{ contact.text }}</p>
-        </mat-card>
+        </div>
     </div>
     
 </div>

@@ -13,7 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { User } from '../../models/user.class';
-import { doc, setDoc, Firestore } from '@angular/fire/firestore';
+import { doc, collection, getDocs, writeBatch, setDoc, Firestore } from '@angular/fire/firestore';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { FirestoreService } from '../services/firestore.service';
 
@@ -66,13 +66,38 @@ export class DialogEditNameComponent {
       return;
     }
     try {
-      const userToSave = {...this.user, contacts: this.user.contacts.map((contact) => ({ ...contact })),};
+      const userToSave = {...this.user };
+      
       const userDocRef = doc(this.firestore, `users/${this.data.id}`); 
       await setDoc(userDocRef, userToSave); 
       this.dialogRef.close(this.user);
+      await this.updateContactsWithNewCompany(this.data.id, this.user.company);
       this.loading = false;
     } catch (error) {
       console.error('Fehler beim Speichern der Benutzerdaten:', error);
     }
   }
+
+  /**
+ * Updates all contacts for the user with the new company name.
+ */
+private async updateContactsWithNewCompany(userId: string, newCompany: string): Promise<void> {
+  const userDocRef = doc(this.firestore, `users/${userId}`);
+  const contactsCollectionRef = collection(userDocRef, 'contacts');
+
+  try {
+      const contactsSnapshot = await getDocs(contactsCollectionRef);
+      const batch = writeBatch(this.firestore);
+
+      contactsSnapshot.forEach((contactDoc) => {
+          const contactRef = doc(contactsCollectionRef, contactDoc.id);
+          batch.update(contactRef, { company: newCompany });
+      });
+
+      await batch.commit();
+      console.log(`All contacts for user ${userId} updated with new company name: ${newCompany}`);
+  } catch (error) {
+      console.error('Error updating contacts:', error);
+  }
+}
 }

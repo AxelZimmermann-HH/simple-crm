@@ -7,6 +7,8 @@
         rgba(183, 13, 32, 1) 
     );
     display: flex;
+    flex-direction: row;
+    align-items: center;
     > h1 {
         color: white;
         font-size: 60px;
@@ -15,25 +17,22 @@
     margin-bottom: 30px;
 }
 
-button {
+.button-top {
     position: absolute;
-    right: 56px;
-    bottom: 56px;
-    width: 100px;
-    height: 100px;
-    background: linear-gradient(
-        to bottom right, 
-        rgba(183, 13, 32, 0.6),
-        rgba(183, 13, 32, 1) 
-    );
-    transition: transform 0.3s ease-in-out;
+    right: 12px;
+    bottom: 12px;
+    width: 90px;
+    height: 90px;
+    background-color: white;
+    color:rgba(183, 13, 32, 1);
+    transition: transform 0.15s ease-in-out;
     &:hover {
-        transform: scale(1.05);
+        transform: scale(1.1);
     }
     > mat-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 40px;
+        width: 50px;
+        height: 50px;
+        font-size: 50px;
     }
 }
 
@@ -141,8 +140,19 @@ mat-card-content {
         > h1 {
             font-size: 30px;
             padding-top: 17px;
-            
+            margin-right: 43px;
         }
+        > mat-icon {
+            width: 40px;
+            height: 40px;
+            font-size: 40px;
+        }
+    }
+    .button-top {
+        width: 65px;
+        height: 65px;
+        bottom: 8px;
+        right: 8px;
         > mat-icon {
             width: 40px;
             height: 40px;

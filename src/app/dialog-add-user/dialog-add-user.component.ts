@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import {FormsModule, FormControl, Validators } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {
   MatDialogActions,
@@ -22,7 +23,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-dialog-add-user',
   standalone: true,
-  imports: [MatProgressBarModule, MatDialogContent, MatInputModule, MatNativeDateModule, MatFormFieldModule, MatIconModule, MatDatepickerModule, MatDialogActions, MatButtonModule, FormsModule],
+  imports: [CommonModule, MatProgressBarModule, MatDialogContent, MatInputModule, MatNativeDateModule, MatFormFieldModule, MatIconModule, MatDatepickerModule, MatDialogActions, MatButtonModule, FormsModule],
   templateUrl: './dialog-add-user.component.html',
   styleUrl: './dialog-add-user.component.scss'
 })
@@ -43,6 +44,17 @@ export class DialogAddUserComponent {
   constructor(private firestore: Firestore, public dialogRef: MatDialogRef<DialogAddUserComponent>, private router: Router) {}
 
   /**
+   * Checks, if the required fields are filled correctly.
+   * @returns verification for activationg button
+   */
+  isFormValid(): boolean {
+    return !!this.user.company &&
+           !!this.user.firstName &&
+           !!this.user.lastName &&
+           !!this.user.mail;
+  }
+
+  /**
    * Saves the user to Firestore after performing necessary preprocessing.
    */
   saveUser(): void {
@@ -57,7 +69,8 @@ export class DialogAddUserComponent {
   * Prepares the user data before saving, such as setting birthDate and default image.
   */
   private prepareUserData(): void {
-    this.user.birthDate = this.birthDate ? this.birthDate.getTime() : undefined;
+    console.log("prepareUserData() aufgerufen");
+    this.user.birthDate = this.birthDate ? this.birthDate.getTime() : new Date('2000-01-01').getTime();
 
     this.user.image = 'assets/profile-placeholder.jpg';
 
@@ -65,7 +78,7 @@ export class DialogAddUserComponent {
     if (userData.birthDate === undefined) {
         delete userData.birthDate; 
     }
-
+    console.log("User vor dem Speichern:", userData);
     this.user = userData;
   }
 

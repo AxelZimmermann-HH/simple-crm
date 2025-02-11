@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Inject, Component } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
@@ -18,7 +19,7 @@ import { FirestoreService } from '../services/firestore.service';
 @Component({
   selector: 'app-dialog-edit-address',
   standalone: true,
-  imports: [MatProgressBarModule, MatDialogContent, MatInputModule, MatFormFieldModule, MatIconModule, MatDialogActions, MatButtonModule, FormsModule],
+  imports: [CommonModule, MatProgressBarModule, MatDialogContent, MatInputModule, MatFormFieldModule, MatIconModule, MatDialogActions, MatButtonModule, FormsModule],
   templateUrl: './dialog-edit-address.component.html',
   styleUrl: './dialog-edit-address.component.scss'
 })
@@ -90,8 +91,7 @@ export class DialogEditAddressComponent {
   */
   private prepareUserData(): any {
     return {
-        ...this.user,
-        contacts: this.user.contacts.map((contact) => ({ ...contact })),
+        ...this.user
     };
   }
 

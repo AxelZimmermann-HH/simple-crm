@@ -23,7 +23,7 @@ import { take } from 'rxjs/operators';
 @Component({
   selector: 'app-dialog-show-contact',
   standalone: true,
-  imports: [DatePipe, MatProgressBarModule, MatCard, MatMenuModule, MatInputModule, MatFormFieldModule, MatIconModule, MatButtonModule, FormsModule],
+  imports: [DatePipe, MatProgressBarModule, MatMenuModule, MatInputModule, MatFormFieldModule, MatIconModule, MatButtonModule, FormsModule],
   templateUrl: './dialog-show-contact.component.html',
   styleUrl: './dialog-show-contact.component.scss'
 })

@@ -1085,6 +1085,10 @@ export class UserComponent {
     <div class="tab-pane fade " id="templateData">
         <pre class="line-numbers"><code class="language-html">&lt;mat-card class&#x3D;&quot;profile-header&quot;&gt;
     &lt;h1&gt;Customer Base&lt;/h1&gt; 
+    &lt;button (click)&#x3D;&quot;openDialog()&quot; mat-fab color&#x3D;&quot;primary&quot; class&#x3D;&quot;button-top&quot;
+        matTooltip&#x3D;&quot;Add Client&quot; [matTooltipPosition]&#x3D;&quot;&#x27;above&#x27;&quot;&gt;
+    &lt;mat-icon&gt;person_add&lt;/mat-icon&gt;
+&lt;/button&gt;
 &lt;/mat-card&gt;
 
 &lt;mat-card appearance&#x3D;&quot;outlined&quot;&gt;
@@ -1121,12 +1125,7 @@ export class UserComponent {
     
         &lt;/div&gt;
     &lt;/mat-card-content&gt;
-&lt;/mat-card&gt;
-
-&lt;button (click)&#x3D;&quot;openDialog()&quot; mat-fab color&#x3D;&quot;primary&quot; class&#x3D;&quot;add-button&quot;
-matTooltip&#x3D;&quot;Add User&quot; [matTooltipPosition]&#x3D;&quot;&#x27;above&#x27;&quot;&gt;
-    &lt;mat-icon&gt;person_add&lt;/mat-icon&gt;
-&lt;/button&gt;</code></pre>
+&lt;/mat-card&gt;</code></pre>
     </div>
 
 
@@ -1155,7 +1154,7 @@ matTooltip&#x3D;&quot;Add User&quot; [matTooltipPosition]&#x3D;&quot;&#x27;above
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><mat-card class="profile-header">    <h1>Customer Base</h1> </mat-card><mat-card appearance="outlined">    <mat-card-header>        <div class="table-header-element first">            COMPANY        </div>        <div class="table-header-element first desktop">            CONTACT PERSON        </div>        <div class="table-header-element second desktop">            CITY        </div>    </mat-card-header>    <mat-card-content>        <div *ngFor="let group of groupedUsers">            <div class="letter-row">                <div class="first letter">{{ group.letter }}</div>            </div>                <div *ngFor="let user of group.users" (click)="showUserDetails(user)" class="table-row">                <div class="table-element first">                    {{ user.company }}                </div>                <div class="table-element first desktop">                    {{ user.firstName }} {{ user.lastName }}                </div>                <div class="table-element second desktop">                    {{ user.city }}                </div>            </div>            </div>    </mat-card-content></mat-card><button (click)="openDialog()" mat-fab color="primary" class="add-button"matTooltip="Add User" [matTooltipPosition]="\'above\'">    <mat-icon>person_add</mat-icon></button></div>'
+        var COMPONENT_TEMPLATE = '<div><mat-card class="profile-header">    <h1>Customer Base</h1>     <button (click)="openDialog()" mat-fab color="primary" class="button-top"        matTooltip="Add Client" [matTooltipPosition]="\'above\'">    <mat-icon>person_add</mat-icon></button></mat-card><mat-card appearance="outlined">    <mat-card-header>        <div class="table-header-element first">            COMPANY        </div>        <div class="table-header-element first desktop">            CONTACT PERSON        </div>        <div class="table-header-element second desktop">            CITY        </div>    </mat-card-header>    <mat-card-content>        <div *ngFor="let group of groupedUsers">            <div class="letter-row">                <div class="first letter">{{ group.letter }}</div>            </div>                <div *ngFor="let user of group.users" (click)="showUserDetails(user)" class="table-row">                <div class="table-element first">                    {{ user.company }}                </div>                <div class="table-element first desktop">                    {{ user.firstName }} {{ user.lastName }}                </div>                <div class="table-element second desktop">                    {{ user.city }}                </div>            </div>            </div>    </mat-card-content></mat-card></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DialogAddContactComponent', 'selector': 'app-dialog-add-contact'},{'name': 'DialogAddUserComponent', 'selector': 'app-dialog-add-user'},{'name': 'DialogDeleteUserComponent', 'selector': 'app-dialog-delete-user'},{'name': 'DialogEditAddressComponent', 'selector': 'app-dialog-edit-address'},{'name': 'DialogEditContactComponent', 'selector': 'app-dialog-edit-contact'},{'name': 'DialogEditContactpersonComponent', 'selector': 'app-dialog-edit-contactperson'},{'name': 'DialogEditImgComponent', 'selector': 'app-dialog-edit-img'},{'name': 'DialogEditNameComponent', 'selector': 'app-dialog-edit-name'},{'name': 'DialogShowContactComponent', 'selector': 'app-dialog-show-contact'},{'name': 'ImprintComponent', 'selector': 'app-imprint'},{'name': 'PrivacyComponent', 'selector': 'app-privacy'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserDetailComponent', 'selector': 'app-user-details'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'UserComponent'};

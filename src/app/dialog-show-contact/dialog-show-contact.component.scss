@@ -46,8 +46,11 @@ p {
 }
 
 .contact-infos {
-    border: 3px solid rgba(183,13,32,0.8);
+    border: 3px solid rgba(183,13,32,0.4);
+    border-radius: 8px;
     color: rgba(183,13,32,1);
+    width: 49%;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     > img {
@@ -63,6 +66,8 @@ p {
         rgba(183, 13, 32, 0.6),
         rgba(183, 13, 32, 1) 
     );
+    
+    border-radius: 6px 6px 0 0;
     padding-left: 16px;
     > h1 {
         margin: 0;

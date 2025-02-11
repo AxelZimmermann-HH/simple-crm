@@ -628,7 +628,8 @@ export class DialogEditNameComponent {
       return;
     }
     try {
-      const userToSave &#x3D; {...this.user, contacts: this.user.contacts.map((contact) &#x3D;&gt; ({ ...contact })),};
+      const userToSave &#x3D; {...this.user };
+      
       const userDocRef &#x3D; doc(this.firestore, &#x60;users/${this.data.id}&#x60;); 
       await setDoc(userDocRef, userToSave); 
       this.dialogRef.close(this.user);

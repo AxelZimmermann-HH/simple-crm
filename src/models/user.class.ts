@@ -12,7 +12,7 @@ export class User {
     city: string;
     country: string;
     image: string;
-    contacts: Contact[];
+    // contacts: Contact[];
 
 
     constructor(obj?: any) {
@@ -27,7 +27,7 @@ export class User {
         this.city = obj ? obj.city : '';
         this.country = obj ? obj.country : '';
         this.image = obj ? obj.image : '';
-        this.contacts = [];
+        // this.contacts = [];
         // this.contacts = obj && obj.contacts 
         //     ? obj.contacts.map((contact: any) => new Contact(contact)) 
         //     : [];

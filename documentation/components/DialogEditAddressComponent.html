@@ -153,6 +153,7 @@
             <tr>
                 <td class="col-md-3">imports</td>
                 <td class="col-md-9">
+                            <code>CommonModule</code>
                             <code>MatProgressBarModule</code>
                             <code>MatDialogContent</code>
                             <code>MatInputModule</code>
@@ -278,7 +279,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/dialog-edit-address/dialog-edit-address.component.ts:27</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/dialog-edit-address/dialog-edit-address.component.ts:28</a></div>
                             </td>
                         </tr>
 
@@ -505,8 +506,8 @@ Fetches user details based on the provided user ID.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="40"
-                                    class="link-to-prism">src/app/dialog-edit-address/dialog-edit-address.component.ts:40</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="41"
+                                    class="link-to-prism">src/app/dialog-edit-address/dialog-edit-address.component.ts:41</a></div>
                         </td>
                     </tr>
 
@@ -553,8 +554,8 @@ Logs an error if no user ID is found.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="91"
-                                    class="link-to-prism">src/app/dialog-edit-address/dialog-edit-address.component.ts:91</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="92"
+                                    class="link-to-prism">src/app/dialog-edit-address/dialog-edit-address.component.ts:92</a></div>
                         </td>
                     </tr>
 
@@ -600,8 +601,8 @@ Logs an error if no user ID is found.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="60"
-                                    class="link-to-prism">src/app/dialog-edit-address/dialog-edit-address.component.ts:60</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="61"
+                                    class="link-to-prism">src/app/dialog-edit-address/dialog-edit-address.component.ts:61</a></div>
                         </td>
                     </tr>
 
@@ -724,8 +725,8 @@ Ensures data integrity before performing the save operation.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="78"
-                                    class="link-to-prism">src/app/dialog-edit-address/dialog-edit-address.component.ts:78</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="79"
+                                    class="link-to-prism">src/app/dialog-edit-address/dialog-edit-address.component.ts:79</a></div>
                         </td>
                     </tr>
 
@@ -785,7 +786,7 @@ Ensures data integrity before performing the save operation.</p>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/dialog-edit-address/dialog-edit-address.component.ts:33</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/dialog-edit-address/dialog-edit-address.component.ts:34</a></div>
                         </td>
                     </tr>
 
@@ -812,7 +813,7 @@ Ensures data integrity before performing the save operation.</p>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/dialog-edit-address/dialog-edit-address.component.ts:33</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/dialog-edit-address/dialog-edit-address.component.ts:34</a></div>
                         </td>
                     </tr>
 
@@ -837,7 +838,7 @@ Ensures data integrity before performing the save operation.</p>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/dialog-edit-address/dialog-edit-address.component.ts:26</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/dialog-edit-address/dialog-edit-address.component.ts:27</a></div>
                         </td>
                     </tr>
 
@@ -868,7 +869,7 @@ Ensures data integrity before performing the save operation.</p>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/dialog-edit-address/dialog-edit-address.component.ts:27</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/dialog-edit-address/dialog-edit-address.component.ts:28</a></div>
                         </td>
                     </tr>
 
@@ -881,7 +882,8 @@ Ensures data integrity before performing the save operation.</p>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Inject, Component } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { CommonModule } from &#x27;@angular/common&#x27;;
+import { Inject, Component } from &#x27;@angular/core&#x27;;
 import {FormsModule} from &#x27;@angular/forms&#x27;;
 import {MatButtonModule} from &#x27;@angular/material/button&#x27;;
 import {
@@ -901,7 +903,7 @@ import { FirestoreService } from &#x27;../services/firestore.service&#x27;;
 @Component({
   selector: &#x27;app-dialog-edit-address&#x27;,
   standalone: true,
-  imports: [MatProgressBarModule, MatDialogContent, MatInputModule, MatFormFieldModule, MatIconModule, MatDialogActions, MatButtonModule, FormsModule],
+  imports: [CommonModule, MatProgressBarModule, MatDialogContent, MatInputModule, MatFormFieldModule, MatIconModule, MatDialogActions, MatButtonModule, FormsModule],
   templateUrl: &#x27;./dialog-edit-address.component.html&#x27;,
   styleUrl: &#x27;./dialog-edit-address.component.scss&#x27;
 })
@@ -973,8 +975,7 @@ export class DialogEditAddressComponent {
   */
   private prepareUserData(): any {
     return {
-        ...this.user,
-        contacts: this.user.contacts.map((contact) &#x3D;&gt; ({ ...contact })),
+        ...this.user
     };
   }
 
@@ -1021,26 +1022,29 @@ export class DialogEditAddressComponent {
     &lt;div mat-dialog-content class&#x3D;&quot;field-area&quot;&gt;
 
         &lt;div&gt;
-            &lt;mat-form-field appearance&#x3D;&quot;outline&quot; class&#x3D;&quot;w-100&quot;&gt;
+            &lt;mat-form-field appearance&#x3D;&quot;fill&quot; class&#x3D;&quot;w-100&quot;&gt;
                 &lt;mat-label&gt;Street &amp; House No.&lt;/mat-label&gt;
                 &lt;input [disabled]&#x3D;&quot;loading&quot; [(ngModel)]&#x3D;&quot;user.street&quot; matInput placeholder&#x3D;&quot;&quot;&gt;
             
             &lt;/mat-form-field&gt;
         &lt;/div&gt;
         &lt;div&gt;
-            &lt;mat-form-field appearance&#x3D;&quot;outline&quot; class&#x3D;&quot;mr-16&quot;&gt;
+            &lt;mat-form-field appearance&#x3D;&quot;fill&quot; class&#x3D;&quot;mr-16&quot;&gt;
                 &lt;mat-label&gt;Zip code&lt;/mat-label&gt;
-                &lt;input [disabled]&#x3D;&quot;loading&quot; [(ngModel)]&#x3D;&quot;user.zipCode&quot; matInput placeholder&#x3D;&quot;&quot;&gt;
-            
+                &lt;input [disabled]&#x3D;&quot;loading&quot; [(ngModel)]&#x3D;&quot;user.zipCode&quot; #zipCodeInput&#x3D;&quot;ngModel&quot; matInput placeholder&#x3D;&quot;&quot;
+                       pattern&#x3D;&quot;^\d{4,10}$&quot;&gt;
+                &lt;mat-error *ngIf&#x3D;&quot;zipCodeInput.invalid &amp;&amp; zipCodeInput.touched&quot;&gt;
+                    Please enter a valid zip code!
+                &lt;/mat-error&gt;
             &lt;/mat-form-field&gt;
-            &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
+            &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
                 &lt;mat-label&gt;City&lt;/mat-label&gt;
                 &lt;input [disabled]&#x3D;&quot;loading&quot; [(ngModel)]&#x3D;&quot;user.city&quot; matInput placeholder&#x3D;&quot;&quot;&gt;
             
             &lt;/mat-form-field&gt;
         &lt;/div&gt;
         &lt;div&gt;
-            &lt;mat-form-field appearance&#x3D;&quot;outline&quot; class&#x3D;&quot;w-100&quot;&gt;
+            &lt;mat-form-field appearance&#x3D;&quot;fill&quot; class&#x3D;&quot;w-100&quot;&gt;
                 &lt;mat-label&gt;Country&lt;/mat-label&gt;
                 &lt;input [disabled]&#x3D;&quot;loading&quot; [(ngModel)]&#x3D;&quot;user.country&quot; matInput placeholder&#x3D;&quot;&quot;&gt;
             
@@ -1050,7 +1054,7 @@ export class DialogEditAddressComponent {
 
     &lt;mat-dialog-actions class&#x3D;&quot;button-area&quot;&gt;
         &lt;button mat-button (click)&#x3D;&quot;dialogRef.close()&quot;&gt;Cancel&lt;/button&gt;
-        &lt;button class&#x3D;&quot;save-button&quot; mat-button (click)&#x3D;&quot;saveUser()&quot; cdkFocusInitial&gt;Save&lt;/button&gt;
+        &lt;button [disabled]&#x3D;&quot;zipCodeInput.invalid&quot; class&#x3D;&quot;save-button&quot; mat-button (click)&#x3D;&quot;saveUser()&quot; cdkFocusInitial&gt;Save&lt;/button&gt;
     &lt;/mat-dialog-actions&gt;
 
 &lt;/div&gt;</code></pre>
@@ -1082,7 +1086,7 @@ export class DialogEditAddressComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div>@if (loading) {    <mat-progress-bar mode="indeterminate"></mat-progress-bar>}<div class="dialog-container">    <div class="profile-header">        <h1 mat-dialog-title>EDIT ADDRESS</h1>    </div>    <div mat-dialog-content class="field-area">        <div>            <mat-form-field appearance="outline" class="w-100">                <mat-label>Street & House No.</mat-label>                <input [disabled]="loading" [(ngModel)]="user.street" matInput placeholder="">                        </mat-form-field>        </div>        <div>            <mat-form-field appearance="outline" class="mr-16">                <mat-label>Zip code</mat-label>                <input [disabled]="loading" [(ngModel)]="user.zipCode" matInput placeholder="">                        </mat-form-field>            <mat-form-field appearance="outline">                <mat-label>City</mat-label>                <input [disabled]="loading" [(ngModel)]="user.city" matInput placeholder="">                        </mat-form-field>        </div>        <div>            <mat-form-field appearance="outline" class="w-100">                <mat-label>Country</mat-label>                <input [disabled]="loading" [(ngModel)]="user.country" matInput placeholder="">                        </mat-form-field>        </div>    </div>    <mat-dialog-actions class="button-area">        <button mat-button (click)="dialogRef.close()">Cancel</button>        <button class="save-button" mat-button (click)="saveUser()" cdkFocusInitial>Save</button>    </mat-dialog-actions></div></div>'
+        var COMPONENT_TEMPLATE = '<div>@if (loading) {    <mat-progress-bar mode="indeterminate"></mat-progress-bar>}<div class="dialog-container">    <div class="profile-header">        <h1 mat-dialog-title>EDIT ADDRESS</h1>    </div>    <div mat-dialog-content class="field-area">        <div>            <mat-form-field appearance="fill" class="w-100">                <mat-label>Street & House No.</mat-label>                <input [disabled]="loading" [(ngModel)]="user.street" matInput placeholder="">                        </mat-form-field>        </div>        <div>            <mat-form-field appearance="fill" class="mr-16">                <mat-label>Zip code</mat-label>                <input [disabled]="loading" [(ngModel)]="user.zipCode" #zipCodeInput="ngModel" matInput placeholder=""                       pattern="^\d{4,10}$">                <mat-error *ngIf="zipCodeInput.invalid && zipCodeInput.touched">                    Please enter a valid zip code!                </mat-error>            </mat-form-field>            <mat-form-field appearance="fill">                <mat-label>City</mat-label>                <input [disabled]="loading" [(ngModel)]="user.city" matInput placeholder="">                        </mat-form-field>        </div>        <div>            <mat-form-field appearance="fill" class="w-100">                <mat-label>Country</mat-label>                <input [disabled]="loading" [(ngModel)]="user.country" matInput placeholder="">                        </mat-form-field>        </div>    </div>    <mat-dialog-actions class="button-area">        <button mat-button (click)="dialogRef.close()">Cancel</button>        <button [disabled]="zipCodeInput.invalid" class="save-button" mat-button (click)="saveUser()" cdkFocusInitial>Save</button>    </mat-dialog-actions></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DialogAddContactComponent', 'selector': 'app-dialog-add-contact'},{'name': 'DialogAddUserComponent', 'selector': 'app-dialog-add-user'},{'name': 'DialogDeleteUserComponent', 'selector': 'app-dialog-delete-user'},{'name': 'DialogEditAddressComponent', 'selector': 'app-dialog-edit-address'},{'name': 'DialogEditContactComponent', 'selector': 'app-dialog-edit-contact'},{'name': 'DialogEditContactpersonComponent', 'selector': 'app-dialog-edit-contactperson'},{'name': 'DialogEditImgComponent', 'selector': 'app-dialog-edit-img'},{'name': 'DialogEditNameComponent', 'selector': 'app-dialog-edit-name'},{'name': 'DialogShowContactComponent', 'selector': 'app-dialog-show-contact'},{'name': 'ImprintComponent', 'selector': 'app-imprint'},{'name': 'PrivacyComponent', 'selector': 'app-privacy'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserDetailComponent', 'selector': 'app-user-details'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'DialogEditAddressComponent'};

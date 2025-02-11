@@ -1,5 +1,8 @@
 .dialog-container {
+    max-width: 600px;
+    width: 100%;
     padding: 24px;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7,6 +10,7 @@
 
 p {
     font-size: 18px;
+    text-align: center;
 }
 
 .field-area {

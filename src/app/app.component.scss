@@ -102,6 +102,11 @@ mat-toolbar {
   > img {
     height: 60px;
     padding-left: 20px;
+    cursor: pointer;
+    transition: filter 0.15s ease; 
+    &:hover {
+      filter: brightness(1.08); 
+    }
   }
 }
 

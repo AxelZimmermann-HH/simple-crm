@@ -673,7 +673,7 @@ export class DialogEditContactComponent {
 
     &lt;mat-dialog-actions class&#x3D;&quot;button-area&quot;&gt;
         &lt;button mat-button (click)&#x3D;&quot;dialogRef.close()&quot;&gt;Cancel&lt;/button&gt;
-        &lt;button mat-button (click)&#x3D;&quot;saveContact()&quot; cdkFocusInitial&gt;Save&lt;/button&gt;
+        &lt;button class&#x3D;&quot;save-button&quot; mat-button (click)&#x3D;&quot;saveContact()&quot; cdkFocusInitial&gt;Save&lt;/button&gt;
     &lt;/mat-dialog-actions&gt;
 
 &lt;/div&gt;</code></pre>
@@ -705,7 +705,7 @@ export class DialogEditContactComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div>@if (loading) {    <mat-progress-bar mode="indeterminate"></mat-progress-bar>}<div class="dialog-container">    <mat-card class="profile-header">        <h1>EDIT CONTACT</h1>    </mat-card>    <div mat-dialog-content class="field-area">        <div>            <mat-form-field appearance="outline" class="w-100">                <mat-label>Informations</mat-label>                <textarea style="height: 200px;" required [disabled]="loading" matInput [(ngModel)]="contact.text" placeholder="Enter information"></textarea>                        </mat-form-field>        </div>    </div>    <mat-dialog-actions class="button-area">        <button mat-button (click)="dialogRef.close()">Cancel</button>        <button mat-button (click)="saveContact()" cdkFocusInitial>Save</button>    </mat-dialog-actions></div></div>'
+        var COMPONENT_TEMPLATE = '<div>@if (loading) {    <mat-progress-bar mode="indeterminate"></mat-progress-bar>}<div class="dialog-container">    <mat-card class="profile-header">        <h1>EDIT CONTACT</h1>    </mat-card>    <div mat-dialog-content class="field-area">        <div>            <mat-form-field appearance="outline" class="w-100">                <mat-label>Informations</mat-label>                <textarea style="height: 200px;" required [disabled]="loading" matInput [(ngModel)]="contact.text" placeholder="Enter information"></textarea>                        </mat-form-field>        </div>    </div>    <mat-dialog-actions class="button-area">        <button mat-button (click)="dialogRef.close()">Cancel</button>        <button class="save-button" mat-button (click)="saveContact()" cdkFocusInitial>Save</button>    </mat-dialog-actions></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DialogAddContactComponent', 'selector': 'app-dialog-add-contact'},{'name': 'DialogAddUserComponent', 'selector': 'app-dialog-add-user'},{'name': 'DialogDeleteUserComponent', 'selector': 'app-dialog-delete-user'},{'name': 'DialogEditAddressComponent', 'selector': 'app-dialog-edit-address'},{'name': 'DialogEditContactComponent', 'selector': 'app-dialog-edit-contact'},{'name': 'DialogEditContactpersonComponent', 'selector': 'app-dialog-edit-contactperson'},{'name': 'DialogEditImgComponent', 'selector': 'app-dialog-edit-img'},{'name': 'DialogEditNameComponent', 'selector': 'app-dialog-edit-name'},{'name': 'DialogShowContactComponent', 'selector': 'app-dialog-show-contact'},{'name': 'ImprintComponent', 'selector': 'app-imprint'},{'name': 'PrivacyComponent', 'selector': 'app-privacy'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserDetailComponent', 'selector': 'app-user-details'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'DialogEditContactComponent'};

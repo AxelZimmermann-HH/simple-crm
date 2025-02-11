@@ -79,7 +79,6 @@ export class DialogAddContactComponent {
       !!this.contact.text
     );
   }
-  
   /**
    * Saves the contact to Firestore after performing necessary validations.
   */

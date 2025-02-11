@@ -1,4 +1,5 @@
 import { Inject, Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {
@@ -20,12 +21,13 @@ import { FirestoreService } from '../services/firestore.service';
 @Component({
   selector: 'app-dialog-edit-contactperson',
   standalone: true,
-  imports: [MatProgressBarModule, MatDialogContent, MatInputModule, MatNativeDateModule, MatFormFieldModule, MatIconModule, MatDatepickerModule, MatDialogActions, MatButtonModule, FormsModule],
+  imports: [CommonModule, MatProgressBarModule, MatDialogContent, MatInputModule, MatNativeDateModule, MatFormFieldModule, MatIconModule, MatDatepickerModule, MatDialogActions, MatButtonModule, FormsModule],
   templateUrl: './dialog-edit-contactperson.component.html',
   styleUrl: './dialog-edit-contactperson.component.scss'
 })
 export class DialogEditContactpersonComponent {
 
+  phonePattern = "^(\+?\d{1,4}[-.\\s]?)?(\\(?\d{1,4}\\)?[-.\\s]?)?\d{3,5}[-.\\s]?\d{3,5}[-.\\s]?\d{1,6}$";
   loading = false;
   user: User = new User;
 
@@ -90,7 +92,7 @@ export class DialogEditContactpersonComponent {
    */
   private async updateUserInFirestore(): Promise<void> {
       const userDocRef = doc(this.firestore, `users/${this.data.id}`);
-      const userToSave = { ...this.user, contacts: this.user.contacts.map(contact => ({ ...contact })) };
+      const userToSave = { ...this.user };
       await setDoc(userDocRef, userToSave);
   }
 }

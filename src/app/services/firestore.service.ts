@@ -28,8 +28,8 @@ export class FirestoreService {
     const userData = userDoc.data();
     const user = new User({ ...userData });
 
-    user.contacts = await this.fetchUserContacts(userDocRef);
-    this.sortContactsByDate(user.contacts);
+    // user.contacts = await this.fetchUserContacts(userDocRef);
+    // this.sortContactsByDate(user.contacts);
 
     return user;
   }
