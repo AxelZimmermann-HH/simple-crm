@@ -95,7 +95,6 @@ private async updateContactsWithNewCompany(userId: string, newCompany: string): 
       });
 
       await batch.commit();
-      console.log(`All contacts for user ${userId} updated with new company name: ${newCompany}`);
   } catch (error) {
       console.error('Error updating contacts:', error);
   }

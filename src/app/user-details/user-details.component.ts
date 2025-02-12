@@ -50,8 +50,6 @@ export class UserDetailComponent implements OnInit {
    */
   ngOnInit(): void {
     this.userId = this.route.snapshot.paramMap.get('id');
-    console.log(this.userId);
-    
     if (this.userId) {
       this.loadUserDetails(this.userId);
     }
@@ -92,18 +90,12 @@ export class UserDetailComponent implements OnInit {
       const userId = this.route.snapshot.paramMap.get('id');
       
       if (result === true && userId) {
-        // Kontakte neu aus Firestore laden, wenn ein neuer Kontakt hinzugefügt oder gelöscht wurde
         try {
           this.contacts = await this.firestoreService.fetchContacts(userId);
         } catch (error) {
           console.error('Fehler beim Laden der Kontakte:', error);
         }
       } else if (result && typeof result === 'object') {
-        // Falls ein Kontakt aktualisiert wurde, ersetze ihn in der Liste
-        // const index = this.contacts.findIndex(c => c.id === result.id);
-        // if (index !== -1) {
-        //   this.contacts[index] = result;
-        // }
         this.user = { ...this.user, ...result };
       }
     });

@@ -69,7 +69,6 @@ export class DialogAddUserComponent {
   * Prepares the user data before saving, such as setting birthDate and default image.
   */
   private prepareUserData(): void {
-    console.log("prepareUserData() aufgerufen");
     this.user.birthDate = this.birthDate ? this.birthDate.getTime() : new Date('2000-01-01').getTime();
 
     this.user.image = 'assets/profile-placeholder.jpg';
@@ -78,7 +77,6 @@ export class DialogAddUserComponent {
     if (userData.birthDate === undefined) {
         delete userData.birthDate; 
     }
-    console.log("User vor dem Speichern:", userData);
     this.user = userData;
   }
 
